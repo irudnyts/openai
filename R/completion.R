@@ -4,7 +4,7 @@ completion <- function(
         prompt = "Hello world",
         max_tokens = 10,
         # XXX: add the rest of parameters
-        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_api_key = Sys.getenv("OPENAI_API_KEY") #,
         # openai_organization = NULL
         ) {
 
@@ -16,7 +16,9 @@ completion <- function(
     result <- httr::POST(
         url = base_url,
         httr::content_type_json(),
-        httr::add_headers(Authorization = paste("Bearer", api_key, sep = " ")),
+        httr::add_headers(
+            Authorization = paste("Bearer", openai_api_key, sep = " ")
+        ),
         # httr::add_headers(`OpenAI-Organization` = openai_organization),
         body = list(
             prompt = prompt,
