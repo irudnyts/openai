@@ -27,8 +27,10 @@ completion <- function(
         encode = "json"
     )
 
-    # XXX: check the mime-type is what you expect, and then parse yourself
-    # XXX: See ?content
-    httr::content(result)
+    verify_mime_type(result)
+
+    result %>%
+        httr::content(as = "text") %>%
+        jsonlite::fromJSON()
 
 }
