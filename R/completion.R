@@ -4,22 +4,48 @@ completion <- function(
         prompt = "Hello world",
         max_tokens = 10,
         # XXX: add the rest of parameters
-        openai_api_key = Sys.getenv("OPENAI_API_KEY") #,
-        # openai_organization = NULL
+        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_organization = NULL
         ) {
+
+    #---------------------------------------------------------------------------
+    # Validate arguments
+
+    assertthat::assert_that(
+        assertthat::is.string(openai_api_key),
+        assertthat::noNA(openai_api_key)
+    )
+
+    if (!is.null(openai_organization)) {
+        assertthat::assert_that(
+            assertthat::is.string(openai_organization),
+            assertthat::noNA(openai_organization)
+        )
+    }
+
+    #---------------------------------------------------------------------------
+    # Build parameters of the request
 
     task <- "completions"
     engine <- "ada"
 
     base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
 
+    headers <- c(
+        Authorization = paste("Bearer", openai_api_key)
+    )
+
+    if (!is.null(openai_organization)) {
+        headers[`OpenAI-Organization`] <- openai_organization
+    }
+
+    #---------------------------------------------------------------------------
+    # Make a request and verify its result
+
     result <- httr::POST(
         url = base_url,
         httr::content_type_json(),
-        httr::add_headers(
-            Authorization = paste("Bearer", openai_api_key, sep = " ")
-        ),
-        # httr::add_headers(`OpenAI-Organization` = openai_organization),
+        httr::add_headers(.headers = headers),
         body = list(
             prompt = prompt,
             max_tokens = max_tokens
@@ -31,8 +57,11 @@ completion <- function(
 
     httr::stop_for_status(result)
 
+    #---------------------------------------------------------------------------
+    # Parse the result of the request
+
     result %>%
-        httr::content(as = "text") %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
 
 }
