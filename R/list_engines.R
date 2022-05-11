@@ -18,6 +18,14 @@ list_engines <- function(
 
     # XXX: check the mime-type is what you expect, and then parse yourself
     # XXX: See ?content
-    httr::content(result)
+    # result %>%
+    #     httr::content() %>%
+    #     purrr::pluck("data") %>%
+    #     tibble::tibble(data = .) %>%
+    #     tidyr::unnest_wider(data)
 
+    result %>%
+        httr::content(as = "text") %>%
+        jsonlite::fromJSON() %>%
+        purrr::pluck("data")
 }
