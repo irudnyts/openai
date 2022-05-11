@@ -4,6 +4,9 @@ list_engines <- function(
         openai_organization = NULL
 ) {
 
+    #---------------------------------------------------------------------------
+    # Validate arguments
+
     assertthat::assert_that(
         assertthat::is.string(openai_api_key),
         assertthat::noNA(openai_api_key)
@@ -16,6 +19,9 @@ list_engines <- function(
         )
     }
 
+    #---------------------------------------------------------------------------
+    # Build parameters of the request
+
     base_url <- "https://api.openai.com/v1/engines"
 
     headers <- c(
@@ -25,6 +31,9 @@ list_engines <- function(
     if (!is.null(openai_organization)) {
         headers[`OpenAI-Organization`] <- openai_organization
     }
+
+    #---------------------------------------------------------------------------
+    # Make a request and verify its result
 
     result <- httr::GET(
         url = base_url,
@@ -36,6 +45,9 @@ list_engines <- function(
     verify_mime_type(result)
 
     httr::stop_for_status(result)
+
+    #---------------------------------------------------------------------------
+    # Parse the result of the request
 
     result %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
@@ -50,6 +62,9 @@ retrieve_engine <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY")
         # openai_organization = NULL
 ) {
+
+    #---------------------------------------------------------------------------
+    # Validate arguments
 
     assertthat::assert_that(
         assertthat::is.string(engine),
@@ -68,6 +83,9 @@ retrieve_engine <- function(
         )
     }
 
+    #---------------------------------------------------------------------------
+    # Build parameters of the request
+
     base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}")
 
     headers <- c(
@@ -77,6 +95,9 @@ retrieve_engine <- function(
     if (!is.null(openai_organization)) {
         headers[`OpenAI-Organization`] <- openai_organization
     }
+
+    #---------------------------------------------------------------------------
+    # Make a request and verify its result
 
     result <- httr::GET(
         url = base_url,
@@ -88,6 +109,9 @@ retrieve_engine <- function(
     verify_mime_type(result)
 
     httr::stop_for_status(result)
+
+    #---------------------------------------------------------------------------
+    # Parse the result of the request
 
     result %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
