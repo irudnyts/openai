@@ -1,9 +1,21 @@
 #' @export
 completion <- function(
         engine = "ada",
-        prompt = "Hello world",
-        max_tokens = 10,
-        # XXX: add the rest of parameters
+        prompt = "<|endoftext|>",
+        # suffix = suffix,
+        max_tokens = 16,
+        temperature = 1,
+        top_p = 1,
+        n = 1,
+        # stream = FALSE,
+        # logprobs = NULL,
+        echo = FALSE,
+        stop = NULL,
+        presence_penalty = 0,
+        frequency_penalty = 0,
+        best_of = 1,
+        logit_bias = NULL,
+        user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
         ) {
@@ -48,7 +60,12 @@ completion <- function(
         httr::add_headers(.headers = headers),
         body = list(
             prompt = prompt,
-            max_tokens = max_tokens
+            # suffix = suffix,
+            max_tokens = max_tokens,
+            temperature = temperature,
+            top_p = top_p,
+            n = n,
+            echo = echo
         ),
         encode = "json"
     )
