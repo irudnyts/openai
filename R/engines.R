@@ -4,6 +4,11 @@ list_engines <- function(
         # openai_organization = NULL
 ) {
 
+    assertthat::assert_that(
+        assertthat::is.string(openai_api_key),
+        assertthat::noNA(openai_api_key)
+    )
+
     base_url <- "https://api.openai.com/v1/engines"
 
     result <- httr::GET(
@@ -33,6 +38,16 @@ retrieve_engine <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY")
         # openai_organization = NULL
 ) {
+
+    assertthat::assert_that(
+        assertthat::is.string(openai_api_key),
+        assertthat::noNA(openai_api_key)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.string(engine),
+        assertthat::noNA(engine)
+    )
 
     base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}")
 
