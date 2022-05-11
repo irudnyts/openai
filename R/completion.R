@@ -29,6 +29,8 @@ completion <- function(
 
     verify_mime_type(result)
 
+    httr::stop_for_status(result)
+
     result %>%
         httr::content(as = "text") %>%
         jsonlite::fromJSON(flatten = TRUE)

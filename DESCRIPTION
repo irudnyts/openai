@@ -11,6 +11,8 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
 Imports: 
+    glue,
+    httr,
     jsonlite,
     magrittr,
     purrr
