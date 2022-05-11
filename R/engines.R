@@ -38,7 +38,7 @@ list_engines <- function(
     httr::stop_for_status(result)
 
     result %>%
-        httr::content(as = "text") %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE) %>%
         purrr::pluck("data")
 
@@ -90,7 +90,7 @@ retrieve_engine <- function(
     httr::stop_for_status(result)
 
     result %>%
-        httr::content(as = "text") %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
 
 }
