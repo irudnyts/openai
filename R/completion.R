@@ -31,6 +31,6 @@ completion <- function(
 
     result %>%
         httr::content(as = "text") %>%
-        jsonlite::fromJSON()
+        jsonlite::fromJSON(flatten = TRUE)
 
 }

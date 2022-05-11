@@ -20,7 +20,7 @@ list_engines <- function(
 
     result %>%
         httr::content(as = "text") %>%
-        jsonlite::fromJSON() %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
         purrr::pluck("data")
 
 }
