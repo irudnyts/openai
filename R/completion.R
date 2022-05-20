@@ -3,8 +3,8 @@ completion <- function(
         engine = "ada",
         prompt = "<|endoftext|>",
         suffix = NULL,
-        # max_tokens = 16,
-        # temperature = 1,
+        max_tokens = 16,
+        temperature = 1,
         # top_p = 1,
         # n = 1,
         # stream = FALSE,
@@ -22,6 +22,38 @@ completion <- function(
 
     #---------------------------------------------------------------------------
     # Validate arguments
+
+    assertthat::assert_that(
+        assertthat::is.string(engine),
+        assertthat::noNA(engine)
+    )
+
+    assertthat::assert_that(
+        is.character(prompt),
+        assertthat::noNA(prompt)
+    )
+
+    if (!is.null(suffix)) {
+        assertthat::assert_that(
+            assertthat::is.string(suffix),
+            assertthat::noNA(suffix)
+        )
+    }
+
+    assertthat::assert_that(
+        assertthat::is.count(max_tokens)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.number(temperature),
+        assertthat::noNA(temperature),
+        between_two_and_zero(temperature)
+    )
+
+
+
+
+
 
     assertthat::assert_that(
         assertthat::is.string(openai_api_key),
@@ -56,6 +88,8 @@ completion <- function(
     body <- list()
     body[["prompt"]] <- prompt
     body[["suffix"]] <- suffix
+    body[["max_tokens"]] <- max_tokens
+    body[["temperature"]] <- temperature
 
     #---------------------------------------------------------------------------
     # Make a request and verify its result
