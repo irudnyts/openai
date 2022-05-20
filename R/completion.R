@@ -2,20 +2,20 @@
 completion <- function(
         engine = "ada",
         prompt = "<|endoftext|>",
-        # suffix = suffix,
-        max_tokens = 16,
-        temperature = 1,
-        top_p = 1,
-        n = 1,
+        suffix = NULL,
+        # max_tokens = 16,
+        # temperature = 1,
+        # top_p = 1,
+        # n = 1,
         # stream = FALSE,
         # logprobs = NULL,
-        echo = FALSE,
-        stop = NULL,
-        presence_penalty = 0,
-        frequency_penalty = 0,
-        best_of = 1,
-        logit_bias = NULL,
-        user = NULL,
+        # echo = FALSE,
+        # stop = NULL,
+        # presence_penalty = 0,
+        # frequency_penalty = 0,
+        # best_of = 1,
+        # logit_bias = NULL,
+        # user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
         ) {
@@ -36,10 +36,9 @@ completion <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Build parameters of the request
+    # Build path parameters
 
     task <- "completions"
-    engine <- "ada"
 
     base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
 
@@ -52,21 +51,20 @@ completion <- function(
     }
 
     #---------------------------------------------------------------------------
+    # Build request body
+
+    body <- list()
+    body[["prompt"]] <- prompt
+    body[["suffix"]] <- suffix
+
+    #---------------------------------------------------------------------------
     # Make a request and verify its result
 
     result <- httr::POST(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
-        body = list(
-            prompt = prompt,
-            # suffix = suffix,
-            max_tokens = max_tokens,
-            temperature = temperature,
-            top_p = top_p,
-            n = n,
-            echo = echo
-        ),
+        body = body,
         encode = "json"
     )
 
