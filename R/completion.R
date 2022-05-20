@@ -5,7 +5,7 @@ completion <- function(
         suffix = NULL,
         max_tokens = 16,
         temperature = 1,
-        # top_p = 1,
+        top_p = 1,
         # n = 1,
         # stream = FALSE,
         # logprobs = NULL,
@@ -47,13 +47,17 @@ completion <- function(
     assertthat::assert_that(
         assertthat::is.number(temperature),
         assertthat::noNA(temperature),
-        between_two_and_zero(temperature)
+        between_zero_and_two(temperature)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.number(top_p),
+        assertthat::noNA(top_p),
+        between_zero_and_two(top_p)
     )
 
 
-
-
-
+    ### XXX check if not specified
 
     assertthat::assert_that(
         assertthat::is.string(openai_api_key),
@@ -90,6 +94,7 @@ completion <- function(
     body[["suffix"]] <- suffix
     body[["max_tokens"]] <- max_tokens
     body[["temperature"]] <- temperature
+    body[["top_p"]] <- top_p
 
     #---------------------------------------------------------------------------
     # Make a request and verify its result
