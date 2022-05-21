@@ -1,6 +1,6 @@
 #' @export
 edit <- function(
-        engine = "ada",
+        engine,
         input = '"',
         instruction,
         temperature = 1,

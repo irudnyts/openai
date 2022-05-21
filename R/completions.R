@@ -1,6 +1,6 @@
 #' @export
 completion <- function(
-        engine = "ada",
+        engine,
         prompt = "<|endoftext|>",
         suffix = NULL,
         max_tokens = 16,
