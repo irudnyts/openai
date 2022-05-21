@@ -53,7 +53,7 @@ completion <- function(
     assertthat::assert_that(
         assertthat::is.number(top_p),
         assertthat::noNA(top_p),
-        value_between(top_p, 0, 2)
+        value_between(top_p, 0, 1)
     )
 
     if (both_specified(temperature, top_p)) {
