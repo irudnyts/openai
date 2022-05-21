@@ -1,5 +1,5 @@
 #' @export
-edits <- function(
+edit <- function(
         engine = "ada",
         input = '"',
         instruction,
