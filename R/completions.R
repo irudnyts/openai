@@ -144,7 +144,7 @@ completion <- function(
     )
 
     if (!is.null(openai_organization)) {
-        headers[`OpenAI-Organization`] <- openai_organization
+        headers["OpenAI-Organization"] <- openai_organization
     }
 
     #---------------------------------------------------------------------------

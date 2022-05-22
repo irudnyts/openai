@@ -29,7 +29,7 @@ list_engines <- function(
     )
 
     if (!is.null(openai_organization)) {
-        headers[`OpenAI-Organization`] <- openai_organization
+        headers["OpenAI-Organization"] <- openai_organization
     }
 
     #---------------------------------------------------------------------------
@@ -93,7 +93,7 @@ retrieve_engine <- function(
     )
 
     if (!is.null(openai_organization)) {
-        headers[`OpenAI-Organization`] <- openai_organization
+        headers["OpenAI-Organization"] <- openai_organization
     }
 
     #---------------------------------------------------------------------------

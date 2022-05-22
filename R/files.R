@@ -29,7 +29,7 @@ list_files <- function(
     )
 
     if (!is.null(openai_organization)) {
-        headers[`OpenAI-Organization`] <- openai_organization
+        headers["OpenAI-Organization"] <- openai_organization
     }
 
     #---------------------------------------------------------------------------
@@ -109,7 +109,7 @@ upload_file <- function(
     )
 
     if (!is.null(openai_organization)) {
-        headers[`OpenAI-Organization`] <- openai_organization
+        headers["OpenAI-Organization"] <- openai_organization
     }
 
     #---------------------------------------------------------------------------
@@ -124,7 +124,6 @@ upload_file <- function(
 
     result <- httr::POST(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         body = body,
         encode = "multipart"
