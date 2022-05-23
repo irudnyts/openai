@@ -1,3 +1,6 @@
+#-------------------------------------------------------------------------------
+# list_engines()
+
 test_argument_validation(
     function_name = "list_engines",
     argument_name = "openai_api_key",
@@ -11,6 +14,9 @@ test_argument_validation(
     argument_type = "string",
     allow_null = TRUE
 )
+
+#-------------------------------------------------------------------------------
+# retrieve_engine()
 
 test_argument_validation(
     function_name = "retrieve_engine",

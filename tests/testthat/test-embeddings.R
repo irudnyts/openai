@@ -1,3 +1,6 @@
+#-------------------------------------------------------------------------------
+# embedding()
+
 test_argument_validation(
     function_name = "embedding",
     argument_name = "engine",
