@@ -13,6 +13,7 @@ answer <- function(
         max_tokens = 16,
         stop = NULL,
         n = 1,
+        logit_bias = NULL,
         return_metadata = FALSE,
         return_prompt = FALSE,
         expand = NULL,
@@ -28,8 +29,8 @@ answer <- function(
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine),
-        assertthat::noNA(engine)
+        assertthat::is.string(model),
+        assertthat::noNA(model)
     )
 
     assertthat::assert_that(
@@ -103,6 +104,8 @@ answer <- function(
     assertthat::assert_that(
         assertthat::is.count(n)
     )
+
+    # XXX: validate logit_bias
 
     assertthat::assert_that(
         assertthat::is.flag(return_metadata),
