@@ -1,6 +1,6 @@
 #' @export
 search <- function(
-        engine,
+        engine = c("ada", "babbage", "curie", "davinci"),
         query,
         documents = NULL,
         file = NULL,
@@ -10,6 +10,8 @@ search <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
+
+    engine <- match.arg(engine)
 
     #---------------------------------------------------------------------------
     # Validate arguments
