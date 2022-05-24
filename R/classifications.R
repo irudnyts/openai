@@ -82,6 +82,8 @@ classification <- function(
         assertthat::is.count(max_examples)
     )
 
+    # XXX: validate logit_bias
+
     assertthat::assert_that(
         assertthat::is.flag(return_prompt),
         assertthat::noNA(return_prompt)
@@ -91,6 +93,8 @@ classification <- function(
         assertthat::is.flag(return_metadata),
         assertthat::noNA(return_metadata)
     )
+
+    # XXX: validate expand
 
     if (!is.null(user)) {
         assertthat::assert_that(

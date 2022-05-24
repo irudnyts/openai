@@ -1,24 +1,28 @@
 #' @export
-completion <- function(
-        engine,
-        prompt = "<|endoftext|>",
-        suffix = NULL,
-        max_tokens = 16,
-        temperature = 1,
-        top_p = 1,
-        n = 1,
-        stream = FALSE,
+answer <- function(
+        model = c("ada", "babbage", "curie", "davinci"),
+        question,
+        examples,
+        examples_context,
+        documents = NULL,
+        file = NULL,
+        search_model = c("ada", "babbage", "curie", "davinci"),
+        max_rerank = 200,
+        temperature = 0,
         logprobs = NULL,
-        echo = FALSE,
+        max_tokens = 16,
         stop = NULL,
-        presence_penalty = 0,
-        frequency_penalty = 0,
-        best_of = 1,
-        logit_bias = NULL,
+        n = 1,
+        return_metadata = FALSE,
+        return_prompt = FALSE,
+        expand = NULL,
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
-        ) {
+) {
+
+    model <- match.arg(model)
+    search_model <- match.arg(search_model)
 
     #---------------------------------------------------------------------------
     # Validate arguments
@@ -29,47 +33,51 @@ completion <- function(
     )
 
     assertthat::assert_that(
-        is.character(prompt),
-        assertthat::noNA(prompt)
+        assertthat::is.string(question),
+        assertthat::noNA(question)
     )
 
-    if (!is.null(suffix)) {
+    assertthat::assert_that(
+        is.list(examples)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.string(examples_context),
+        assertthat::noNA(examples_context)
+    )
+
+    if (!is.null(documents)) {
         assertthat::assert_that(
-            assertthat::is.string(suffix),
-            assertthat::noNA(suffix)
+            is.character(documents),
+            assertthat::noNA(documents)
         )
     }
 
+    if (!is.null(file)) {
+        assertthat::assert_that(
+            assertthat::is.string(file),
+            assertthat::noNA(file)
+        )
+    }
+
+    if ((is.null(documents) && is.null(file)) ||
+        (!is.null(documents) && !is.null(file))) {
+        stop("You should specify either documents or a file, but not both.")
+    }
+
     assertthat::assert_that(
-        assertthat::is.count(max_tokens)
+        assertthat::is.string(search_model),
+        assertthat::noNA(search_model)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.count(max_rerank)
     )
 
     assertthat::assert_that(
         assertthat::is.number(temperature),
         assertthat::noNA(temperature),
         value_between(temperature, 0, 2)
-    )
-
-    assertthat::assert_that(
-        assertthat::is.number(top_p),
-        assertthat::noNA(top_p),
-        value_between(top_p, 0, 1)
-    )
-
-    if (both_specified(temperature, top_p)) {
-        warning(
-            "It is recommended NOT to specify temperature and top_p at a time."
-        )
-    }
-
-    assertthat::assert_that(
-        assertthat::is.count(n)
-    )
-
-    assertthat::assert_that(
-        assertthat::is.flag(stream),
-        assertthat::noNA(stream),
-        is_false(stream)
     )
 
     if (!is.null(logprobs)) {
@@ -81,8 +89,7 @@ completion <- function(
     }
 
     assertthat::assert_that(
-        assertthat::is.flag(echo),
-        assertthat::noNA(echo)
+        assertthat::is.count(max_tokens)
     )
 
     if (!is.null(stop)) {
@@ -94,26 +101,20 @@ completion <- function(
     }
 
     assertthat::assert_that(
-        assertthat::is.number(presence_penalty),
-        assertthat::noNA(presence_penalty),
-        value_between(presence_penalty, -2, 2)
+        assertthat::is.count(n)
     )
 
     assertthat::assert_that(
-        assertthat::is.number(frequency_penalty),
-        assertthat::noNA(frequency_penalty),
-        value_between(frequency_penalty, -2, 2)
+        assertthat::is.flag(return_metadata),
+        assertthat::noNA(return_metadata)
     )
 
     assertthat::assert_that(
-        assertthat::is.count(best_of)
+        assertthat::is.flag(return_prompt),
+        assertthat::noNA(return_prompt)
     )
 
-    assertthat::assert_that(
-        best_of >= n
-    )
-
-    # XXX: validate logit_bias
+    # XXX: validate expand
 
     if (!is.null(user)) {
         assertthat::assert_that(
@@ -137,9 +138,9 @@ completion <- function(
     #---------------------------------------------------------------------------
     # Build path parameters
 
-    task <- "completions"
+    task <- "answers"
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
+    base_url <- glue::glue("https://api.openai.com/v1/{task}")
 
     headers <- c(
         Authorization = paste("Bearer", openai_api_key)
@@ -153,20 +154,23 @@ completion <- function(
     # Build request body
 
     body <- list()
-    body[["prompt"]] <- prompt
-    body[["suffix"]] <- suffix
-    body[["max_tokens"]] <- max_tokens
+    body[["model"]] <- model
+    body[["question"]] <- question
+    body[["examples"]] <- examples
+    body[["examples_context"]] <- examples_context
+    body[["documents"]] <- documents
+    body[["file"]] <- file
+    body[["search_model"]] <- search_model
+    body[["max_rerank"]] <- max_rerank
     body[["temperature"]] <- temperature
-    body[["top_p"]] <- top_p
-    body[["n"]] <- n
-    body[["stream"]] <- stream
     body[["logprobs"]] <- logprobs
-    body[["echo"]] <- echo
+    body[["max_tokens"]] <- max_tokens
     body[["stop"]] <- stop
-    body[["presence_penalty"]] <- presence_penalty
-    body[["frequency_penalty"]] <- frequency_penalty
-    body[["best_of"]] <- best_of
+    body[["n"]] <- n
     body[["logit_bias"]] <- logit_bias
+    body[["return_metadata"]] <- return_metadata
+    body[["return_prompt"]] <- return_prompt
+    body[["expand"]] <- expand
     body[["user"]] <- user
 
     #---------------------------------------------------------------------------
