@@ -14,8 +14,8 @@ Imports:
     glue,
     httr,
     jsonlite,
-    magrittr,
-    purrr
+    magrittr
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    purrr
 Config/testthat/edition: 3

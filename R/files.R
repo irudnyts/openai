@@ -25,7 +25,8 @@ list_files <- function(
     base_url <- "https://api.openai.com/v1/files"
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -37,7 +38,6 @@ list_files <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -113,7 +113,7 @@ upload_file <- function(
     base_url <- "https://api.openai.com/v1/files"
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key),
+        "Authorization" = paste("Bearer", openai_api_key),
         "Content-Type" = "multipart/form-data"
     )
 
@@ -194,7 +194,8 @@ delete_file <- function(
     base_url <- glue::glue("https://api.openai.com/v1/files/{file_id}")
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -206,7 +207,6 @@ delete_file <- function(
 
     response <- httr::DELETE(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -267,7 +267,8 @@ retrieve_file <- function(
     base_url <- glue::glue("https://api.openai.com/v1/files/{file_id}")
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -279,7 +280,6 @@ retrieve_file <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -342,7 +342,8 @@ retrieve_file_content <- function(
     base_url <- glue::glue("https://api.openai.com/v1/files/{file_id}/content")
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -354,7 +355,6 @@ retrieve_file_content <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )

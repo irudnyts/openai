@@ -103,7 +103,8 @@ create_fine_tune <- function(
     base_url <- glue::glue("https://api.openai.com/v1/{task}")
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -132,7 +133,6 @@ create_fine_tune <- function(
 
     response <- httr::POST(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         body = body,
         encode = "json"
@@ -140,7 +140,6 @@ create_fine_tune <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -195,7 +194,8 @@ list_fine_tunes <- function(
     base_url <- "https://api.openai.com/v1/fine-tunes"
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -207,7 +207,6 @@ list_fine_tunes <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -270,7 +269,8 @@ retrieve_fine_tune <- function(
     )
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -282,7 +282,6 @@ retrieve_fine_tune <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -345,7 +344,8 @@ cancel_fine_tune <- function(
     )
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -357,7 +357,6 @@ cancel_fine_tune <- function(
 
     response <- httr::POST(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
@@ -427,7 +426,8 @@ list_fine_tune_events <- function(
     )
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -445,7 +445,6 @@ list_fine_tune_events <- function(
 
     response <- httr::GET(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         body = body,
         encode = "json"
@@ -507,7 +506,8 @@ delete_fine_tune_model <- function(
     base_url <- glue::glue("https://api.openai.com/v1/models/{model}")
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -519,7 +519,6 @@ delete_fine_tune_model <- function(
 
     response <- httr::DELETE(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )

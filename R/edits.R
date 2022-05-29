@@ -65,7 +65,8 @@ create_edit <- function(
     base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
 
     headers <- c(
-        Authorization = paste("Bearer", openai_api_key)
+        "Authorization" = paste("Bearer", openai_api_key),
+        "Content-Type" = "application/json"
     )
 
     if (!is.null(openai_organization)) {
@@ -86,7 +87,6 @@ create_edit <- function(
 
     response <- httr::POST(
         url = base_url,
-        httr::content_type_json(),
         httr::add_headers(.headers = headers),
         body = body,
         encode = "json"
