@@ -39,6 +39,23 @@ assertthat::on_failure(length_between) <- function(call, env) {
 
 #-------------------------------------------------------------------------------
 
+n_characters_between <- function(x, lower, upper) {
+    nchar(x) >= lower && nchar(x) <= upper
+}
+
+assertthat::on_failure(n_characters_between) <- function(call, env) {
+    paste0(
+        "Number of characters of ",
+        deparse(call$x),
+        " is not between ",
+        deparse(call$lower),
+        " and ",
+        deparse(call$upper)
+    )
+}
+
+#-------------------------------------------------------------------------------
+
 is_false <- function(x) {
     !x
 }
