@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # edit()
 
-function_name <- "edit"
+function_name <- "create_edit"
 
 test_argument_validation(
     function_name = function_name,

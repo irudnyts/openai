@@ -1,5 +1,5 @@
 #' @export
-completion <- function(
+create_completion <- function(
         engine,
         prompt = "<|endoftext|>",
         suffix = NULL,

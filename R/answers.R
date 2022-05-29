@@ -1,5 +1,5 @@
 #' @export
-answer <- function(
+create_answer <- function(
         model = c("ada", "babbage", "curie", "davinci"),
         question,
         examples,

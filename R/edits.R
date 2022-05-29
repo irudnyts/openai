@@ -1,5 +1,5 @@
 #' @export
-edit <- function(
+create_edit <- function(
         engine,
         input = '"',
         instruction,

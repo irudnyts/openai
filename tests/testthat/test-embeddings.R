@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # embedding()
 
-function_name <- "embedding"
+function_name <- "create_embedding"
 
 test_argument_validation(
     function_name = function_name,

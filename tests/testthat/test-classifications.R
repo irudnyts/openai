@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # classification()
 
-function_name <- "classification"
+function_name <- "create_classification"
 
 test_argument_validation(
     function_name = function_name,

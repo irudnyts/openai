@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # completion()
 
-function_name <- "completion"
+function_name <- "create_completion"
 
 test_argument_validation(
     function_name = function_name,

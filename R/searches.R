@@ -1,5 +1,5 @@
 #' @export
-search <- function(
+create_search <- function(
         engine = c("ada", "babbage", "curie", "davinci"),
         query,
         documents = NULL,

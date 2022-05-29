@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # search()
 
-function_name <- "search"
+function_name <- "create_search"
 
 test_argument_validation(
     function_name = function_name,

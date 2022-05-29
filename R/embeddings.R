@@ -1,5 +1,5 @@
 #' @export
-embedding <- function(
+create_embedding <- function(
         engine,
         input,
         user = NULL,

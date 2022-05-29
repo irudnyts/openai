@@ -1,5 +1,5 @@
 #' @export
-classification <- function(
+create_classification <- function(
         model = c("ada", "babbage", "curie", "davinci"),
         query,
         examples = NULL,
