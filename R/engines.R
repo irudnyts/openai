@@ -33,25 +33,35 @@ list_engines <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -96,24 +106,34 @@ retrieve_engine <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }

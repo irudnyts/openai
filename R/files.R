@@ -33,25 +33,35 @@ list_files <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -119,25 +129,35 @@ upload_file <- function(
     body[["purpose"]] <- purpose
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::POST(
+    response <- httr::POST(
         url = base_url,
         httr::add_headers(.headers = headers),
         body = body,
         encode = "multipart"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -182,25 +202,35 @@ delete_file <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::DELETE(
+    response <- httr::DELETE(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -245,25 +275,36 @@ retrieve_file <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
+
 }
 
 # Please note that only output files are allowed to be downloaded, not the
@@ -309,23 +350,34 @@ retrieve_file_content <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
+
 }

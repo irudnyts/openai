@@ -128,9 +128,9 @@ create_fine_tune <- function(
     body[["suffix"]] <- suffix
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::POST(
+    response <- httr::POST(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
@@ -138,16 +138,33 @@ create_fine_tune <- function(
         encode = "json"
     )
 
-    verify_mime_type(result)
+    response <- httr::GET(
+        url = base_url,
+        httr::content_type_json(),
+        httr::add_headers(.headers = headers),
+        encode = "json"
+    )
 
-    httr::stop_for_status(result)
+    verify_mime_type(response)
 
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -186,25 +203,35 @@ list_fine_tunes <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -251,25 +278,35 @@ retrieve_fine_tune <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -316,25 +353,35 @@ cancel_fine_tune <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::POST(
+    response <- httr::POST(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -394,9 +441,9 @@ list_fine_tune_events <- function(
     body[["stream"]] <- stream
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::GET(
+    response <- httr::GET(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
@@ -404,16 +451,26 @@ list_fine_tune_events <- function(
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
 
@@ -458,24 +515,34 @@ delete_fine_tune_model <- function(
     }
 
     #---------------------------------------------------------------------------
-    # Make a request and verify its result
+    # Make a request and parse it
 
-    result <- httr::DELETE(
+    response <- httr::DELETE(
         url = base_url,
         httr::content_type_json(),
         httr::add_headers(.headers = headers),
         encode = "json"
     )
 
-    verify_mime_type(result)
+    verify_mime_type(response)
 
-    httr::stop_for_status(result)
-
-    #---------------------------------------------------------------------------
-    # Parse the result of the request
-
-    result %>%
+    parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
         jsonlite::fromJSON(flatten = TRUE)
+
+    #---------------------------------------------------------------------------
+    # Check whether request failed and return parsed
+
+    if (httr::http_error(response)) {
+        paste0(
+            "OpenAI API request failed [",
+            httr::status_code(response),
+            "]:\n\n",
+            parsed$error$message
+        ) %>%
+            stop(call. = FALSE)
+    }
+
+    parsed
 
 }
