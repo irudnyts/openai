@@ -51,8 +51,7 @@ list_files <- function(
 
     result %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(flatten = TRUE) %>%
-        purrr::pluck("data")
+        jsonlite::fromJSON(flatten = TRUE)
 
 }
 
