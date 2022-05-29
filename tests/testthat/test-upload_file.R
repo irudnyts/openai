@@ -1,40 +1,19 @@
 #-------------------------------------------------------------------------------
-# edit()
+# upload_file()
 
-function_name <- "create_edit"
+function_name <- "upload_file"
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "engine",
+    argument_name = "file",
     argument_type = "string",
     allow_null = FALSE
 )
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "input",
+    argument_name = "purpose",
     argument_type = "string",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "instruction",
-    argument_type = "character",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "temperature",
-    argument_type = "number",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "top_p",
-    argument_type = "number",
     allow_null = FALSE
 )
 

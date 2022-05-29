@@ -1,27 +1,13 @@
 #-------------------------------------------------------------------------------
-# embedding()
+# retrieve_file()
 
-function_name <- "create_embedding"
+function_name <- "retrieve_file"
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "engine",
+    argument_name = "file_id",
     argument_type = "string",
     allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "input",
-    argument_type = "string",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "user",
-    argument_type = "string",
-    allow_null = TRUE
 )
 
 test_argument_validation(

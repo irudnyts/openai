@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
-# answer()
+# create_classification()
 
-function_name <- "create_answer"
+function_name <- "create_classification"
 
 test_argument_validation(
     function_name = function_name,
@@ -12,23 +12,9 @@ test_argument_validation(
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "question",
+    argument_name = "query",
     argument_type = "string",
     allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "examples_context",
-    argument_type = "string",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "documents",
-    argument_type = "character",
-    allow_null = TRUE
 )
 
 test_argument_validation(
@@ -40,15 +26,15 @@ test_argument_validation(
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "search_model",
-    argument_type = "string",
-    allow_null = FALSE
+    argument_name = "labels",
+    argument_type = "character",
+    allow_null = TRUE
 )
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "max_rerank",
-    argument_type = "count",
+    argument_name = "search_model",
+    argument_type = "string",
     allow_null = FALSE
 )
 
@@ -68,35 +54,21 @@ test_argument_validation(
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "max_tokens",
+    argument_name = "max_examples",
     argument_type = "count",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "stop",
-    argument_type = "character",
-    allow_null = TRUE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "n",
-    argument_type = "count",
-    allow_null = FALSE
-)
-
-test_argument_validation(
-    function_name = function_name,
-    argument_name = "return_metadata",
-    argument_type = "flag",
     allow_null = FALSE
 )
 
 test_argument_validation(
     function_name = function_name,
     argument_name = "return_prompt",
+    argument_type = "flag",
+    allow_null = FALSE
+)
+
+test_argument_validation(
+    function_name = function_name,
+    argument_name = "return_metadata",
     argument_type = "flag",
     allow_null = FALSE
 )
