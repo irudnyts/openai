@@ -1,3 +1,18 @@
+#' List Engines
+#'
+#' Lists the currently available engines, and provides basic information about
+#' each one such as the owner and availability.
+#'
+#' @param openai_api_key a length one character vector containing OpenAI API
+#' key. Defaults to \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is
+#' retrieved from the \code{.Renviron} file).
+#' @param openai_organization an optional length one character vector specifying
+#' OpenAI organization. Defaults to \code{NULL}.
+#' @return A list of engines.
+#' @examples \dontrun{
+#' list_engines()
+#' }
+#'
 #' @export
 list_engines <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
