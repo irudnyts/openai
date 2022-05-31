@@ -39,6 +39,7 @@ retrieve_engine("text-davinci-002")
 }
 \seealso{
 Other engine functions: 
+\code{\link{create_completion}()},
 \code{\link{list_engines}()}
 }
 \concept{engine functions}

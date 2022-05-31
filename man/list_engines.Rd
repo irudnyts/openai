@@ -35,6 +35,7 @@ list_engines()
 }
 \seealso{
 Other engine functions: 
+\code{\link{create_completion}()},
 \code{\link{retrieve_engine}()}
 }
 \concept{engine functions}

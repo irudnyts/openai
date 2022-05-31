@@ -4,6 +4,68 @@
 #' \href{https://beta.openai.com/docs/api-reference/completions/create}{this page}
 #'  for details.
 #'
+#' @param engine_id required; a length one character vector. The ID of the
+#' engine to use for this request.
+#' @param prompt required; defaults to \code{"<|endoftext|>"}; an arbitrary
+#' length character vector.The prompt(s) to generate completions for, encoded as
+#' a string, array of strings, array of tokens, or array of token arrays. Note
+#' that \code{<|endoftext|>} is the document separator that the model sees
+#' during training, so if a prompt is not specified the model will generate as
+#' if from the beginning of a new document.
+#' @param suffix optional; defaults to \code{NULL}; a length one
+#' character vector. The suffix that comes after a completion of inserted text.
+#' @param max_tokens required; defaults to \code{16}; a length one
+#' numeric vector with the integer value greater than \code{0}. The maximum
+#' number of tokens to generate in the completion. The token count of your
+#' prompt plus \code{max_tokens} cannot exceed the model's context length. Most
+#' models have a context length of \code{2048} tokens (except for the newest
+#' models, which support \code{4096}).
+#' @param temperature required; defaults to \code{1}; a length one numeric
+#' vector with the value between \code{0} and \code{2}. What sampling
+#' temperature to use. Higher values means the model will take more risks. Try
+#' \code{0.9} for more creative applications, and \code{0} (argmax sampling) for
+#' ones with a well-defined answer. We generally recommend altering (i.e.,
+#' setting the value different from \code{1}) this or \code{top_p} but not both.
+#' @param top_p required; defaults to \code{1}; a length one numeric
+#' vector with the value between \code{0} and \code{1}. An alternative to
+#' sampling with temperature, called nucleus sampling, where the model considers
+#' the results of the tokens with top_p probability mass. So \code{0.1} means
+#' only the tokens comprising the top 10\% probability mass are considered. We
+#' generally recommend altering (i.e., setting the value different from
+#' \code{1}) this or \code{temperature} but not both.
+#' @param n required; defaults to \code{1}; a length one numeric vector with the
+#' integer value greater than \code{0}. How many completions to generate for
+#' each prompt. \strong{Note:} Because this parameter generates many
+#' completions, it can quickly consume your token quota. Use carefully and
+#' ensure that you have reasonable settings for \code{max_tokens} and
+#' \code{stop}.
+#' @param stream required; defaults to \code{FALSE}; a length one logical
+#' vector. Whether to stream back partial progress. If set, tokens will be sent
+#' as data-only server-sent events as they become available, with the stream
+#' terminated by a \code{data: [DONE]} message. \strong{Currently is not
+#' implemented.}
+#'
+#'
+#' @param logprobs optional; defaults to \code{NULL}; a length one numeric
+#' vector specifying whether to include the log probabilities on the
+#' \code{logprobs} most likely tokens, as well the chosen tokens. For example,
+#' if \code{logprobs} is \code{5}, the API will return a list of the \code{5}
+#' most likely tokens. The API will always return the \code{logprob} of the
+#' sampled token, so there may be up to \code{logprobs+1} elements in the
+#' response.
+#' @param echo required; defaults to \code{FALSE}; a length one logical
+#' vector specifying whether to echo back the prompt in addition to the
+#' completion.
+#' @param stop optional; defaults to \code{NULL}; an arbitrary length character
+#' vector specifying up to 4 sequences where the API will stop generating
+#' further tokens. The returned text will not contain the stop sequence.
+#'
+#' @param presence_penalty required; defaults to \code{0}; a length one numeric
+#' vector with a value between \code{-2} and \code{2} specifying Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+
+
+#'
+#'
 #' @param openai_api_key required; defaults to
 #' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
 #' \code{.Renviron} file); a length one character vector containing OpenAI API

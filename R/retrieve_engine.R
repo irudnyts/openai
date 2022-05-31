@@ -5,14 +5,14 @@
 #' \href{https://beta.openai.com/docs/api-reference/engines/retrievet}{this page}
 #' for details.
 #'
-#' @param engine_id required; a length one character vector specifying the ID of
-#'  the engine to use for this request.
+#' @param engine_id required; a length one character vector. The ID of the
+#' engine to use for this request.
 #' @param openai_api_key required; defaults to
 #' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-#' \code{.Renviron} file); a length one character vector containing OpenAI API
+#' \code{.Renviron} file); a length one character vector. Specifies OpenAI API
 #' key.
 #' @param openai_organization optional; defaults to \code{NULL}; a length one
-#' character vector specifying OpenAI organization.
+#' character vector. Specifyies OpenAI organization.
 #' @return Returns a list, elements of which contain information about the
 #' engine.
 #' @examples \dontrun{
