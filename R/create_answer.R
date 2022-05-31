@@ -105,7 +105,11 @@ create_answer <- function(
         assertthat::is.count(n)
     )
 
-    # XXX: validate logit_bias
+    if (!is.null(logit_bias)) {
+        assertthat::assert_that(
+            is.list(logit_bias)
+        )
+    }
 
     assertthat::assert_that(
         assertthat::is.flag(return_metadata),

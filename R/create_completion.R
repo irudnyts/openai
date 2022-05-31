@@ -231,7 +231,11 @@ create_completion <- function(
         best_of >= n
     )
 
-    # XXX: validate logit_bias
+    if (!is.null(logit_bias)) {
+        assertthat::assert_that(
+            is.list(logit_bias)
+        )
+    }
 
     if (!is.null(user)) {
         assertthat::assert_that(
