@@ -1,6 +1,14 @@
+#' Create edit
+#'
+#' Given a prompt and an instruction, the model will return an edited version of
+#' the prompt. See
+#' \href{https://beta.openai.com/docs/api-reference/edits}{this page}
+#'  for details.
+#'
+#'
 #' @export
 create_edit <- function(
-        engine,
+        engine_id,
         input = '"',
         instruction,
         temperature = 1,
@@ -13,8 +21,8 @@ create_edit <- function(
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine),
-        assertthat::noNA(engine)
+        assertthat::is.string(engine_id),
+        assertthat::noNA(engine_id)
     )
 
     assertthat::assert_that(
@@ -62,7 +70,9 @@ create_edit <- function(
 
     task <- "edits"
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
+    base_url <- glue::glue(
+        "https://api.openai.com/v1/engines/{engine_id}/{task}"
+    )
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
