@@ -2,7 +2,7 @@
 #'
 #' Creates a new completion for the provided prompt and parameters. See
 #' \href{https://beta.openai.com/docs/api-reference/completions/create}{this page}
-#'  for details.
+#' for details.
 #'
 #' @param engine_id required; a length one character vector. The ID of the
 #' engine to use for this request.
