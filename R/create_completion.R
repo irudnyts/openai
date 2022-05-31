@@ -154,7 +154,7 @@ create_completion <- function(
 
     if (!is.null(logprobs)) {
         assertthat::assert_that(
-            assertthat::is.count(logprobs - 1),
+            assertthat::is.count(logprobs + 1),
             value_between(logprobs, 0, 5)
 
         )
