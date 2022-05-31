@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_engines.R
 \name{list_engines}
 \alias{list_engines}
-\title{List Engines}
+\title{List engines}
 \usage{
 list_engines(
   openai_api_key = Sys.getenv("OPENAI_API_KEY"),
@@ -10,23 +10,31 @@ list_engines(
 )
 }
 \arguments{
-\item{openai_api_key}{a length one character vector containing OpenAI API
-key. Defaults to \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is
-retrieved from the \code{.Renviron} file).}
+\item{openai_api_key}{required; defaults to
+\code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
+\code{.Renviron} file); a length one character vector containing OpenAI API
+key.}
 
-\item{openai_organization}{an optional length one character vector specifying
-OpenAI organization. Defaults to \code{NULL}.}
+\item{openai_organization}{optional; defaults to \code{NULL}; a length one
+character vector specifying OpenAI organization.}
 }
 \value{
-A list of engines.
+Returns a list, an element of which is a data frame containing
+information about engines.
 }
 \description{
 Lists the currently available engines, and provides basic information about
-each one such as the owner and availability.
+each one such as the owner and availability. See
+\href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for
+details.
 }
 \examples{
 \dontrun{
 list_engines()
 }
-
 }
+\seealso{
+Other engine functions: 
+\code{\link{retrieve_engine}()}
+}
+\concept{engine functions}

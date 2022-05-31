@@ -1,6 +1,27 @@
+#' Retrieve engine
+#'
+#' Retrieves an engine instance, providing basic information about the engine
+#' such as the owner and availability. See
+#' \href{https://beta.openai.com/docs/api-reference/engines/retrievet}{this page}
+#' for details.
+#'
+#' @param engine_id required; a length one character vector specifying the ID of
+#'  the engine to use for this request.
+#' @param openai_api_key required; defaults to
+#' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
+#' \code{.Renviron} file); a length one character vector containing OpenAI API
+#' key.
+#' @param openai_organization optional; defaults to \code{NULL}; a length one
+#' character vector specifying OpenAI organization.
+#' @return Returns a list, elements of which contain information about the
+#' engine.
+#' @examples \dontrun{
+#' retrieve_engine("text-davinci-002")
+#' }
+#' @family engine functions
 #' @export
 retrieve_engine <- function(
-        engine,
+        engine_id,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
@@ -9,8 +30,8 @@ retrieve_engine <- function(
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine),
-        assertthat::noNA(engine)
+        assertthat::is.string(engine_id),
+        assertthat::noNA(engine_id)
     )
 
     assertthat::assert_that(
@@ -28,7 +49,7 @@ retrieve_engine <- function(
     #---------------------------------------------------------------------------
     # Build parameters of the request
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}")
+    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine_id}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
