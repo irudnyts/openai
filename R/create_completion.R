@@ -1,6 +1,24 @@
+#' Create completion
+#'
+#' Creates a new completion for the provided prompt and parameters. See
+#' \href{https://beta.openai.com/docs/api-reference/completions/create}{this page}
+#'  for details.
+#'
+#' @param openai_api_key required; defaults to
+#' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
+#' \code{.Renviron} file); a length one character vector containing OpenAI API
+#' key.
+#' @param openai_organization optional; defaults to \code{NULL}; a length one
+#' character vector specifying OpenAI organization.
+#' @return Returns a list, an element of which is a data frame containing
+#' information about engines.
+#' @examples \dontrun{
+#' list_engines()
+#' }
+#' @family engine functions
 #' @export
 create_completion <- function(
-        engine,
+        engine_id,
         prompt = "<|endoftext|>",
         suffix = NULL,
         max_tokens = 16,
@@ -24,8 +42,8 @@ create_completion <- function(
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine),
-        assertthat::noNA(engine)
+        assertthat::is.string(engine_id),
+        assertthat::noNA(engine_id)
     )
 
     assertthat::assert_that(
@@ -139,7 +157,7 @@ create_completion <- function(
 
     task <- "completions"
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
+    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine_id}/{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
