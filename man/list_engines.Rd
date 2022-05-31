@@ -12,11 +12,11 @@ list_engines(
 \arguments{
 \item{openai_api_key}{required; defaults to
 \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-\code{.Renviron} file); a length one character vector containing OpenAI API
+\code{.Renviron} file); a length one character vector. Specifies OpenAI API
 key.}
 
 \item{openai_organization}{optional; defaults to \code{NULL}; a length one
-character vector specifying OpenAI organization.}
+character vector. Specifies OpenAI organization.}
 }
 \value{
 Returns a list, an element of which is a data frame containing
@@ -35,7 +35,6 @@ list_engines()
 }
 \seealso{
 Other engine functions: 
-\code{\link{create_completion}()},
 \code{\link{retrieve_engine}()}
 }
 \concept{engine functions}

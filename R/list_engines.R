@@ -10,7 +10,7 @@
 #' \code{.Renviron} file); a length one character vector. Specifies OpenAI API
 #' key.
 #' @param openai_organization optional; defaults to \code{NULL}; a length one
-#' character vector. Specifyies OpenAI organization.
+#' character vector. Specifies OpenAI organization.
 #' @return Returns a list, an element of which is a data frame containing
 #' information about engines.
 #' @examples \dontrun{
