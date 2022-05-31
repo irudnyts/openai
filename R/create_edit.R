@@ -2,7 +2,7 @@
 #'
 #' Given a prompt and an instruction, the model will return an edited version of
 #' the prompt. See
-#' \href{https://beta.openai.com/docs/api-reference/edits}{this page}
+#' \href{https://beta.openai.com/docs/api-reference/edits/create}{this page}
 #' for details.
 #'
 #' @param engine_id required; a length one character vector. The ID of the

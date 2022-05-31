@@ -1,6 +1,50 @@
+#' Create search
+#'
+#' Given a query and a set of documents or labels, the model ranks each document
+#' based on its semantic similarity to the provided query. See
+#' \href{https://beta.openai.com/docs/api-reference/searches/create}{this page}
+#' for details.
+#'
+#' @param engine_id required; defaults to \code{"ada"}; a length one character
+#' vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and
+#' \code{"davinci"}. The ID of the engine to use for this request.
+#' @param query required; length one character vector. Query to search against
+#' the documents.
+#' @param documents optional; defaults to \code{NULL}; an arbitrary length
+#' character vector. Up to 200 documents to search over. The maximum document
+#' length (in tokens) is 2034 minus the number of tokens in the query. You
+#' should specify either \code{documents} or a \code{file}, but not both.
+#' @param file optional; defaults to \code{NULL}; length one character vector.
+#' The ID of an uploaded file that contains documents to search over. You should
+#' specify either \code{documents} or a \code{file}, but not both.
+#' @param max_rerank required; defaults to \code{200}; a length one numeric vector
+#' with the integer value greater than \code{0}. The maximum number of documents
+#' to be re-ranked and returned by search. This flag only takes effect when
+#' \code{file} is set.
+#' @param return_metadata required; defaults to \code{FALSE}; a length one
+#' logical vector. A special boolean flag for showing metadata. If set to
+#' \code{TRUE}, each document entry in the returned JSON will contain a
+#' "metadata" field. This flag only takes effect when \code{file} is set.
+#' @param user optional; defaults to \code{NULL}; a length one character vector.
+#' A unique identifier representing your end-user, which will help OpenAI to
+#' monitor and detect abuse.
+#' @param openai_api_key required; defaults to
+#' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
+#' \code{.Renviron} file); a length one character vector. Specifies OpenAI API
+#' key.
+#' @param openai_organization optional; defaults to \code{NULL}; a length one
+#' character vector. Specifies OpenAI organization.
+#' @return Returns a list, elements of which contain score of each document and
+#' supplementary information.
+#' @examples \dontrun{
+#' create_search(
+#'     documents = c("White House", "hospital", "school"),
+#'     query = "the president"
+#' )
+#' }
 #' @export
 create_search <- function(
-        engine = c("ada", "babbage", "curie", "davinci"),
+        engine_id = c("ada", "babbage", "curie", "davinci"),
         query,
         documents = NULL,
         file = NULL,
@@ -11,14 +55,14 @@ create_search <- function(
         openai_organization = NULL
 ) {
 
-    engine <- match.arg(engine)
+    engine_id <- match.arg(engine_id)
 
     #---------------------------------------------------------------------------
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine),
-        assertthat::noNA(engine)
+        assertthat::is.string(engine_id),
+        assertthat::noNA(engine_id)
     )
 
     assertthat::assert_that(
@@ -78,7 +122,9 @@ create_search <- function(
 
     task <- "search"
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
+    base_url <- glue::glue(
+        "https://api.openai.com/v1/engines/{engine_id}/{task}"
+    )
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),

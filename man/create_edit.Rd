@@ -54,7 +54,7 @@ and supplementary information.
 \description{
 Given a prompt and an instruction, the model will return an edited version of
 the prompt. See
-\href{https://beta.openai.com/docs/api-reference/edits}{this page}
+\href{https://beta.openai.com/docs/api-reference/edits/create}{this page}
 for details.
 }
 \examples{

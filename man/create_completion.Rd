@@ -136,7 +136,7 @@ key.}
 character vector. Specifies OpenAI organization.}
 }
 \value{
-Returns a list, an elements of which contain completion(s) and
+Returns a list, elements of which contain completion(s) and
 supplementary information.
 }
 \description{
