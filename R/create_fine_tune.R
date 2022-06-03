@@ -11,7 +11,9 @@ create_fine_tune <- function(
         classification_n_classes = NULL,
         classification_positive_class = NULL,
         classification_betas = NULL,
-        suffix = NULL
+        suffix = NULL,
+        openai_api_key = Sys.getenv("OPENAI_API_KEY"),
+        openai_organization = NULL
 ) {
 
     model <- match.arg(model)
