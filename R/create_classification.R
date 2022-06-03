@@ -1,6 +1,8 @@
 #' Create classification
 #'
-#' Classifies the specified \code{query} using provided examples.
+#' Classifies the specified \code{query} using provided examples. See
+#' \href{https://beta.openai.com/docs/api-reference/classifications/create}{this page}
+#' for details.
 #'
 #' Given a query and a set of labeled examples, the model will predict the most
 #' likely label for the query. Useful as a drop-in replacement for any ML
