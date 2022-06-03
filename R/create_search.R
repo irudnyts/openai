@@ -27,7 +27,7 @@
 #' character vector. Up to 200 documents to search over. The maximum document
 #' length (in tokens) is 2034 minus the number of tokens in the query. You
 #' should specify either \code{documents} or a \code{file}, but not both.
-#' @param file optional; defaults to \code{NULL}; length one character vector.
+#' @param file optional; defaults to \code{NULL}; a length one character vector.
 #' The ID of an uploaded file that contains documents to search over. You should
 #' specify either \code{documents} or a \code{file}, but not both.
 #' @param max_rerank required; defaults to \code{200}; a length one numeric vector
