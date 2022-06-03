@@ -39,8 +39,8 @@ key.}
 character vector. Specifies OpenAI organization.}
 }
 \value{
-Returns a list, elements of which contains ID of an uploaded file and
-other supplementary information.
+Returns a list, elements of which contains ID of the uploaded file
+and other supplementary information.
 }
 \description{
 Upload a file that contains document(s) to be used across various
@@ -62,6 +62,7 @@ upload_file(file = file, purpose = "classification")
 }
 \seealso{
 Other file functions: 
+\code{\link{delete_file}()},
 \code{\link{list_files}()}
 }
 \concept{file functions}

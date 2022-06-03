@@ -32,8 +32,8 @@
 #' key.
 #' @param openai_organization optional; defaults to \code{NULL}; a length one
 #' character vector. Specifies OpenAI organization.
-#' @return Returns a list, elements of which contains ID of an uploaded file and
-#' other supplementary information.
+#' @return Returns a list, elements of which contains ID of the uploaded file
+#' and other supplementary information.
 #' @examples \dontrun{
 #' file <- system.file("extdata", "classification-file.jsonl", package = "openai")
 #' upload_file(file = file, purpose = "classification")

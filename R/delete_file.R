@@ -1,3 +1,28 @@
+#' Delete file
+#'
+#' Delete a file.
+#'
+#' Files are used to upload documents that can be used across features like
+#' \href{https://beta.openai.com/docs/api-reference/answers}{Answers},
+#' \href{https://beta.openai.com/docs/api-reference/searches}{Search},
+#' and \href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
+#'
+#' @param file_id required; a length one character vector. The ID of the file to
+#' use for this request.
+#' @param openai_api_key required; defaults to
+#' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
+#' \code{.Renviron} file); a length one character vector. Specifies OpenAI API
+#' key.
+#' @param openai_organization optional; defaults to \code{NULL}; a length one
+#' character vector. Specifies OpenAI organization.
+#' @return Returns a list, elements of which contains ID of the deleted file and
+#' status whether the file is deleted.
+#' @examples \dontrun{
+#' file <- system.file("extdata", "classification-file.jsonl", package = "openai")
+#' file_info <- upload_file(file = file, purpose = "classification")
+#' delete_file(file_info$id)
+#' }
+#' @family file functions
 #' @export
 delete_file <- function(
         file_id,
