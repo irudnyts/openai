@@ -10,9 +10,9 @@
 #' @param engine_id required; a length one character vector. The ID of the
 #' engine to use for this request.
 #' @param prompt required; defaults to \code{"<|endoftext|>"}; an arbitrary
-#' length character vector.The prompt(s) to generate completions for, encoded as
-#' a string, array of strings, array of tokens, or array of token arrays. Note
-#' that \code{<|endoftext|>} is the document separator that the model sees
+#' length character vector. The prompt(s) to generate completions for, encoded
+#' as a string, array of strings, array of tokens, or array of token arrays.
+#' Note that \code{<|endoftext|>} is the document separator that the model sees
 #' during training, so if a prompt is not specified the model will generate as
 #' if from the beginning of a new document.
 #' @param suffix optional; defaults to \code{NULL}; a length one

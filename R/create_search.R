@@ -15,7 +15,8 @@
 #' returned along with their search scores. The similarity score is a positive
 #' score that usually ranges from 0 to 300 (but can sometimes go higher), where
 #' a score above 200 usually means the document is semantically similar to the
-#' query.
+#' query. Related guide:
+#' \href{https://beta.openai.com/docs/guides/search}{Search}.
 #'
 #' @param engine_id required; defaults to \code{"ada"}; a length one character
 #' vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and
