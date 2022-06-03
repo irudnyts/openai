@@ -5,7 +5,7 @@ function_name <- "create_embedding"
 
 test_argument_validation(
     function_name = function_name,
-    argument_name = "engine",
+    argument_name = "engine_id",
     argument_type = "string",
     allow_null = FALSE
 )
@@ -13,7 +13,7 @@ test_argument_validation(
 test_argument_validation(
     function_name = function_name,
     argument_name = "input",
-    argument_type = "string",
+    argument_type = "character",
     allow_null = FALSE
 )
 
