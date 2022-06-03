@@ -1,6 +1,6 @@
 #' @export
 create_embedding <- function(
-        engine,
+        engine_id,
         input,
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
@@ -11,12 +11,12 @@ create_embedding <- function(
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine),
-        assertthat::noNA(engine)
+        assertthat::is.string(engine_id),
+        assertthat::noNA(engine_id)
     )
 
     assertthat::assert_that(
-        assertthat::is.string(input),
+        is.character(input),
         assertthat::noNA(input)
     )
 
@@ -44,7 +44,9 @@ create_embedding <- function(
 
     task <- "embeddings"
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine}/{task}")
+    base_url <- glue::glue(
+        "https://api.openai.com/v1/engines/{engine_id}/{task}"
+    )
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
