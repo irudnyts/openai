@@ -3,7 +3,9 @@
 #' Upload a file that contains document(s) to be used across various
 #' endpoints/features. Currently, the size of all the files uploaded by one
 #' organization can be up to 1 GB. Please contact us if you need to increase the
-#' storage limit.
+#' storage limit. See
+#' \href{https://beta.openai.com/docs/api-reference/files/upload}{this page} for
+#' details.
 #'
 #' Files are used to upload documents that can be used across features like
 #' \href{https://beta.openai.com/docs/api-reference/answers}{Answers},

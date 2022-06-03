@@ -46,7 +46,9 @@ and other supplementary information.
 Upload a file that contains document(s) to be used across various
 endpoints/features. Currently, the size of all the files uploaded by one
 organization can be up to 1 GB. Please contact us if you need to increase the
-storage limit.
+storage limit. See
+\href{https://beta.openai.com/docs/api-reference/files/upload}{this page} for
+details.
 }
 \details{
 Files are used to upload documents that can be used across features like
@@ -63,6 +65,8 @@ upload_file(file = file, purpose = "classification")
 \seealso{
 Other file functions: 
 \code{\link{delete_file}()},
-\code{\link{list_files}()}
+\code{\link{list_files}()},
+\code{\link{retrieve_file_content}()},
+\code{\link{retrieve_file}()}
 }
 \concept{file functions}

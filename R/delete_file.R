@@ -1,6 +1,8 @@
 #' Delete file
 #'
-#' Delete a file.
+#' Delete a file. See
+#' \href{https://beta.openai.com/docs/api-reference/files/delete}{this page} for
+#' details.
 #'
 #' Files are used to upload documents that can be used across features like
 #' \href{https://beta.openai.com/docs/api-reference/answers}{Answers},

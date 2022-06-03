@@ -27,7 +27,9 @@ Returns a list, elements of which contains ID of the deleted file and
 status whether the file is deleted.
 }
 \description{
-Delete a file.
+Delete a file. See
+\href{https://beta.openai.com/docs/api-reference/files/delete}{this page} for
+details.
 }
 \details{
 Files are used to upload documents that can be used across features like
@@ -45,6 +47,8 @@ delete_file(file_info$id)
 \seealso{
 Other file functions: 
 \code{\link{list_files}()},
+\code{\link{retrieve_file_content}()},
+\code{\link{retrieve_file}()},
 \code{\link{upload_file}()}
 }
 \concept{file functions}
