@@ -1,9 +1,11 @@
 #' Create edit
 #'
-#' Given a prompt and an instruction, the model will return an edited version of
-#' the prompt. See
+#' Creates a new edit for the provided input, instruction, and parameters. See
 #' \href{https://beta.openai.com/docs/api-reference/edits/create}{this page}
 #' for details.
+#'
+#' Given a prompt and an instruction, the model will return an edited version of
+#' the prompt.
 #'
 #' @param engine_id required; a length one character vector. The ID of the
 #' engine to use for this request.

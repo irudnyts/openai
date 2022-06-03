@@ -52,10 +52,13 @@ Returns a list, an elements of which contain edited version of prompt
 and supplementary information.
 }
 \description{
-Given a prompt and an instruction, the model will return an edited version of
-the prompt. See
+Creates a new edit for the provided input, instruction, and parameters. See
 \href{https://beta.openai.com/docs/api-reference/edits/create}{this page}
 for details.
+}
+\details{
+Given a prompt and an instruction, the model will return an edited version of
+the prompt.
 }
 \examples{
 \dontrun{

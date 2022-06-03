@@ -28,6 +28,12 @@ each one such as the owner and availability. See
 \href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for
 details.
 }
+\details{
+Engines describe and provide access to the various models available in the
+API. You can refer to the \href{https://beta.openai.com/docs/engines}{Engines}
+documentation to understand what engines are available and the differences
+between them.
+}
 \examples{
 \dontrun{
 list_engines()

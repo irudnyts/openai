@@ -144,6 +144,10 @@ Creates a new completion for the provided prompt and parameters. See
 \href{https://beta.openai.com/docs/api-reference/completions/create}{this page}
 for details.
 }
+\details{
+Given a prompt, the model will return one or more predicted completions, and
+can also return the probabilities of alternative tokens at each position.
+}
 \examples{
 \dontrun{
 create_completion(

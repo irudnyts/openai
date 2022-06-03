@@ -4,6 +4,9 @@
 #' \href{https://beta.openai.com/docs/api-reference/completions/create}{this page}
 #' for details.
 #'
+#' Given a prompt, the model will return one or more predicted completions, and
+#' can also return the probabilities of alternative tokens at each position.
+#'
 #' @param engine_id required; a length one character vector. The ID of the
 #' engine to use for this request.
 #' @param prompt required; defaults to \code{"<|endoftext|>"}; an arbitrary

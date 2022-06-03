@@ -5,6 +5,11 @@
 #' \href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for
 #' details.
 #'
+#' Engines describe and provide access to the various models available in the
+#' API. You can refer to the \href{https://beta.openai.com/docs/engines}{Engines}
+#' documentation to understand what engines are available and the differences
+#' between them.
+#'
 #' @param openai_api_key required; defaults to
 #' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
 #' \code{.Renviron} file); a length one character vector. Specifies OpenAI API

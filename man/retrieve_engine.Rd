@@ -29,8 +29,14 @@ engine.
 \description{
 Retrieves an engine instance, providing basic information about the engine
 such as the owner and availability. See
-\href{https://beta.openai.com/docs/api-reference/engines/retrievet}{this page}
+\href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page}
 for details.
+}
+\details{
+Engines describe and provide access to the various models available in the
+API. You can refer to the \href{https://beta.openai.com/docs/engines}{Engines}
+documentation to understand what engines are available and the differences
+between them.
 }
 \examples{
 \dontrun{
