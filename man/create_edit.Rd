@@ -35,7 +35,7 @@ setting the value different from \code{1}) this or \code{top_p} but not both.}
 vector with the value between \code{0} and \code{1}. An alternative to
 sampling with temperature, called nucleus sampling, where the model considers
 the results of the tokens with top_p probability mass. So \code{0.1} means
-only the tokens comprising the top 10\% probability mass are considered. We
+only the tokens comprising the top 10\\% probability mass are considered. We
 generally recommend altering (i.e., setting the value different from
 \code{1}) this or \code{temperature} but not both.}
 

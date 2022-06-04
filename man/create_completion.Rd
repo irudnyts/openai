@@ -32,7 +32,7 @@ engine to use for this request.}
 \item{prompt}{required; defaults to \code{"<|endoftext|>"}; an arbitrary
 length character vector. The prompt(s) to generate completions for, encoded
 as a string, array of strings, array of tokens, or array of token arrays.
-Note that \code{<|endoftext|>} is the document separator that the model sees
+Note that \verb{<|endoftext|>} is the document separator that the model sees
 during training, so if a prompt is not specified the model will generate as
 if from the beginning of a new document.}
 
@@ -57,7 +57,7 @@ setting the value different from \code{1}) this or \code{top_p} but not both.}
 vector with the value between \code{0} and \code{1}. An alternative to
 sampling with temperature, called nucleus sampling, where the model considers
 the results of the tokens with top_p probability mass. So \code{0.1} means
-only the tokens comprising the top 10\% probability mass are considered. We
+only the tokens comprising the top 10\\% probability mass are considered. We
 generally recommend altering (i.e., setting the value different from
 \code{1}) this or \code{temperature} but not both.}
 
@@ -71,7 +71,7 @@ ensure that you have reasonable settings for \code{max_tokens} and
 \item{stream}{required; defaults to \code{FALSE}; a length one logical
 vector. Whether to stream back partial progress. If set, tokens will be sent
 as data-only server-sent events as they become available, with the stream
-terminated by a \code{data: [DONE]} message. \strong{Currently is not
+terminated by a \verb{data: [DONE]} message. \strong{Currently is not
 implemented.}}
 
 \item{logprobs}{optional; defaults to \code{NULL}; a length one numeric
@@ -120,7 +120,7 @@ model prior to sampling. The exact effect will vary per model, but values
 between \code{-1} and \code{1} should decrease or increase likelihood of
 selection; values like \code{-100} or \code{100} should result in a ban or
 exclusive selection of the relevant token. As an example, you can pass
-\code{list("50256" = -100)} to prevent the \code{<|endoftext|>} token from
+\code{list("50256" = -100)} to prevent the \verb{<|endoftext|>} token from
 being generated.}
 
 \item{user}{optional; defaults to \code{NULL}; a length one character vector.

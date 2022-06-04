@@ -1,19 +1,19 @@
 #' List files
 #'
 #' Returns a list of files that belong to the user's organization. See
-#' \href{https://beta.openai.com/docs/api-reference/files/list}{this page} for
+#' [this page](https://beta.openai.com/docs/api-reference/files/list) for
 #' details.
 #'
 #' Files are used to upload documents that can be used across features like
-#' \href{https://beta.openai.com/docs/api-reference/answers}{Answers},
-#' \href{https://beta.openai.com/docs/api-reference/searches}{Search},
-#' and \href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
+#' [Answers](https://beta.openai.com/docs/api-reference/answers),
+#' [Search](https://beta.openai.com/docs/api-reference/searches),
+#' and [Classifications](https://beta.openai.com/docs/api-reference/classifications).
 #'
 #' @param openai_api_key required; defaults to
-#' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-#' \code{.Renviron} file); a length one character vector. Specifies OpenAI API
+#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
+#' `.Renviron` file); a length one character vector. Specifies OpenAI API
 #' key.
-#' @param openai_organization optional; defaults to \code{NULL}; a length one
+#' @param openai_organization optional; defaults to `NULL`; a length one
 #' character vector. Specifies OpenAI organization.
 #' @return Returns a list, an element of which is a data frame containing
 #' information about files.

@@ -51,17 +51,17 @@ either \code{documents} or a \code{file}, but not both.}
 
 \item{file}{optional; defaults to \code{NULL}; a length one character vector.
 The ID of an uploaded file that contains documents to search over. See
-\code{\link{upload_file()}} for how to upload a file of the desired format
+\code{\link[=upload_file()]{upload_file()()}} for how to upload a file of the desired format
 and purpose. You should specify either \code{documents} or a \code{file}, but
 not both.}
 
 \item{search_model}{required; defaults to \code{ada}; a length one character
 vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and
-\code{"davinci"}. ID of the engine to use for \code{\link{create_search()}}.}
+\code{"davinci"}. ID of the engine to use for \code{\link[=create_search()]{create_search()()}}.}
 
 \item{max_rerank}{required; defaults to \code{200}; a length one numeric vector
 with the integer value greater than \code{0}. The maximum number of documents
-to be ranked by \code{\link{create_search()}} when using \code{file}. Setting
+to be ranked by \code{\link[=create_search()]{create_search()()}} when using \code{file}. Setting
 it to a higher value leads to improved accuracy but with increased latency
 and cost.}
 
@@ -104,7 +104,7 @@ model prior to sampling. The exact effect will vary per model, but values
 between \code{-1} and \code{1} should decrease or increase likelihood of
 selection; values like \code{-100} or \code{100} should result in a ban or
 exclusive selection of the relevant token. As an example, you can pass
-\code{list("50256" = -100)} to prevent the \code{<|endoftext|>} token from
+\code{list("50256" = -100)} to prevent the \verb{<|endoftext|>} token from
 being generated.}
 
 \item{return_metadata}{required; defaults to \code{FALSE}; a length one

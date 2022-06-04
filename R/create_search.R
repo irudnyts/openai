@@ -1,7 +1,7 @@
 #' Create search
 #'
 #' Computes similarity scores between provided query and documents. See
-#' \href{https://beta.openai.com/docs/api-reference/searches/create}{this page}
+#' [this page](https://beta.openai.com/docs/api-reference/searches/create)
 #' for details.
 #'
 #' Given a query and a set of documents or labels, the model ranks each document
@@ -9,43 +9,43 @@
 #' computes similarity scores between provided query and documents. Documents
 #' can be passed directly to the API if there are no more than 200 of them. To
 #' go beyond the 200 document limit, documents can be processed offline and then
-#' used for efficient retrieval at query time. When \code{file} is set, the
+#' used for efficient retrieval at query time. When `file` is set, the
 #' search endpoint searches over all the documents in the given file and returns
-#' up to the \code{max_rerank} number of documents. These documents will be
+#' up to the `max_rerank` number of documents. These documents will be
 #' returned along with their search scores. The similarity score is a positive
 #' score that usually ranges from 0 to 300 (but can sometimes go higher), where
 #' a score above 200 usually means the document is semantically similar to the
 #' query. Related guide:
-#' \href{https://beta.openai.com/docs/guides/search}{Search}.
+#' [Search](https://beta.openai.com/docs/guides/search).
 #'
-#' @param engine_id required; defaults to \code{"ada"}; a length one character
-#' vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and
-#' \code{"davinci"}. The ID of the engine to use for this request.
+#' @param engine_id required; defaults to `"ada"`; a length one character
+#' vector, one among `"ada"`, `"babbage"`, `"curie"`, and
+#' `"davinci"`. The ID of the engine to use for this request.
 #' @param query required; length one character vector. Query to search against
 #' the documents.
-#' @param documents optional; defaults to \code{NULL}; an arbitrary length
+#' @param documents optional; defaults to `NULL`; an arbitrary length
 #' character vector. Up to 200 documents to search over. The maximum document
 #' length (in tokens) is 2034 minus the number of tokens in the query. You
-#' should specify either \code{documents} or a \code{file}, but not both.
-#' @param file optional; defaults to \code{NULL}; a length one character vector.
+#' should specify either `documents` or a `file`, but not both.
+#' @param file optional; defaults to `NULL`; a length one character vector.
 #' The ID of an uploaded file that contains documents to search over. You should
-#' specify either \code{documents} or a \code{file}, but not both.
-#' @param max_rerank required; defaults to \code{200}; a length one numeric vector
-#' with the integer value greater than \code{0}. The maximum number of documents
+#' specify either `documents` or a `file`, but not both.
+#' @param max_rerank required; defaults to `200`; a length one numeric vector
+#' with the integer value greater than `0`. The maximum number of documents
 #' to be re-ranked and returned by search. This flag only takes effect when
-#' \code{file} is set.
-#' @param return_metadata required; defaults to \code{FALSE}; a length one
+#' `file` is set.
+#' @param return_metadata required; defaults to `FALSE`; a length one
 #' logical vector. A special boolean flag for showing metadata. If set to
-#' \code{TRUE}, each document entry in the returned JSON will contain a
-#' "metadata" field. This flag only takes effect when \code{file} is set.
-#' @param user optional; defaults to \code{NULL}; a length one character vector.
+#' `TRUE`, each document entry in the returned JSON will contain a
+#' "metadata" field. This flag only takes effect when `file` is set.
+#' @param user optional; defaults to `NULL`; a length one character vector.
 #' A unique identifier representing your end-user, which will help OpenAI to
 #' monitor and detect abuse.
 #' @param openai_api_key required; defaults to
-#' \code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-#' \code{.Renviron} file); a length one character vector. Specifies OpenAI API
+#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
+#' `.Renviron` file); a length one character vector. Specifies OpenAI API
 #' key.
-#' @param openai_organization optional; defaults to \code{NULL}; a length one
+#' @param openai_organization optional; defaults to `NULL`; a length one
 #' character vector. Specifies OpenAI organization.
 #' @return Returns a list, elements of which contain score of each document and
 #' supplementary information.
