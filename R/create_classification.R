@@ -1,9 +1,18 @@
 #' Create classification
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' **Note:** This endpoint is deprecated and will be removed on December 3,
+#' 2022. Please see
+#' [Classifications Transition Guide](https://help.openai.com/en/articles/6272941-classifications-transition-guide)
+#' for details.
+#'
 #' Classifies the specified `query` using provided examples. See
 #' [this page](https://beta.openai.com/docs/api-reference/classifications/create)
 #' for details.
 #'
+#' @details
 #' Given a query and a set of labeled examples, the model will predict the most
 #' likely label for the query. Useful as a drop-in replacement for any ML
 #' classification or text-to-label task. Classifies the specified `query`
@@ -126,6 +135,15 @@ create_classification <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
+
+    lifecycle::deprecate_warn(
+        "0.1.0",
+        "create_answer()",
+        details = paste(
+            "See the official transition guide:",
+            "https://help.openai.com/en/articles/6272941-classifications-transition-guide"
+        )
+    )
 
     model <- match.arg(model)
     search_model <- match.arg(search_model)

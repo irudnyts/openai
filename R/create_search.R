@@ -1,9 +1,18 @@
 #' Create search
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' **Note:** This endpoint is deprecated and will be removed on December 3,
+#' 2022. Please see
+#' [Search Transition Guide](https://help.openai.com/en/articles/6272952-search-transition-guide)
+#' for details.
+#'
 #' Computes similarity scores between provided query and documents. See
 #' [this page](https://beta.openai.com/docs/api-reference/searches/create)
 #' for details.
 #'
+#' @details
 #' Given a query and a set of documents or labels, the model ranks each document
 #' based on its semantic similarity to the provided query. The search endpoint
 #' computes similarity scores between provided query and documents. Documents
@@ -67,6 +76,15 @@ create_search <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
+
+    lifecycle::deprecate_warn(
+        "0.1.0",
+        "create_answer()",
+        details = paste(
+            "See the official transition guide:",
+            "https://help.openai.com/en/articles/6272952-search-transition-guide"
+        )
+    )
 
     engine_id <- match.arg(engine_id)
 

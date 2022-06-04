@@ -60,6 +60,13 @@ Returns a list, elements of which contain score of each document and
 supplementary information.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+\strong{Note:} This endpoint is deprecated and will be removed on December 3,
+2022. Please see
+\href{https://help.openai.com/en/articles/6272952-search-transition-guide}{Search Transition Guide}
+for details.
+
 Computes similarity scores between provided query and documents. See
 \href{https://beta.openai.com/docs/api-reference/searches/create}{this page}
 for details.

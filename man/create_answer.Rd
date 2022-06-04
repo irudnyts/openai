@@ -139,6 +139,13 @@ Returns a list, elements of which contain an answer and other
 supplementary information.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+\strong{Note:} This endpoint is deprecated and will be removed on December 3,
+2022. Please see
+\href{https://help.openai.com/en/articles/6233728-answers-transition-guide}{Answers Transition Guide}
+for details.
+
 Answers the specified question using the provided documents and examples. See
 \href{https://beta.openai.com/docs/api-reference/answers/create}{this page}
 for details.

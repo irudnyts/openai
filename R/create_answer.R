@@ -1,9 +1,18 @@
 #' Create answer
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' **Note:** This endpoint is deprecated and will be removed on December 3,
+#' 2022. Please see
+#' [Answers Transition Guide](https://help.openai.com/en/articles/6233728-answers-transition-guide)
+#' for details.
+#'
 #' Answers the specified question using the provided documents and examples. See
 #' [this page](https://beta.openai.com/docs/api-reference/answers/create)
 #' for details.
 #'
+#' @details
 #' Given a question, a set of documents, and some examples, the API generates an
 #' answer to the question based on the information in the set of documents. This
 #' is useful for question-answering applications on sources of truth, like
@@ -142,6 +151,15 @@ create_answer <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
+
+    lifecycle::deprecate_warn(
+        "0.1.0",
+        "create_answer()",
+        details = paste(
+            "See the official transition guide:",
+            "https://help.openai.com/en/articles/6233728-answers-transition-guide"
+        )
+    )
 
     model <- match.arg(model)
     search_model <- match.arg(search_model)
