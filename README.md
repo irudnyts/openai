@@ -18,4 +18,19 @@ You can install the development version of openai from
 devtools::install_github("irudnyts/openai")
 ```
 
+## Authentication
+
+``` r
+Sys.setenv(
+    SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+)
+```
+
+``` r
+usethis::edit_r_environ(scope = "project")
+```
+
+**Note:** If you are using GitHub/Gitlab, do not forget to add
+`.Renviron` file to `.gitignore`!
+
 ## Example

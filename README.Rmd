@@ -24,9 +24,23 @@ The goal of openai is to ...
 
 You can install the development version of openai from [GitHub](https://github.com/) with:
 
-``` r
+```{r, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("irudnyts/openai")
 ```
+
+## Authentication
+
+```{r, eval = FALSE}
+Sys.setenv(
+    SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+)
+```
+
+```{r, eval = FALSE}
+usethis::edit_r_environ(scope = "project")
+```
+
+**Note:** If you are using GitHub/Gitlab, do not forget to add `.Renviron` file to `.gitignore`!
 
 ## Example
