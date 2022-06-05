@@ -27,6 +27,7 @@ Imports:
     magrittr (>= 2.0.3)
 Suggests: 
     testthat (>= 3.0.0),
-    purrr (>= 0.3.4)
+    purrr (>= 0.3.4),
+    covr (>= 3.5.1)
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
