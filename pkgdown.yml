@@ -1,0 +1,9 @@
+pandoc: 2.7.3
+pkgdown: 2.0.3
+pkgdown_sha: ~
+articles: {}
+last_built: 2022-06-05T21:13Z
+urls:
+  reference: https://irudnyts.github.io/openai/reference
+  article: https://irudnyts.github.io/openai/articles
+
