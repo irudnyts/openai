@@ -65,6 +65,7 @@ cancel_fine_tune(fine_tune_id = id)
 \seealso{
 Other fine-tune functions: 
 \code{\link{create_fine_tune}()},
+\code{\link{list_fine_tune_events}()},
 \code{\link{list_fine_tunes}()},
 \code{\link{retrieve_fine_tune}()}
 }

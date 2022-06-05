@@ -38,6 +38,7 @@ list_fine_tunes()
 Other fine-tune functions: 
 \code{\link{cancel_fine_tune}()},
 \code{\link{create_fine_tune}()},
+\code{\link{list_fine_tune_events}()},
 \code{\link{retrieve_fine_tune}()}
 }
 \concept{fine-tune functions}
