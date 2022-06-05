@@ -94,13 +94,14 @@ one character vector. The positive class in binary classification. This
 parameter is needed to generate precision, recall, and F1 metrics when
 doing binary classification.}
 
-\item{classification_betas}{optional; defaults to \code{NULL}; a list. If this is
-provided, we calculate F-beta scores at the specified beta values. The
-F-beta score is a generalization of F-1 score. This is only used for binary
-classification. With a beta of 1 (i.e. the F-1 score), precision and recall
-are given the same weight. A larger beta score puts more weight on recall
-and less on precision. A smaller beta score puts more weight on precision
-and less on recall.}
+\item{classification_betas}{optional; defaults to \code{NULL}; a list elements of
+which are numeric values greater than \code{0}. If this is provided, we
+calculate F-beta scores at the specified beta values. The F-beta score is a
+generalization of F-1 score. This is only used for binary classification.
+With a beta of 1 (i.e. the F-1 score), precision and recall are given the
+same weight. A larger beta score puts more weight on recall and less on
+precision. A smaller beta score puts more weight on precision and less on
+recall.}
 
 \item{suffix}{optional; defaults to \code{NULL}; a length one character vector. A
 string of up to 40 characters that will be added to your fine-tuned model

@@ -83,10 +83,10 @@
 #'   vector. A special boolean flag for showing metadata. If set to `TRUE`, each
 #'   document entry in the returned JSON will contain a "metadata" field. This
 #'   flag only takes effect when `file` is set.
-#' @param expand optional; defaults to `NULL`; a list. If an object name is in
-#'   the list, we provide the full information of the object; otherwise, we only
-#'   provide the object ID. Currently we support `completion` and `file` objects
-#'   for expansion.
+#' @param expand optional; defaults to `NULL`; a list elements of which are
+#'   among `completion` and `file`. If an object name is in the list, we provide
+#'   the full information of the object; otherwise, we only provide the object
+#'   ID. Currently we support `completion` and `file` objects for expansion.
 #' @param user optional; defaults to `NULL`; a length one character vector. A
 #'   unique identifier representing your end-user, which will help OpenAI to
 #'   monitor and detect abuse.
@@ -219,7 +219,11 @@ create_classification <- function(
         assertthat::noNA(return_metadata)
     )
 
-    # XXX: validate expand
+    if (!is.null(expand)) {
+        assertthat::assert_that(
+            assertthat::is.list(expand)
+        )
+    }
 
     if (!is.null(user)) {
         assertthat::assert_that(

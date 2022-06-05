@@ -93,10 +93,10 @@ vector. A special boolean flag for showing metadata. If set to \code{TRUE}, each
 document entry in the returned JSON will contain a "metadata" field. This
 flag only takes effect when \code{file} is set.}
 
-\item{expand}{optional; defaults to \code{NULL}; a list. If an object name is in
-the list, we provide the full information of the object; otherwise, we only
-provide the object ID. Currently we support \code{completion} and \code{file} objects
-for expansion.}
+\item{expand}{optional; defaults to \code{NULL}; a list elements of which are
+among \code{completion} and \code{file}. If an object name is in the list, we provide
+the full information of the object; otherwise, we only provide the object
+ID. Currently we support \code{completion} and \code{file} objects for expansion.}
 
 \item{user}{optional; defaults to \code{NULL}; a length one character vector. A
 unique identifier representing your end-user, which will help OpenAI to

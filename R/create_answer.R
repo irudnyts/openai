@@ -91,10 +91,10 @@
 #'   vector. If set to `TRUE`, the returned JSON will include a "prompt" field
 #'   containing the final prompt that was used to request a completion. This is
 #'   mainly useful for debugging purposes.
-#' @param expand optional; defaults to `NULL`; a list. If an object name is in
-#'   the list, we provide the full information of the object; otherwise, we only
-#'   provide the object ID. Currently we support `completion` and `file` objects
-#'   for expansion.
+#' @param expand optional; defaults to `NULL`; a list elements of which are
+#'   among `completion` and `file`. If an object name is in the list, we provide
+#'   the full information of the object; otherwise, we only provide the object
+#'   ID. Currently we support `completion` and `file` objects for expansion.
 #' @param user optional; defaults to `NULL`; a length one character vector. A
 #'   unique identifier representing your end-user, which will help OpenAI to
 #'   monitor and detect abuse.
@@ -252,7 +252,11 @@ create_answer <- function(
         assertthat::noNA(return_prompt)
     )
 
-    # XXX: validate expand
+    if (!is.null(expand)) {
+        assertthat::assert_that(
+            assertthat::is.list(expand)
+        )
+    }
 
     if (!is.null(user)) {
         assertthat::assert_that(

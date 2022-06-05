@@ -113,10 +113,10 @@ vector. If set to \code{TRUE}, the returned JSON will include a "prompt" field
 containing the final prompt that was used to request a completion. This is
 mainly useful for debugging purposes.}
 
-\item{expand}{optional; defaults to \code{NULL}; a list. If an object name is in
-the list, we provide the full information of the object; otherwise, we only
-provide the object ID. Currently we support \code{completion} and \code{file} objects
-for expansion.}
+\item{expand}{optional; defaults to \code{NULL}; a list elements of which are
+among \code{completion} and \code{file}. If an object name is in the list, we provide
+the full information of the object; otherwise, we only provide the object
+ID. Currently we support \code{completion} and \code{file} objects for expansion.}
 
 \item{user}{optional; defaults to \code{NULL}; a length one character vector. A
 unique identifier representing your end-user, which will help OpenAI to

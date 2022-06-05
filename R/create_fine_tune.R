@@ -76,13 +76,14 @@
 #'   one character vector. The positive class in binary classification. This
 #'   parameter is needed to generate precision, recall, and F1 metrics when
 #'   doing binary classification.
-#' @param classification_betas optional; defaults to `NULL`; a list. If this is
-#'   provided, we calculate F-beta scores at the specified beta values. The
-#'   F-beta score is a generalization of F-1 score. This is only used for binary
-#'   classification. With a beta of 1 (i.e. the F-1 score), precision and recall
-#'   are given the same weight. A larger beta score puts more weight on recall
-#'   and less on precision. A smaller beta score puts more weight on precision
-#'   and less on recall.
+#' @param classification_betas optional; defaults to `NULL`; a list elements of
+#'   which are numeric values greater than `0`. If this is provided, we
+#'   calculate F-beta scores at the specified beta values. The F-beta score is a
+#'   generalization of F-1 score. This is only used for binary classification.
+#'   With a beta of 1 (i.e. the F-1 score), precision and recall are given the
+#'   same weight. A larger beta score puts more weight on recall and less on
+#'   precision. A smaller beta score puts more weight on precision and less on
+#'   recall.
 #' @param suffix optional; defaults to `NULL`; a length one character vector. A
 #'   string of up to 40 characters that will be added to your fine-tuned model
 #'   name. For example, a `suffix` of "custom-model-name" would produce a model
@@ -168,7 +169,6 @@ create_fine_tune <- function(
         )
     }
 
-    # XXX: validate prompt_loss_weight
     assertthat::assert_that(
         assertthat::is.number(prompt_loss_weight),
         assertthat::noNA(prompt_loss_weight)
@@ -193,7 +193,6 @@ create_fine_tune <- function(
         )
     }
 
-    # XXX: validate classification_betas
     if (!is.null(classification_betas)) {
         assertthat::assert_that(
             is.list(classification_betas)
