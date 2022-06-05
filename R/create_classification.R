@@ -36,7 +36,7 @@
 #'   `examples` or `file`, but not both.
 #' @param file optional; defaults to `NULL`; a length one character vector. The
 #'   ID of the uploaded file that contains training examples. See
-#'   [upload_file()()] for how to upload a file of the desired format and
+#'   [upload_file()] for how to upload a file of the desired format and
 #'   purpose. You should specify either `examples` or `file`, but not both.
 #' @param labels optional; defaults to `NULL`; an arbitrary length character
 #'   vector. The set of categories being classified. If not specified, candidate
@@ -44,7 +44,7 @@
 #'   the label strings will be normalized to be capitalized.
 #' @param search_model required; defaults to `ada`; a length one character
 #'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`. ID of
-#'   the engine to use for [create_search()()].
+#'   the engine to use for [create_search()].
 #' @param temperature required; defaults to `0`; a length one numeric vector
 #'   with the value between `0` and `2`. What sampling `temperature` to use.
 #'   Higher values means the model will take more risks. Try `0.9` for more

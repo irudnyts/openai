@@ -37,7 +37,7 @@ strings will be normalized to be capitalized. You should specify either
 
 \item{file}{optional; defaults to \code{NULL}; a length one character vector. The
 ID of the uploaded file that contains training examples. See
-\code{\link[=upload_file()]{upload_file()()}} for how to upload a file of the desired format and
+\code{\link[=upload_file]{upload_file()}} for how to upload a file of the desired format and
 purpose. You should specify either \code{examples} or \code{file}, but not both.}
 
 \item{labels}{optional; defaults to \code{NULL}; an arbitrary length character
@@ -47,7 +47,7 @@ the label strings will be normalized to be capitalized.}
 
 \item{search_model}{required; defaults to \code{ada}; a length one character
 vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}. ID of
-the engine to use for \code{\link[=create_search()]{create_search()()}}.}
+the engine to use for \code{\link[=create_search]{create_search()}}.}
 
 \item{temperature}{required; defaults to \code{0}; a length one numeric vector
 with the value between \code{0} and \code{2}. What sampling \code{temperature} to use.

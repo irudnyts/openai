@@ -23,7 +23,7 @@ create_fine_tune(
 }
 \arguments{
 \item{training_file}{required; a length one character vector. The ID of an
-uploaded file that contains training data. See \code{\link[=upload_file()]{upload_file()()}} for how to
+uploaded file that contains training data. See \code{\link[=upload_file]{upload_file()}} for how to
 upload a file. Your dataset must be formatted as a JSONL file, where each
 training example is a JSON object with the keys "prompt" and "completion".
 Additionally, you must upload your file with the purpose \code{fine-tune}. See
