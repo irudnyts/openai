@@ -146,6 +146,7 @@ info <- create_fine_tune(
 \seealso{
 Other fine-tune functions: 
 \code{\link{cancel_fine_tune}()},
+\code{\link{delete_fine_tune_model}()},
 \code{\link{list_fine_tune_events}()},
 \code{\link{list_fine_tunes}()},
 \code{\link{retrieve_fine_tune}()}

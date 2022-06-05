@@ -1,3 +1,32 @@
+#' Delete fine_tune model
+#'
+#' Delete a fine-tuned model. You must have the Owner role in your organization.
+#' See [this
+#' page](https://beta.openai.com/docs/api-reference/fine-tunes/delete-model) for
+#' details.
+#'
+#' Manage fine-tuning jobs to tailor a model to your specific training data.
+#' Related guide: [Fine-tune
+#' models](https://beta.openai.com/docs/guides/fine-tuning).
+#'
+#' @param model required; a length one character vector. The model to delete.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
+#' @return Returns a list, elements of which contains information about the
+#'   deleted model.
+#' @examples \dontrun{
+#' fine_tunes <- list_fine_tunes()
+#'
+#' fine_tunes <- fine_tunes$data
+#'
+#' id <- fine_tunes[!is.na(fine_tunes[, "fine_tuned_model"]), "fine_tuned_model"]
+#'
+#' delete_fine_tune_model(model = id[1])
+#' }
+#' @family fine-tune functions
 #' @export
 delete_fine_tune_model <- function(
         model,
