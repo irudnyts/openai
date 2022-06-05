@@ -145,6 +145,7 @@ info <- create_fine_tune(
 }
 \seealso{
 Other fine-tune functions: 
-\code{\link{list_fine_tunes}()}
+\code{\link{list_fine_tunes}()},
+\code{\link{retrieve_fine_tune}()}
 }
 \concept{fine-tune functions}

@@ -36,6 +36,7 @@ list_fine_tunes()
 }
 \seealso{
 Other fine-tune functions: 
-\code{\link{create_fine_tune}()}
+\code{\link{create_fine_tune}()},
+\code{\link{retrieve_fine_tune}()}
 }
 \concept{fine-tune functions}

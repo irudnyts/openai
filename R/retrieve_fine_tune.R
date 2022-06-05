@@ -1,3 +1,44 @@
+#' Retrieve fine-tune
+#'
+#' Gets info about the fine-tune job. See [this
+#' page](https://beta.openai.com/docs/api-reference/fine-tunes/retrieve) for
+#' details.
+#'
+#' Manage fine-tuning jobs to tailor a model to your specific training data.
+#' Related guide: [Fine-tune
+#' models](https://beta.openai.com/docs/guides/fine-tuning).
+#'
+#' @param fine_tune_id required; a length one character vector. The ID of the
+#'   fine-tune job.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
+#' @return Returns a list, elements of which contains information about the
+#'   fine-tune.
+#' @examples \dontrun{
+#' training_file <- system.file(
+#'     "extdata", "sport_prepared_train.jsonl", package = "openai"
+#' )
+#' validation_file <- system.file(
+#'     "extdata", "sport_prepared_train.jsonl", package = "openai"
+#' )
+#'
+#' training_info <- upload_file(training_file, "fine-tune")
+#' validation_info <- upload_file(validation_file, "fine-tune")
+#'
+#' info <- create_fine_tune(
+#'     training_file = training_info$id,
+#'     validation_file = validation_info$id,
+#'     model = "ada",
+#'     compute_classification_metrics = TRUE,
+#'     classification_positive_class = " baseball" # Mind space in front
+#' )
+#'
+#' retrieve_fine_tune(fine_tune_id = info$data$id[1])
+#' }
+#' @family fine-tune functions
 #' @export
 retrieve_fine_tune <- function(
         fine_tune_id,
