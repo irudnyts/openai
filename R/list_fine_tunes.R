@@ -1,3 +1,24 @@
+#' Lists fine-tunes
+#'
+#' List your organization's fine-tuning jobs. See [this
+#' page](https://beta.openai.com/docs/api-reference/fine-tunes/list) for
+#' details.
+#'
+#' Manage fine-tuning jobs to tailor a model to your specific training data.
+#' Related guide: [Fine-tune
+#' models](https://beta.openai.com/docs/guides/fine-tuning).
+#'
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
+#' @return Returns a list, an element of which is a data frame containing
+#'   information about fine-tunes.
+#' @examples \dontrun{
+#' list_fine_tunes()
+#' }
+#' @family fine-tune functions
 #' @export
 list_fine_tunes <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
