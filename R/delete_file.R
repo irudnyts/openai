@@ -1,24 +1,22 @@
 #' Delete file
 #'
-#' Delete a file. See
-#' [this page](https://beta.openai.com/docs/api-reference/files/delete) for
-#' details.
+#' Delete a file. See [this
+#' page](https://beta.openai.com/docs/api-reference/files/delete) for details.
 #'
 #' Files are used to upload documents that can be used across features like
 #' [Answers](https://beta.openai.com/docs/api-reference/answers),
-#' [Search](https://beta.openai.com/docs/api-reference/searches),
-#' and [Classifications](https://beta.openai.com/docs/api-reference/classifications).
+#' [Search](https://beta.openai.com/docs/api-reference/searches), and
+#' [Classifications](https://beta.openai.com/docs/api-reference/classifications).
 #'
 #' @param file_id required; a length one character vector. The ID of the file to
-#' use for this request.
-#' @param openai_api_key required; defaults to
-#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
-#' `.Renviron` file); a length one character vector. Specifies OpenAI API
-#' key.
+#'   use for this request.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
-#' character vector. Specifies OpenAI organization.
+#'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, elements of which contains ID of the deleted file and
-#' status whether the file is deleted.
+#'   status whether the file is deleted.
 #' @examples \dontrun{
 #' file <- system.file("extdata", "classification-file.jsonl", package = "openai")
 #' file_info <- upload_file(file = file, purpose = "classification")

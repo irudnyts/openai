@@ -10,10 +10,9 @@ list_engines(
 )
 }
 \arguments{
-\item{openai_api_key}{required; defaults to
-\code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-\code{.Renviron} file); a length one character vector. Specifies OpenAI API
-key.}
+\item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
+(i.e., the value is retrieved from the \code{.Renviron} file); a length one
+character vector. Specifies OpenAI API key.}
 
 \item{openai_organization}{optional; defaults to \code{NULL}; a length one
 character vector. Specifies OpenAI organization.}
@@ -24,9 +23,7 @@ information about engines.
 }
 \description{
 Lists the currently available engines, and provides basic information about
-each one such as the owner and availability. See
-\href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for
-details.
+each one such as the owner and availability. See \href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for details.
 }
 \details{
 Engines describe and provide access to the various models available in the

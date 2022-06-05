@@ -14,10 +14,9 @@ retrieve_engine(
 \item{engine_id}{required; a length one character vector. The ID of the
 engine to use for this request.}
 
-\item{openai_api_key}{required; defaults to
-\code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-\code{.Renviron} file); a length one character vector. Specifies OpenAI API
-key.}
+\item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
+(i.e., the value is retrieved from the \code{.Renviron} file); a length one
+character vector. Specifies OpenAI API key.}
 
 \item{openai_organization}{optional; defaults to \code{NULL}; a length one
 character vector. Specifies OpenAI organization.}
@@ -28,9 +27,8 @@ engine.
 }
 \description{
 Retrieves an engine instance, providing basic information about the engine
-such as the owner and availability. See
-\href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page}
-for details.
+such as the owner and availability. See \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page} for
+details.
 }
 \details{
 Engines describe and provide access to the various models available in the

@@ -18,31 +18,30 @@ create_edit(
 \item{engine_id}{required; a length one character vector. The ID of the
 engine to use for this request.}
 
-\item{input}{required; defaults to \code{'"'}; a length one character vector.
-The input text to use as a starting point for the edit.}
+\item{input}{required; defaults to \code{'"'}; a length one character vector. The
+input text to use as a starting point for the edit.}
 
 \item{instruction}{required; a length one character vector. The instruction
 that tells the model how to edit the prompt.}
 
-\item{temperature}{required; defaults to \code{1}; a length one numeric
-vector with the value between \code{0} and \code{2}. What sampling
-temperature to use. Higher values means the model will take more risks. Try
-\code{0.9} for more creative applications, and \code{0} (argmax sampling) for
-ones with a well-defined answer. We generally recommend altering (i.e.,
-setting the value different from \code{1}) this or \code{top_p} but not both.}
+\item{temperature}{required; defaults to \code{1}; a length one numeric vector
+with the value between \code{0} and \code{2}. What sampling temperature to use.
+Higher values means the model will take more risks. Try \code{0.9} for more
+creative applications, and \code{0} (argmax sampling) for ones with a
+well-defined answer. We generally recommend altering (i.e., setting the
+value different from \code{1}) this or \code{top_p} but not both.}
 
-\item{top_p}{required; defaults to \code{1}; a length one numeric
-vector with the value between \code{0} and \code{1}. An alternative to
-sampling with temperature, called nucleus sampling, where the model considers
-the results of the tokens with top_p probability mass. So \code{0.1} means
-only the tokens comprising the top 10\\% probability mass are considered. We
-generally recommend altering (i.e., setting the value different from
-\code{1}) this or \code{temperature} but not both.}
+\item{top_p}{required; defaults to \code{1}; a length one numeric vector with the
+value between \code{0} and \code{1}. An alternative to sampling with temperature,
+called nucleus sampling, where the model considers the results of the
+tokens with top_p probability mass. So \code{0.1} means only the tokens
+comprising the top 10\\% probability mass are considered. We generally
+recommend altering (i.e., setting the value different from \code{1}) this or
+\code{temperature} but not both.}
 
-\item{openai_api_key}{required; defaults to
-\code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-\code{.Renviron} file); a length one character vector. Specifies OpenAI API
-key.}
+\item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
+(i.e., the value is retrieved from the \code{.Renviron} file); a length one
+character vector. Specifies OpenAI API key.}
 
 \item{openai_organization}{optional; defaults to \code{NULL}; a length one
 character vector. Specifies OpenAI organization.}
@@ -53,8 +52,8 @@ and supplementary information.
 }
 \description{
 Creates a new edit for the provided input, instruction, and parameters. See
-\href{https://beta.openai.com/docs/api-reference/edits/create}{this page}
-for details.
+\href{https://beta.openai.com/docs/api-reference/edits/create}{this page} for
+details.
 }
 \details{
 Given a prompt and an instruction, the model will return an edited version of

@@ -1,9 +1,9 @@
 #' Retrieve engine
 #'
 #' Retrieves an engine instance, providing basic information about the engine
-#' such as the owner and availability. See
-#' [this page](https://beta.openai.com/docs/api-reference/engines/retrieve)
-#' for details.
+#' such as the owner and availability. See [this
+#' page](https://beta.openai.com/docs/api-reference/engines/retrieve) for
+#' details.
 #'
 #' Engines describe and provide access to the various models available in the
 #' API. You can refer to the [Engines](https://beta.openai.com/docs/engines)
@@ -11,15 +11,14 @@
 #' between them.
 #'
 #' @param engine_id required; a length one character vector. The ID of the
-#' engine to use for this request.
-#' @param openai_api_key required; defaults to
-#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
-#' `.Renviron` file); a length one character vector. Specifies OpenAI API
-#' key.
+#'   engine to use for this request.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
-#' character vector. Specifies OpenAI organization.
+#'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, elements of which contain information about the
-#' engine.
+#'   engine.
 #' @examples \dontrun{
 #' retrieve_engine("text-davinci-002")
 #' }

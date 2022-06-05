@@ -10,10 +10,9 @@ list_files(
 )
 }
 \arguments{
-\item{openai_api_key}{required; defaults to
-\code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-\code{.Renviron} file); a length one character vector. Specifies OpenAI API
-key.}
+\item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
+(i.e., the value is retrieved from the \code{.Renviron} file); a length one
+character vector. Specifies OpenAI API key.}
 
 \item{openai_organization}{optional; defaults to \code{NULL}; a length one
 character vector. Specifies OpenAI organization.}
@@ -23,15 +22,13 @@ Returns a list, an element of which is a data frame containing
 information about files.
 }
 \description{
-Returns a list of files that belong to the user's organization. See
-\href{https://beta.openai.com/docs/api-reference/files/list}{this page} for
-details.
+Returns a list of files that belong to the user's organization. See \href{https://beta.openai.com/docs/api-reference/files/list}{this page} for details.
 }
 \details{
 Files are used to upload documents that can be used across features like
 \href{https://beta.openai.com/docs/api-reference/answers}{Answers},
-\href{https://beta.openai.com/docs/api-reference/searches}{Search},
-and \href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
+\href{https://beta.openai.com/docs/api-reference/searches}{Search}, and
+\href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
 }
 \examples{
 \dontrun{

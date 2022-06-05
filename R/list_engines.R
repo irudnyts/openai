@@ -1,23 +1,21 @@
 #' List engines
 #'
 #' Lists the currently available engines, and provides basic information about
-#' each one such as the owner and availability. See
-#' [this page](https://beta.openai.com/docs/api-reference/engines/list) for
-#' details.
+#' each one such as the owner and availability. See [this
+#' page](https://beta.openai.com/docs/api-reference/engines/list) for details.
 #'
 #' Engines describe and provide access to the various models available in the
 #' API. You can refer to the [Engines](https://beta.openai.com/docs/engines)
 #' documentation to understand what engines are available and the differences
 #' between them.
 #'
-#' @param openai_api_key required; defaults to
-#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
-#' `.Renviron` file); a length one character vector. Specifies OpenAI API
-#' key.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
-#' character vector. Specifies OpenAI organization.
+#'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, an element of which is a data frame containing
-#' information about engines.
+#'   information about engines.
 #' @examples \dontrun{
 #' list_engines()
 #' }

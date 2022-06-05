@@ -28,9 +28,9 @@ create_answer(
 )
 }
 \arguments{
-\item{model}{required; defaults to \code{"ada"}; a length one character
-vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and
-\code{"davinci"}. ID of the engine to use for completion.}
+\item{model}{required; defaults to \code{"ada"}; a length one character vector,
+one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}. ID of the
+engine to use for completion.}
 
 \item{question}{required; a length one character vector. Question to get
 answered.}
@@ -43,48 +43,45 @@ recommend adding 2 to 3 examples.}
 snippet containing the contextual information used to generate the answers
 for the \code{examples} you provide.}
 
-\item{documents}{optional; defaults to \code{NULL}; an arbitrary length
-character vector. List of documents from which the answer for the input
-\code{question} should be derived. If this is an empty list, the question
-will be answered based on the question-answer examples. You should specify
-either \code{documents} or a \code{file}, but not both.}
+\item{documents}{optional; defaults to \code{NULL}; an arbitrary length character
+vector. List of documents from which the answer for the input \code{question}
+should be derived. If this is an empty list, the question will be answered
+based on the question-answer examples. You should specify either
+\code{documents} or a \code{file}, but not both.}
 
-\item{file}{optional; defaults to \code{NULL}; a length one character vector.
-The ID of an uploaded file that contains documents to search over. See
-\code{\link[=upload_file()]{upload_file()()}} for how to upload a file of the desired format
-and purpose. You should specify either \code{documents} or a \code{file}, but
-not both.}
+\item{file}{optional; defaults to \code{NULL}; a length one character vector. The
+ID of an uploaded file that contains documents to search over. See
+\code{\link[=upload_file()]{upload_file()()}} for how to upload a file of the desired format and
+purpose. You should specify either \code{documents} or a \code{file}, but not both.}
 
 \item{search_model}{required; defaults to \code{ada}; a length one character
-vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and
-\code{"davinci"}. ID of the engine to use for \code{\link[=create_search()]{create_search()()}}.}
+vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}. ID of
+the engine to use for \code{\link[=create_search()]{create_search()()}}.}
 
 \item{max_rerank}{required; defaults to \code{200}; a length one numeric vector
-with the integer value greater than \code{0}. The maximum number of documents
-to be ranked by \code{\link[=create_search()]{create_search()()}} when using \code{file}. Setting
-it to a higher value leads to improved accuracy but with increased latency
-and cost.}
+with the integer value greater than \code{0}. The maximum number of documents to
+be ranked by \code{\link[=create_search()]{create_search()()}} when using \code{file}. Setting it to a higher
+value leads to improved accuracy but with increased latency and cost.}
 
-\item{temperature}{required; defaults to \code{0}; a length one numeric
-vector with the value between \code{0} and \code{2}. What sampling
-temperature to use. Higher values mean the model will take more risks and
-value 0 (argmax sampling) works better for scenarios with a well-defined
-answer.}
+\item{temperature}{required; defaults to \code{0}; a length one numeric vector
+with the value between \code{0} and \code{2}. What sampling temperature to use.
+Higher values mean the model will take more risks and value 0 (argmax
+sampling) works better for scenarios with a well-defined answer.}
 
-\item{logprobs}{optional; defaults to \code{NULL}; a length one numeric
-vector with the integer value between \code{0} and \code{5}. Include the log
-probabilities on the \code{logprobs} most likely tokens, as well the chosen
-tokens. For example, if \code{logprobs} is \code{5}, the API will return a
-list of the 5 most likely tokens. The API will always return the
-\code{logprob} of the sampled token, so there may be up to \code{logprobs+1}
-elements in the response. The maximum value for logprobs is \code{5}. If you
-need more than this, please contact \email{support@openai.com} and describe
-your use case. When \code{logprobs} is set, \code{completion} will be
-automatically added into \code{expand} to get the logprobs.}
+\item{logprobs}{optional; defaults to \code{NULL}; a length one numeric vector
+with the integer value between \code{0} and \code{5}. Include the log probabilities
+on the \code{logprobs} most likely tokens, as well the chosen tokens. For
+example, if \code{logprobs} is \code{5}, the API will return a list of the 5 most
+likely tokens. The API will always return the \code{logprob} of the sampled
+token, so there may be up to \code{logprobs+1} elements in the response. The
+maximum value for logprobs is \code{5}. If you need more than this, please
+contact \email{support@openai.com} and describe your use case. When
+\code{logprobs} is set, \code{completion} will be automatically added into \code{expand}
+to get the logprobs.}
 
-\item{max_tokens}{required; defaults to \code{16}; a length one
-numeric vector with the integer value greater than \code{0}. The maximum
-number of tokens allowed for the generated answer.}
+\item{max_tokens}{required; defaults to \code{16}; a length one numeric vector
+with the integer value greater than \code{0}. The maximum number of tokens
+allowed for the generated answer.}
 
 \item{stop}{optional; defaults to \code{NULL}; a character vector of length
 between one and four. Up to 4 sequences where the API will stop generating
@@ -97,39 +94,37 @@ question.}
 \item{logit_bias}{optional; defaults to \code{NULL}; a named list. Modify the
 likelihood of specified tokens appearing in the completion. Accepts a list
 that maps tokens (specified by their token ID in the GPT tokenizer) to an
-associated bias value from \code{-100} to \code{100}. You can use this
-tokenizer tool (which works for both GPT-2 and GPT-3) to convert text to
-token IDs. Mathematically, the bias is added to the logits generated by the
-model prior to sampling. The exact effect will vary per model, but values
-between \code{-1} and \code{1} should decrease or increase likelihood of
-selection; values like \code{-100} or \code{100} should result in a ban or
-exclusive selection of the relevant token. As an example, you can pass
-\code{list("50256" = -100)} to prevent the \verb{<|endoftext|>} token from
-being generated.}
+associated bias value from \code{-100} to \code{100}. You can use this tokenizer tool
+(which works for both GPT-2 and GPT-3) to convert text to token IDs.
+Mathematically, the bias is added to the logits generated by the model
+prior to sampling. The exact effect will vary per model, but values between
+\code{-1} and \code{1} should decrease or increase likelihood of selection; values
+like \code{-100} or \code{100} should result in a ban or exclusive selection of the
+relevant token. As an example, you can pass \code{list("50256" = -100)} to
+prevent the \verb{<|endoftext|>} token from being generated.}
 
-\item{return_metadata}{required; defaults to \code{FALSE}; a length one
-logical vector. A special boolean flag for showing metadata. If set to
-\code{TRUE}, each document entry in the returned JSON will contain a
-"metadata" field. This flag only takes effect when \code{file} is set.}
+\item{return_metadata}{required; defaults to \code{FALSE}; a length one logical
+vector. A special boolean flag for showing metadata. If set to \code{TRUE}, each
+document entry in the returned JSON will contain a "metadata" field. This
+flag only takes effect when \code{file} is set.}
 
 \item{return_prompt}{required; defaults to \code{FALSE}; a length one logical
-vector. If set to \code{TRUE}, the returned JSON will include a "prompt"
-field containing the final prompt that was used to request a completion. This
-is mainly useful for debugging purposes.}
+vector. If set to \code{TRUE}, the returned JSON will include a "prompt" field
+containing the final prompt that was used to request a completion. This is
+mainly useful for debugging purposes.}
 
-\item{expand}{optional; defaults to \code{NULL}; a list. If an object name is
-in the list, we provide the full information of the object; otherwise, we
-only provide the object ID. Currently we support \code{completion} and
-\code{file} objects for expansion.}
+\item{expand}{optional; defaults to \code{NULL}; a list. If an object name is in
+the list, we provide the full information of the object; otherwise, we only
+provide the object ID. Currently we support \code{completion} and \code{file} objects
+for expansion.}
 
-\item{user}{optional; defaults to \code{NULL}; a length one character vector.
-A unique identifier representing your end-user, which will help OpenAI to
+\item{user}{optional; defaults to \code{NULL}; a length one character vector. A
+unique identifier representing your end-user, which will help OpenAI to
 monitor and detect abuse.}
 
-\item{openai_api_key}{required; defaults to
-\code{Sys.getenv("OPENAI_API_KEY")} (i.e., the value is retrieved from the
-\code{.Renviron} file); a length one character vector. Specifies OpenAI API
-key.}
+\item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
+(i.e., the value is retrieved from the \code{.Renviron} file); a length one
+character vector. Specifies OpenAI API key.}
 
 \item{openai_organization}{optional; defaults to \code{NULL}; a length one
 character vector. Specifies OpenAI organization.}
@@ -142,26 +137,24 @@ supplementary information.
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
 \strong{Note:} This endpoint is deprecated and will be removed on December 3,
-2022. Please see
-\href{https://help.openai.com/en/articles/6233728-answers-transition-guide}{Answers Transition Guide}
+2022. Please see \href{https://help.openai.com/en/articles/6233728-answers-transition-guide}{Answers Transition Guide}
 for details.
 
 Answers the specified question using the provided documents and examples. See
-\href{https://beta.openai.com/docs/api-reference/answers/create}{this page}
-for details.
+\href{https://beta.openai.com/docs/api-reference/answers/create}{this page} for
+details.
 }
 \details{
-Given a question, a set of documents, and some examples, the API generates an
-answer to the question based on the information in the set of documents. This
-is useful for question-answering applications on sources of truth, like
-company documentation or a knowledge base. Answers the specified question
-using the provided documents and examples. The endpoint first
-\href{https://beta.openai.com/docs/api-reference/searches}{searches} over
-provided documents or files to find relevant context. The relevant context is
-combined with the provided examples and question to create the prompt for
-\href{https://beta.openai.com/docs/api-reference/completions}{completion}.
-Related guide:
-\href{https://beta.openai.com/docs/guides/answers}{Question answering}.
+Given a question, a set of documents, and some examples, the API
+generates an answer to the question based on the information in the set of
+documents. This is useful for question-answering applications on sources of
+truth, like company documentation or a knowledge base. Answers the specified
+question using the provided documents and examples. The endpoint first
+\href{https://beta.openai.com/docs/api-reference/searches}{searches} over provided
+documents or files to find relevant context. The relevant context is combined
+with the provided examples and question to create the prompt for
+\href{https://beta.openai.com/docs/api-reference/completions}{completion}. Related
+guide: \href{https://beta.openai.com/docs/guides/answers}{Question answering}.
 }
 \examples{
 \dontrun{

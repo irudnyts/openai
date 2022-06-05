@@ -1,39 +1,38 @@
 #' Create edit
 #'
 #' Creates a new edit for the provided input, instruction, and parameters. See
-#' [this page](https://beta.openai.com/docs/api-reference/edits/create)
-#' for details.
+#' [this page](https://beta.openai.com/docs/api-reference/edits/create) for
+#' details.
 #'
 #' Given a prompt and an instruction, the model will return an edited version of
 #' the prompt.
 #'
 #' @param engine_id required; a length one character vector. The ID of the
-#' engine to use for this request.
-#' @param input required; defaults to `'"'`; a length one character vector.
-#' The input text to use as a starting point for the edit.
+#'   engine to use for this request.
+#' @param input required; defaults to `'"'`; a length one character vector. The
+#'   input text to use as a starting point for the edit.
 #' @param instruction required; a length one character vector. The instruction
-#' that tells the model how to edit the prompt.
-#' @param temperature required; defaults to `1`; a length one numeric
-#' vector with the value between `0` and `2`. What sampling
-#' temperature to use. Higher values means the model will take more risks. Try
-#' `0.9` for more creative applications, and `0` (argmax sampling) for
-#' ones with a well-defined answer. We generally recommend altering (i.e.,
-#' setting the value different from `1`) this or `top_p` but not both.
-#' @param top_p required; defaults to `1`; a length one numeric
-#' vector with the value between `0` and `1`. An alternative to
-#' sampling with temperature, called nucleus sampling, where the model considers
-#' the results of the tokens with top_p probability mass. So `0.1` means
-#' only the tokens comprising the top 10\% probability mass are considered. We
-#' generally recommend altering (i.e., setting the value different from
-#' `1`) this or `temperature` but not both.
-#' @param openai_api_key required; defaults to
-#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
-#' `.Renviron` file); a length one character vector. Specifies OpenAI API
-#' key.
+#'   that tells the model how to edit the prompt.
+#' @param temperature required; defaults to `1`; a length one numeric vector
+#'   with the value between `0` and `2`. What sampling temperature to use.
+#'   Higher values means the model will take more risks. Try `0.9` for more
+#'   creative applications, and `0` (argmax sampling) for ones with a
+#'   well-defined answer. We generally recommend altering (i.e., setting the
+#'   value different from `1`) this or `top_p` but not both.
+#' @param top_p required; defaults to `1`; a length one numeric vector with the
+#'   value between `0` and `1`. An alternative to sampling with temperature,
+#'   called nucleus sampling, where the model considers the results of the
+#'   tokens with top_p probability mass. So `0.1` means only the tokens
+#'   comprising the top 10\% probability mass are considered. We generally
+#'   recommend altering (i.e., setting the value different from `1`) this or
+#'   `temperature` but not both.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
-#' character vector. Specifies OpenAI organization.
+#'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, an elements of which contain edited version of prompt
-#' and supplementary information.
+#'   and supplementary information.
 #' @examples \dontrun{
 #' create_edit(
 #'     engine_id = "text-davinci-edit-001",

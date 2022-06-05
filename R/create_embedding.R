@@ -1,33 +1,32 @@
 #' Create embeddings
 #'
-#' Creates an embedding vector representing the input text. See
-#' [this page](https://beta.openai.com/docs/api-reference/embeddings/create)
-#' for details.
+#' Creates an embedding vector representing the input text. See [this
+#' page](https://beta.openai.com/docs/api-reference/embeddings/create) for
+#' details.
 #'
 #' Get a vector representation of a given input that can be easily consumed by
 #' machine learning models and algorithms. Related guide:
 #' [Embeddings](https://beta.openai.com/docs/guides/embeddings).
 #'
 #' @param engine_id required; a length one character vector. The ID of the
-#' engine to use for this request.
+#'   engine to use for this request.
 #' @param input required; an arbitrary length character vector. Input text to
-#' get embeddings for, encoded as a string or array of tokens. To get embeddings
-#' for multiple inputs in a single request, pass an array of strings or array of
-#' token arrays. Each input must not exceed 2048 tokens in length. Unless your
-#' are embedding code, we suggest replacing newlines (`\\n`) in your input
-#' with a single space, as we have observed inferior results when newlines are
-#' present.
-#' @param user optional; defaults to `NULL`; a length one character vector.
-#' A unique identifier representing your end-user, which will help OpenAI to
-#' monitor and detect abuse.
-#' @param openai_api_key required; defaults to
-#' `Sys.getenv("OPENAI_API_KEY")` (i.e., the value is retrieved from the
-#' `.Renviron` file); a length one character vector. Specifies OpenAI API
-#' key.
+#'   get embeddings for, encoded as a string or array of tokens. To get
+#'   embeddings for multiple inputs in a single request, pass an array of
+#'   strings or array of token arrays. Each input must not exceed 2048 tokens in
+#'   length. Unless your are embedding code, we suggest replacing newlines
+#'   (`\\n`) in your input with a single space, as we have observed inferior
+#'   results when newlines are present.
+#' @param user optional; defaults to `NULL`; a length one character vector. A
+#'   unique identifier representing your end-user, which will help OpenAI to
+#'   monitor and detect abuse.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
-#' character vector. Specifies OpenAI organization.
+#'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, an element of which contains embedding vector(s) for
-#' a given input.
+#'   a given input.
 #' @examples \dontrun{
 #' create_embedding(
 #'     engine_id = "text-similarity-babbage-001",
