@@ -36,7 +36,13 @@
 #'     classification_positive_class = " baseball" # Mind space in front
 #' )
 #'
-#' retrieve_fine_tune(fine_tune_id = info$data$id[1])
+#' id <- ifelse(
+#'     length(info$data$id) > 1,
+#'     info$data$id[length(info$data$id)],
+#'     info$data$id
+#' )
+#'
+#' retrieve_fine_tune(fine_tune_id = id)
 #' }
 #' @family fine-tune functions
 #' @export

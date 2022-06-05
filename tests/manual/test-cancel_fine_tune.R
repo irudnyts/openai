@@ -22,4 +22,4 @@ id <- ifelse(
     info$data$id
 )
 
-retrieve_fine_tune(fine_tune_id = id)
+cancel_fine_tune(fine_tune_id = id)
