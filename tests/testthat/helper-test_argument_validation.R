@@ -2,7 +2,8 @@ test_argument_validation <- function(
         function_name,
         argument_name,
         argument_type = c("character", "string", "number", "count", "flag"),
-        allow_null = FALSE
+        allow_null = FALSE,
+        suppress_warnings = FALSE
 ) {
 
     argument_type <- match.arg(argument_type)
@@ -38,9 +39,25 @@ test_argument_validation <- function(
                     if (is.null(x))
                         argument_object[argument_name] <- list(NULL)
 
-                    expect_error(
-                        do.call(what = function_object, args = argument_object)
-                    )
+                    if (suppress_warnings) {
+                        suppressWarnings(
+                            expect_error(
+                                do.call(
+                                    what = function_object,
+                                    args = argument_object
+                                )
+                            )
+                        )
+                    } else {
+                        expect_error(
+                            do.call(
+                                what = function_object,
+                                args = argument_object
+                            )
+                        )
+                    }
+
+
 
                 }
             )
