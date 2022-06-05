@@ -31,7 +31,7 @@
 #'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
 #'   character vector. Specifies OpenAI organization.
-#' @return Returns a list, an elements of which contain edited version of prompt
+#' @return Returns a list, elements of which contain edited version of prompt
 #'   and supplementary information.
 #' @examples \dontrun{
 #' create_edit(

@@ -47,7 +47,7 @@ character vector. Specifies OpenAI API key.}
 character vector. Specifies OpenAI organization.}
 }
 \value{
-Returns a list, an elements of which contain edited version of prompt
+Returns a list, elements of which contain edited version of prompt
 and supplementary information.
 }
 \description{

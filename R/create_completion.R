@@ -33,7 +33,7 @@
 #'   value between `0` and `1`. An alternative to sampling with temperature,
 #'   called nucleus sampling, where the model considers the results of the
 #'   tokens with top_p probability mass. So `0.1` means only the tokens
-#'   comprising the top 10\% probability mass are considered. We generally
+#'   comprising the top 10% probability mass are considered. We generally
 #'   recommend altering (i.e., setting the value different from `1`) this or
 #'   `temperature` but not both.
 #' @param n required; defaults to `1`; a length one numeric vector with the
