@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# openai
+# openai <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 
@@ -85,20 +85,20 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-5G9NLGMpKWD6RsBTauzHUuvrsODue"
+#> [1] "cmpl-5GCXvzaSrNprHrJ8fbNBUh6TL4M14"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1654530971
+#> [1] 1654543159
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
 #>                                                text index logprobs
-#> 1 \n\nto win sample test\n\nlook up question(s)\n\n     0       NA
+#> 1 .\n\n\n\nHave a ready-type flash card.\n\n\n\nAsk     0       NA
 #>   finish_reason
 #> 1        length
 ```

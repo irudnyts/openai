@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# openai
+# openai <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/irudnyts/openai/workflows/R-CMD-check/badge.svg)](https://github.com/irudnyts/openai/actions)
