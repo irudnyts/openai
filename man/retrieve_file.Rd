@@ -11,8 +11,7 @@ retrieve_file(
 )
 }
 \arguments{
-\item{file_id}{required; a length one character vector. The ID of the file to
-use for this request.}
+\item{file_id}{required; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -26,13 +25,10 @@ Returns a list, elements of which contains information about the
 file.
 }
 \description{
-Returns information about a specific file. See \href{https://beta.openai.com/docs/api-reference/files/retrieve}{this page} for details.
+Provides information about a specific file. See \href{https://beta.openai.com/docs/api-reference/files/retrieve}{this page} for details.
 }
 \details{
-Files are used to upload documents that can be used across features like
-\href{https://beta.openai.com/docs/api-reference/answers}{Answers},
-\href{https://beta.openai.com/docs/api-reference/searches}{Search}, and
-\href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/retrieve}{official documentation}.
 }
 \examples{
 \dontrun{

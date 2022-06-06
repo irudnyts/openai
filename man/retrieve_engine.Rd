@@ -11,8 +11,7 @@ retrieve_engine(
 )
 }
 \arguments{
-\item{engine_id}{required; a length one character vector. The ID of the
-engine to use for this request.}
+\item{engine_id}{required; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -26,15 +25,11 @@ Returns a list, elements of which contain information about the
 engine.
 }
 \description{
-Retrieves an engine instance, providing basic information about the engine
-such as the owner and availability. See \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page} for
+Provides information about a specified engine. See \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page} for
 details.
 }
 \details{
-Engines describe and provide access to the various models available in the
-API. You can refer to the \href{https://beta.openai.com/docs/engines}{Engines}
-documentation to understand what engines are available and the differences
-between them.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{official documentation}.
 }
 \examples{
 \dontrun{

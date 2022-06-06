@@ -1,17 +1,13 @@
 #' Retrieve engine
 #'
-#' Retrieves an engine instance, providing basic information about the engine
-#' such as the owner and availability. See [this
+#' Provides information about a specified engine. See [this
 #' page](https://beta.openai.com/docs/api-reference/engines/retrieve) for
 #' details.
 #'
-#' Engines describe and provide access to the various models available in the
-#' API. You can refer to the [Engines](https://beta.openai.com/docs/engines)
-#' documentation to understand what engines are available and the differences
-#' between them.
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/engines/retrieve).
 #'
-#' @param engine_id required; a length one character vector. The ID of the
-#'   engine to use for this request.
+#' @param engine_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.

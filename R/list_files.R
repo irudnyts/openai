@@ -1,12 +1,10 @@
 #' List files
 #'
-#' Returns a list of files that belong to the user's organization. See [this
+#' Lists files uploaded by user's organization. See [this
 #' page](https://beta.openai.com/docs/api-reference/files/list) for details.
 #'
-#' Files are used to upload documents that can be used across features like
-#' [Answers](https://beta.openai.com/docs/api-reference/answers),
-#' [Search](https://beta.openai.com/docs/api-reference/searches), and
-#' [Classifications](https://beta.openai.com/docs/api-reference/classifications).
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/files/list).
 #'
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one

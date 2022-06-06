@@ -11,8 +11,7 @@ delete_file(
 )
 }
 \arguments{
-\item{file_id}{required; a length one character vector. The ID of the file to
-use for this request.}
+\item{file_id}{required; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -26,13 +25,10 @@ Returns a list, elements of which contains ID of the deleted file and
 status whether the file is deleted.
 }
 \description{
-Delete a file. See \href{https://beta.openai.com/docs/api-reference/files/delete}{this page} for details.
+Deletes a file. See \href{https://beta.openai.com/docs/api-reference/files/delete}{this page} for details.
 }
 \details{
-Files are used to upload documents that can be used across features like
-\href{https://beta.openai.com/docs/api-reference/answers}{Answers},
-\href{https://beta.openai.com/docs/api-reference/searches}{Search}, and
-\href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/delete}{official documentation}.
 }
 \examples{
 \dontrun{

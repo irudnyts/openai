@@ -2,51 +2,29 @@
 #'
 #' @description `r lifecycle::badge("deprecated")`
 #'
-#' **Note:** This endpoint is deprecated and will be removed on December 3,
-#' 2022. Please see [Search Transition
-#' Guide](https://help.openai.com/en/articles/6272952-search-transition-guide)
-#' for details.
+#'   **Note:** This endpoint is deprecated and will be removed on December 3,
+#'   2022. Please see [Search Transition
+#'   Guide](https://help.openai.com/en/articles/6272952-search-transition-guide)
+#'   for details.
 #'
-#' Computes similarity scores between provided query and documents. See [this
-#' page](https://beta.openai.com/docs/api-reference/searches/create) for
-#' details.
+#'   Computes similarity scores between the query and provided documents. See
+#'   [this page](https://beta.openai.com/docs/api-reference/searches/create) for
+#'   details.
 #'
-#' @details Given a query and a set of documents or labels, the model ranks each
-#' document based on its semantic similarity to the provided query. The search
-#' endpoint computes similarity scores between provided query and documents.
-#' Documents can be passed directly to the API if there are no more than 200 of
-#' them. To go beyond the 200 document limit, documents can be processed offline
-#' and then used for efficient retrieval at query time. When `file` is set, the
-#' search endpoint searches over all the documents in the given file and returns
-#' up to the `max_rerank` number of documents. These documents will be returned
-#' along with their search scores. The similarity score is a positive score that
-#' usually ranges from 0 to 300 (but can sometimes go higher), where a score
-#' above 200 usually means the document is semantically similar to the query.
-#' Related guide: [Search](https://beta.openai.com/docs/guides/search).
+#' @details For arguments description please refer to the [official
+#'   documentation](https://beta.openai.com/docs/api-reference/searches/create).
 #'
 #' @param engine_id required; defaults to `"ada"`; a length one character
-#'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`. The ID
-#'   of the engine to use for this request.
-#' @param query required; length one character vector. Query to search against
-#'   the documents.
+#'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`.
+#' @param query required; length one character vector.
 #' @param documents optional; defaults to `NULL`; an arbitrary length character
-#'   vector. Up to 200 documents to search over. The maximum document length (in
-#'   tokens) is 2034 minus the number of tokens in the query. You should specify
-#'   either `documents` or a `file`, but not both.
-#' @param file optional; defaults to `NULL`; a length one character vector. The
-#'   ID of an uploaded file that contains documents to search over. You should
-#'   specify either `documents` or a `file`, but not both.
+#'   vector.
+#' @param file optional; defaults to `NULL`; a length one character vector.
 #' @param max_rerank required; defaults to `200`; a length one numeric vector
-#'   with the integer value greater than `0`. The maximum number of documents to
-#'   be re-ranked and returned by search. This flag only takes effect when
-#'   `file` is set.
+#'   with the integer value greater than `0`.
 #' @param return_metadata required; defaults to `FALSE`; a length one logical
-#'   vector. A special boolean flag for showing metadata. If set to `TRUE`, each
-#'   document entry in the returned JSON will contain a "metadata" field. This
-#'   flag only takes effect when `file` is set.
-#' @param user optional; defaults to `NULL`; a length one character vector. A
-#'   unique identifier representing your end-user, which will help OpenAI to
-#'   monitor and detect abuse.
+#'   vector.
+#' @param user optional; defaults to `NULL`; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.

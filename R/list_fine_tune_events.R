@@ -1,23 +1,15 @@
 #' List fine-tune events
 #'
-#' Get fine-grained status updates for a fine-tune job. See [this
+#' Returns events related to a specidied fine-tune job. See [this
 #' page](https://beta.openai.com/docs/api-reference/fine-tunes/events) for
 #' details.
 #'
-#' Manage fine-tuning jobs to tailor a model to your specific training data.
-#' Related guide: [Fine-tune
-#' models](https://beta.openai.com/docs/guides/fine-tuning).
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/events).
 #'
-#' @param fine_tune_id required; a length one character vector. The ID of the
-#'   fine-tune job.
+#' @param fine_tune_id required; a length one character vector.
 #' @param stream required; defaults to `FALSE`; a length one logical vector.
-#'   Whether to stream events for the fine-tune job. If set to true, events will
-#'   be sent as data-only [server-sent
-#'   events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format)
-#'   as they become available. The stream will terminate with a `data: [DONE]`
-#'   message when the job is finished (succeeded, cancelled, or failed). If set
-#'   to false, only events generated so far will be returned. **Currently is not
-#'   implemented.**
+#'   **Currently is not implemented.**
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.

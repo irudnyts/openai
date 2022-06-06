@@ -22,91 +22,39 @@ create_fine_tune(
 )
 }
 \arguments{
-\item{training_file}{required; a length one character vector. The ID of an
-uploaded file that contains training data. See \code{\link[=upload_file]{upload_file()}} for how to
-upload a file. Your dataset must be formatted as a JSONL file, where each
-training example is a JSON object with the keys "prompt" and "completion".
-Additionally, you must upload your file with the purpose \code{fine-tune}. See
-the \href{https://beta.openai.com/docs/guides/fine-tuning/creating-training-data}{fine-tuning guide}
-for more details.}
+\item{training_file}{required; a length one character vector.}
 
 \item{validation_file}{optional; defaults to \code{NULL}; a length one character
-vector. The ID of an uploaded file that contains validation data. If you
-provide this file, the data is used to generate validation metrics
-periodically during fine-tuning. These metrics can be viewed in the
-\href{https://beta.openai.com/docs/guides/fine-tuning/analyzing-your-fine-tuned-model}{fine-tuning results file}.
-Your train and validation data should be mutually exclusive. Your dataset
-must be formatted as a JSONL file, where each validation example is a JSON
-object with the keys "prompt" and "completion". Additionally, you must
-upload your file with the purpose \code{fine-tune}. See the \href{https://beta.openai.com/docs/guides/fine-tuning/creating-training-data}{fine-tuning guide}
-for more details.}
+vector.}
 
 \item{model}{model required; defaults to \code{"curie"}; a length one character
-vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}. The
-name of the base model to fine-tune. To learn more about these models, see
-the \href{https://beta.openai.com/docs/engines}{Engines} documentation.}
+vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}.}
 
 \item{n_epochs}{required; defaults to \code{4}; a length one numeric vector with
-the integer value greater than \code{0}. The number of epochs to train the model
-for. An epoch refers to one full cycle through the training dataset.}
+the integer value greater than \code{0}.}
 
 \item{batch_size}{optional; defaults to \code{NULL}; a length one numeric vector
-with the integer value greater than \code{0}. The batch size to use for
-training. The batch size is the number of training examples used to train a
-single forward and backward pass. By default, the batch size will be
-dynamically configured to be ~0.2\% of the number of examples in the
-training set, capped at 256 - in general, we've found that larger batch
-sizes tend to work better for larger datasets.}
+with the integer value greater than \code{0}.}
 
 \item{learning_rate_multiplier}{optional; defaults to \code{NULL}; a length one
-numeric vector with the value greater than \code{0}. The learning rate
-multiplier to use for training. The fine-tuning learning rate is the
-original learning rate used for pretraining multiplied by this value. By
-default, the learning rate multiplier is the 0.05, 0.1, or 0.2 depending on
-final \code{batch_size} (larger learning rates tend to perform better with
-larger batch sizes). We recommend experimenting with values in the range
-0.02 to 0.2 to see what produces the best results.}
+numeric vector with the value greater than \code{0}.}
 
 \item{prompt_loss_weight}{required; defaults to \code{0.1}; a length one numeric
-vector. The weight to use for loss on the prompt tokens. This controls how
-much the model tries to learn to generate the prompt (as compared to the
-completion which always has a weight of 1.0), and can add a stabilizing
-effect to training when completions are short. If prompts are extremely
-long (relative to completions), it may make sense to reduce this weight so
-as to avoid over-prioritizing learning the prompt.}
+vector.}
 
 \item{compute_classification_metrics}{required; defaults to \code{FLASE}; a length
-one logical vector. If set, we calculate classification-specific metrics
-such as accuracy and F-1 score using the validation set at the end of every
-epoch. These metrics can be viewed in the \href{https://beta.openai.com/docs/guides/fine-tuning/analyzing-your-fine-tuned-model}{results file}.
-In order to compute classification metrics, you must provide a
-\code{validation_file}. Additionally, you must specify
-\code{classification_n_classes} for multiclass classification or
-\code{classification_positive_class} for binary classification.}
+one logical vector.}
 
 \item{classification_n_classes}{optional; defaults to \code{NULL}; a length one
-numeric vector with the value greater than \code{0}. The number of classes in a
-classification task. This parameter is required for multiclass
-classification.}
+numeric vector with the value greater than \code{0}.}
 
 \item{classification_positive_class}{optional; defaults to \code{NULL}; a length
-one character vector. The positive class in binary classification. This
-parameter is needed to generate precision, recall, and F1 metrics when
-doing binary classification.}
+one character vector.}
 
 \item{classification_betas}{optional; defaults to \code{NULL}; a list elements of
-which are numeric values greater than \code{0}. If this is provided, we
-calculate F-beta scores at the specified beta values. The F-beta score is a
-generalization of F-1 score. This is only used for binary classification.
-With a beta of 1 (i.e. the F-1 score), precision and recall are given the
-same weight. A larger beta score puts more weight on recall and less on
-precision. A smaller beta score puts more weight on precision and less on
-recall.}
+which are numeric values greater than \code{0}.}
 
-\item{suffix}{optional; defaults to \code{NULL}; a length one character vector. A
-string of up to 40 characters that will be added to your fine-tuned model
-name. For example, a \code{suffix} of "custom-model-name" would produce a model
-name like \code{ada:ft-your-org:custom-model-name-2022-02-15-04-21-04}.}
+\item{suffix}{optional; defaults to \code{NULL}; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -120,15 +68,12 @@ Returns a list, elements of which contain information about the
 fine-tune.
 }
 \description{
-Creates a job that fine-tunes a specified model from a given dataset. See
+Creates a job that fine-tunes a specified model based on a given dataset. See
 \href{https://beta.openai.com/docs/api-reference/fine-tunes/create}{this page} for
 details.
 }
 \details{
-Manage fine-tuning jobs to tailor a model to your specific training data.
-Creates a job that fine-tunes a specified model from a given dataset.
-Response includes details of the enqueued job including job status and the
-name of the fine-tuned models once complete. Related guide: \href{https://beta.openai.com/docs/guides/fine-tuning}{Fine-tune models}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/create}{official documentation}.
 }
 \examples{
 \dontrun{

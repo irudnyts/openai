@@ -1,13 +1,11 @@
 #' List engines
 #'
-#' Lists the currently available engines, and provides basic information about
-#' each one such as the owner and availability. See [this
-#' page](https://beta.openai.com/docs/api-reference/engines/list) for details.
+#' Lists available engines and provides basic information about such engines.
+#' See [this page](https://beta.openai.com/docs/api-reference/engines/list) for
+#' details.
 #'
-#' Engines describe and provide access to the various models available in the
-#' API. You can refer to the [Engines](https://beta.openai.com/docs/engines)
-#' documentation to understand what engines are available and the differences
-#' between them.
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/engines/list).
 #'
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one

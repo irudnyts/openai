@@ -1,12 +1,11 @@
 #' Lists fine-tunes
 #'
-#' List your organization's fine-tuning jobs. See [this
+#' Lists organization's fine-tuning jobs. See [this
 #' page](https://beta.openai.com/docs/api-reference/fine-tunes/list) for
 #' details.
 #'
-#' Manage fine-tuning jobs to tailor a model to your specific training data.
-#' Related guide: [Fine-tune
-#' models](https://beta.openai.com/docs/guides/fine-tuning).
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/list).
 #'
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one

@@ -11,7 +11,7 @@ delete_fine_tune_model(
 )
 }
 \arguments{
-\item{model}{required; a length one character vector. The model to delete.}
+\item{model}{required; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -25,13 +25,11 @@ Returns a list, elements of which contains information about the
 deleted model.
 }
 \description{
-Delete a fine-tuned model. You must have the Owner role in your organization.
-See \href{https://beta.openai.com/docs/api-reference/fine-tunes/delete-model}{this page} for
+Deletes a fine-tuned model. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/delete-model}{this page} for
 details.
 }
 \details{
-Manage fine-tuning jobs to tailor a model to your specific training data.
-Related guide: \href{https://beta.openai.com/docs/guides/fine-tuning}{Fine-tune models}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/delete-model}{official documentation}.
 }
 \examples{
 \dontrun{

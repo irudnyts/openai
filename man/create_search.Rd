@@ -18,34 +18,22 @@ create_search(
 }
 \arguments{
 \item{engine_id}{required; defaults to \code{"ada"}; a length one character
-vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}. The ID
-of the engine to use for this request.}
+vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}.}
 
-\item{query}{required; length one character vector. Query to search against
-the documents.}
+\item{query}{required; length one character vector.}
 
 \item{documents}{optional; defaults to \code{NULL}; an arbitrary length character
-vector. Up to 200 documents to search over. The maximum document length (in
-tokens) is 2034 minus the number of tokens in the query. You should specify
-either \code{documents} or a \code{file}, but not both.}
+vector.}
 
-\item{file}{optional; defaults to \code{NULL}; a length one character vector. The
-ID of an uploaded file that contains documents to search over. You should
-specify either \code{documents} or a \code{file}, but not both.}
+\item{file}{optional; defaults to \code{NULL}; a length one character vector.}
 
 \item{max_rerank}{required; defaults to \code{200}; a length one numeric vector
-with the integer value greater than \code{0}. The maximum number of documents to
-be re-ranked and returned by search. This flag only takes effect when
-\code{file} is set.}
+with the integer value greater than \code{0}.}
 
 \item{return_metadata}{required; defaults to \code{FALSE}; a length one logical
-vector. A special boolean flag for showing metadata. If set to \code{TRUE}, each
-document entry in the returned JSON will contain a "metadata" field. This
-flag only takes effect when \code{file} is set.}
+vector.}
 
-\item{user}{optional; defaults to \code{NULL}; a length one character vector. A
-unique identifier representing your end-user, which will help OpenAI to
-monitor and detect abuse.}
+\item{user}{optional; defaults to \code{NULL}; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -65,22 +53,12 @@ supplementary information.
 2022. Please see \href{https://help.openai.com/en/articles/6272952-search-transition-guide}{Search Transition Guide}
 for details.
 
-Computes similarity scores between provided query and documents. See \href{https://beta.openai.com/docs/api-reference/searches/create}{this page} for
+Computes similarity scores between the query and provided documents. See
+\href{https://beta.openai.com/docs/api-reference/searches/create}{this page} for
 details.
 }
 \details{
-Given a query and a set of documents or labels, the model ranks each
-document based on its semantic similarity to the provided query. The search
-endpoint computes similarity scores between provided query and documents.
-Documents can be passed directly to the API if there are no more than 200 of
-them. To go beyond the 200 document limit, documents can be processed offline
-and then used for efficient retrieval at query time. When \code{file} is set, the
-search endpoint searches over all the documents in the given file and returns
-up to the \code{max_rerank} number of documents. These documents will be returned
-along with their search scores. The similarity score is a positive score that
-usually ranges from 0 to 300 (but can sometimes go higher), where a score
-above 200 usually means the document is semantically similar to the query.
-Related guide: \href{https://beta.openai.com/docs/guides/search}{Search}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/searches/create}{official documentation}.
 }
 \examples{
 \dontrun{

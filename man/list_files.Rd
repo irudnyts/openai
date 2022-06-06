@@ -22,13 +22,10 @@ Returns a list, an element of which is a data frame containing
 information about files.
 }
 \description{
-Returns a list of files that belong to the user's organization. See \href{https://beta.openai.com/docs/api-reference/files/list}{this page} for details.
+Lists files uploaded by user's organization. See \href{https://beta.openai.com/docs/api-reference/files/list}{this page} for details.
 }
 \details{
-Files are used to upload documents that can be used across features like
-\href{https://beta.openai.com/docs/api-reference/answers}{Answers},
-\href{https://beta.openai.com/docs/api-reference/searches}{Search}, and
-\href{https://beta.openai.com/docs/api-reference/classifications}{Classifications}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/list}{official documentation}.
 }
 \examples{
 \dontrun{

@@ -1,17 +1,14 @@
 #' Retrieve file content
 #'
-#' Returns the contents of the specified file. See [this
+#' Returns the content of the specified file. See [this
 #' page](https://beta.openai.com/docs/api-reference/files/retrieve-content) for
 #' details. Please note that only output files are allowed to be downloaded, not
 #' the input ones.
 #'
-#' Files are used to upload documents that can be used across features like
-#' [Answers](https://beta.openai.com/docs/api-reference/answers),
-#' [Search](https://beta.openai.com/docs/api-reference/searches), and
-#' [Classifications](https://beta.openai.com/docs/api-reference/classifications).
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/files/retrieve-content).
 #'
-#' @param file_id required; a length one character vector. The ID of the file to
-#'   use for this request.
+#' @param file_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.

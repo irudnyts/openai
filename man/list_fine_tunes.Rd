@@ -22,12 +22,11 @@ Returns a list, an element of which is a data frame containing
 information about fine-tunes.
 }
 \description{
-List your organization's fine-tuning jobs. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/list}{this page} for
+Lists organization's fine-tuning jobs. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/list}{this page} for
 details.
 }
 \details{
-Manage fine-tuning jobs to tailor a model to your specific training data.
-Related guide: \href{https://beta.openai.com/docs/guides/fine-tuning}{Fine-tune models}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/list}{official documentation}.
 }
 \examples{
 \dontrun{

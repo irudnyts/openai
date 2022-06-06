@@ -11,8 +11,7 @@ cancel_fine_tune(
 )
 }
 \arguments{
-\item{fine_tune_id}{required; a length one character vector. The ID of the
-fine-tune job.}
+\item{fine_tune_id}{required; a length one character vector.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -26,12 +25,11 @@ Returns a list, elements of which contains information about the
 cancelled fine-tune.
 }
 \description{
-Immediately cancel a fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/cancel}{this page} for
+Cancel a running fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/cancel}{this page} for
 details.
 }
 \details{
-Manage fine-tuning jobs to tailor a model to your specific training data.
-Related guide: \href{https://beta.openai.com/docs/guides/fine-tuning}{Fine-tune models}.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/cancel}{official documentation}.
 }
 \examples{
 \dontrun{

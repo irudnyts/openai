@@ -2,102 +2,48 @@
 #'
 #' @description `r lifecycle::badge("deprecated")`
 #'
-#' **Note:** This endpoint is deprecated and will be removed on December 3,
-#' 2022. Please see [Answers Transition
-#' Guide](https://help.openai.com/en/articles/6233728-answers-transition-guide)
-#' for details.
+#'   **Note:** This endpoint is deprecated and will be removed on December 3,
+#'   2022. Please see [Answers Transition
+#'   Guide](https://help.openai.com/en/articles/6233728-answers-transition-guide)
+#'    for details.
 #'
-#' Answers the specified question using the provided documents and examples. See
-#' [this page](https://beta.openai.com/docs/api-reference/answers/create) for
-#' details.
+#'   Answers the specified question based on the documents and examples. See
+#'   [this page](https://beta.openai.com/docs/api-reference/answers/create) for
+#'   details.
 #'
-#' @details Given a question, a set of documents, and some examples, the API
-#' generates an answer to the question based on the information in the set of
-#' documents. This is useful for question-answering applications on sources of
-#' truth, like company documentation or a knowledge base. Answers the specified
-#' question using the provided documents and examples. The endpoint first
-#' [searches](https://beta.openai.com/docs/api-reference/searches) over provided
-#' documents or files to find relevant context. The relevant context is combined
-#' with the provided examples and question to create the prompt for
-#' [completion](https://beta.openai.com/docs/api-reference/completions). Related
-#' guide: [Question answering](https://beta.openai.com/docs/guides/answers).
+#' @details For arguments description please refer to the [official
+#'   documentation](https://beta.openai.com/docs/api-reference/answers/create).
 #'
 #' @param model required; defaults to `"ada"`; a length one character vector,
-#'   one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`. ID of the
-#'   engine to use for completion.
-#' @param question required; a length one character vector. Question to get
-#'   answered.
-#' @param examples required; a list. List of (question, answer) pairs that will
-#'   help steer the model towards the tone and answer format you'd like. We
-#'   recommend adding 2 to 3 examples.
-#' @param examples_context required; a length one character vector. A text
-#'   snippet containing the contextual information used to generate the answers
-#'   for the `examples` you provide.
+#'   one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`.
+#' @param question required; a length one character vector.
+#' @param examples required; a list.
+#' @param examples_context required; a length one character vector.
 #' @param documents optional; defaults to `NULL`; an arbitrary length character
-#'   vector. List of documents from which the answer for the input `question`
-#'   should be derived. If this is an empty list, the question will be answered
-#'   based on the question-answer examples. You should specify either
-#'   `documents` or a `file`, but not both.
-#' @param file optional; defaults to `NULL`; a length one character vector. The
-#'   ID of an uploaded file that contains documents to search over. See
-#'   [upload_file()] for how to upload a file of the desired format and
-#'   purpose. You should specify either `documents` or a `file`, but not both.
+#'   vector.
+#' @param file optional; defaults to `NULL`; a length one character vector.
 #' @param search_model required; defaults to `ada`; a length one character
-#'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`. ID of
-#'   the engine to use for [create_search()].
+#'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`.
 #' @param max_rerank required; defaults to `200`; a length one numeric vector
-#'   with the integer value greater than `0`. The maximum number of documents to
-#'   be ranked by [create_search()] when using `file`. Setting it to a higher
-#'   value leads to improved accuracy but with increased latency and cost.
+#'   with the integer value greater than `0`.
 #' @param temperature required; defaults to `0`; a length one numeric vector
-#'   with the value between `0` and `2`. What sampling temperature to use.
-#'   Higher values mean the model will take more risks and value 0 (argmax
-#'   sampling) works better for scenarios with a well-defined answer.
+#'   with the value between `0` and `2`.
 #' @param logprobs optional; defaults to `NULL`; a length one numeric vector
-#'   with the integer value between `0` and `5`. Include the log probabilities
-#'   on the `logprobs` most likely tokens, as well the chosen tokens. For
-#'   example, if `logprobs` is `5`, the API will return a list of the 5 most
-#'   likely tokens. The API will always return the `logprob` of the sampled
-#'   token, so there may be up to `logprobs+1` elements in the response. The
-#'   maximum value for logprobs is `5`. If you need more than this, please
-#'   contact \email{support@openai.com} and describe your use case. When
-#'   `logprobs` is set, `completion` will be automatically added into `expand`
-#'   to get the logprobs.
+#'   with the integer value between `0` and `5`.
 #' @param max_tokens required; defaults to `16`; a length one numeric vector
-#'   with the integer value greater than `0`. The maximum number of tokens
-#'   allowed for the generated answer.
+#'   with the integer value greater than `0`.
 #' @param stop optional; defaults to `NULL`; a character vector of length
-#'   between one and four. Up to 4 sequences where the API will stop generating
-#'   further tokens. The returned text will not contain the stop sequence.
+#'   between one and four.
 #' @param n required; defaults to `1`; a length one numeric vector with the
-#'   integer value greater than `0`. How many answers to generate for each
-#'   question.
-#' @param logit_bias optional; defaults to `NULL`; a named list. Modify the
-#'   likelihood of specified tokens appearing in the completion. Accepts a list
-#'   that maps tokens (specified by their token ID in the GPT tokenizer) to an
-#'   associated bias value from `-100` to `100`. You can use this tokenizer tool
-#'   (which works for both GPT-2 and GPT-3) to convert text to token IDs.
-#'   Mathematically, the bias is added to the logits generated by the model
-#'   prior to sampling. The exact effect will vary per model, but values between
-#'   `-1` and `1` should decrease or increase likelihood of selection; values
-#'   like `-100` or `100` should result in a ban or exclusive selection of the
-#'   relevant token. As an example, you can pass `list("50256" = -100)` to
-#'   prevent the `<|endoftext|>` token from being generated.
+#'   integer value greater than `0`.
+#' @param logit_bias optional; defaults to `NULL`; a named list.
 #' @param return_metadata required; defaults to `FALSE`; a length one logical
-#'   vector. A special boolean flag for showing metadata. If set to `TRUE`, each
-#'   document entry in the returned JSON will contain a "metadata" field. This
-#'   flag only takes effect when `file` is set.
+#'   vector.
 #' @param return_prompt required; defaults to `FALSE`; a length one logical
-#'   vector. If set to `TRUE`, the returned JSON will include a "prompt" field
-#'   containing the final prompt that was used to request a completion. This is
-#'   mainly useful for debugging purposes.
+#'   vector.
 #' @param expand optional; defaults to `NULL`; a list elements of which are
-#'   among `completion` and `file`. If an object name is in the list, we provide
-#'   the full information of the object; otherwise, we only provide the object
-#'   ID. Currently we support `completion` and `file` objects for expansion.
-#' @param user optional; defaults to `NULL`; a length one character vector. A
-#'   unique identifier representing your end-user, which will help OpenAI to
-#'   monitor and detect abuse.
+#'   among `completion` and `file`.
+#' @param user optional; defaults to `NULL`; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.

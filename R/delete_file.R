@@ -1,15 +1,12 @@
 #' Delete file
 #'
-#' Delete a file. See [this
+#' Deletes a file. See [this
 #' page](https://beta.openai.com/docs/api-reference/files/delete) for details.
 #'
-#' Files are used to upload documents that can be used across features like
-#' [Answers](https://beta.openai.com/docs/api-reference/answers),
-#' [Search](https://beta.openai.com/docs/api-reference/searches), and
-#' [Classifications](https://beta.openai.com/docs/api-reference/classifications).
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/files/delete).
 #'
-#' @param file_id required; a length one character vector. The ID of the file to
-#'   use for this request.
+#' @param file_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.

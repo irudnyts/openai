@@ -22,14 +22,12 @@ Returns a list, an element of which is a data frame containing
 information about engines.
 }
 \description{
-Lists the currently available engines, and provides basic information about
-each one such as the owner and availability. See \href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for details.
+Lists available engines and provides basic information about such engines.
+See \href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for
+details.
 }
 \details{
-Engines describe and provide access to the various models available in the
-API. You can refer to the \href{https://beta.openai.com/docs/engines}{Engines}
-documentation to understand what engines are available and the differences
-between them.
+For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/engines/list}{official documentation}.
 }
 \examples{
 \dontrun{
