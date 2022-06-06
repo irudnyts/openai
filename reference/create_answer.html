@@ -116,16 +116,16 @@ based on the question-answer examples. You should specify either
 <dt>file</dt>
 <dd><p>optional; defaults to <code>NULL</code>; a length one character vector. The
 ID of an uploaded file that contains documents to search over. See
-<code>upload_file()()</code> for how to upload a file of the desired format and
+<code><a href="upload_file.html">upload_file()</a></code> for how to upload a file of the desired format and
 purpose. You should specify either <code>documents</code> or a <code>file</code>, but not both.</p></dd>
 <dt>search_model</dt>
 <dd><p>required; defaults to <code>ada</code>; a length one character
 vector, one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>. ID of
-the engine to use for <code>create_search()()</code>.</p></dd>
+the engine to use for <code><a href="create_search.html">create_search()</a></code>.</p></dd>
 <dt>max_rerank</dt>
 <dd><p>required; defaults to <code>200</code>; a length one numeric vector
 with the integer value greater than <code>0</code>. The maximum number of documents to
-be ranked by <code>create_search()()</code> when using <code>file</code>. Setting it to a higher
+be ranked by <code><a href="create_search.html">create_search()</a></code> when using <code>file</code>. Setting it to a higher
 value leads to improved accuracy but with increased latency and cost.</p></dd>
 <dt>temperature</dt>
 <dd><p>required; defaults to <code>0</code>; a length one numeric vector

@@ -160,6 +160,13 @@ recall.</p></dd>
 string of up to 40 characters that will be added to your fine-tuned model
 name. For example, a <code>suffix</code> of "custom-model-name" would produce a model
 name like <code>ada:ft-your-org:custom-model-name-2022-02-15-04-21-04</code>.</p></dd>
+<dt>openai_api_key</dt>
+<dd><p>required; defaults to <code>Sys.getenv("OPENAI_API_KEY")</code>
+(i.e., the value is retrieved from the <code>.Renviron</code> file); a length one
+character vector. Specifies OpenAI API key.</p></dd>
+<dt>openai_organization</dt>
+<dd><p>optional; defaults to <code>NULL</code>; a length one
+character vector. Specifies OpenAI organization.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
