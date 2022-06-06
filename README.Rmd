@@ -48,7 +48,7 @@ Sys.setenv(
 )
 ```
 
-Otherwise, you can add the key to the `.Renviron` file of the project. The following commands will open `.Renviron` for edditing:
+Otherwise, you can add the key to the `.Renviron` file of the project. The following commands will open `.Renviron` for editing:
 
 ```{r, eval = FALSE}
 if (!require(usethis))

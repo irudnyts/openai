@@ -49,7 +49,7 @@ Sys.setenv(
 ```
 
 Otherwise, you can add the key to the `.Renviron` file of the project.
-The following commands will open `.Renviron` for edditing:
+The following commands will open `.Renviron` for editing:
 
 ``` r
 if (!require(usethis))
@@ -85,20 +85,20 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-5GCXvzaSrNprHrJ8fbNBUh6TL4M14"
+#> [1] "cmpl-5GDS6aZAwCPBqUCSpjUWXdFH04FLR"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1654543159
+#> [1] 1654546642
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                text index logprobs
-#> 1 .\n\n\n\nHave a ready-type flash card.\n\n\n\nAsk     0       NA
-#>   finish_reason
-#> 1        length
+#>                                                                  text index
+#> 1  from Pluralities.ai\nIn this office we sleep your worries away and     0
+#>   logprobs finish_reason
+#> 1       NA        length
 ```
