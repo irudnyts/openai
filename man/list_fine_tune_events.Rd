@@ -15,6 +15,13 @@ list_fine_tune_events(
 \item{fine_tune_id}{required; a length one character vector. The ID of the
 fine-tune job.}
 
+\item{stream}{required; defaults to \code{FALSE}; a length one logical vector.
+Whether to stream events for the fine-tune job. If set to true, events will
+be sent as data-only \href{https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format}{server-sent events}
+as they become available. The stream will terminate with a \verb{data: [DONE]}
+message when the job is finished (succeeded, cancelled, or failed). If set
+to false, only events generated so far will be returned.}
+
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
 character vector. Specifies OpenAI API key.}
