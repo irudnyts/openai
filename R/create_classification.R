@@ -62,7 +62,7 @@
 #'   to get the logprobs.
 #' @param max_examples required; defaults to `200`; a length one numeric vector
 #'   with the integer value greater than `0`. The maximum number of examples to
-#'   be ranked by [create_search()()] when using file. Setting it to a higher
+#'   be ranked by [create_search()] when using file. Setting it to a higher
 #'   value leads to improved accuracy but with increased latency and cost.
 #' @param logit_bias optional; defaults to `NULL`; a named list. Modify the
 #'   likelihood of specified tokens appearing in the completion. Accepts a list
@@ -221,7 +221,7 @@ create_classification <- function(
 
     if (!is.null(expand)) {
         assertthat::assert_that(
-            assertthat::is.list(expand)
+            is.list(expand)
         )
     }
 

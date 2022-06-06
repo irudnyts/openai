@@ -51,16 +51,16 @@ based on the question-answer examples. You should specify either
 
 \item{file}{optional; defaults to \code{NULL}; a length one character vector. The
 ID of an uploaded file that contains documents to search over. See
-\code{\link[=upload_file()]{upload_file()()}} for how to upload a file of the desired format and
+\code{\link[=upload_file]{upload_file()}} for how to upload a file of the desired format and
 purpose. You should specify either \code{documents} or a \code{file}, but not both.}
 
 \item{search_model}{required; defaults to \code{ada}; a length one character
 vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}. ID of
-the engine to use for \code{\link[=create_search()]{create_search()()}}.}
+the engine to use for \code{\link[=create_search]{create_search()}}.}
 
 \item{max_rerank}{required; defaults to \code{200}; a length one numeric vector
 with the integer value greater than \code{0}. The maximum number of documents to
-be ranked by \code{\link[=create_search()]{create_search()()}} when using \code{file}. Setting it to a higher
+be ranked by \code{\link[=create_search]{create_search()}} when using \code{file}. Setting it to a higher
 value leads to improved accuracy but with increased latency and cost.}
 
 \item{temperature}{required; defaults to \code{0}; a length one numeric vector

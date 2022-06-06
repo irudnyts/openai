@@ -40,14 +40,14 @@
 #'   `documents` or a `file`, but not both.
 #' @param file optional; defaults to `NULL`; a length one character vector. The
 #'   ID of an uploaded file that contains documents to search over. See
-#'   [upload_file()()] for how to upload a file of the desired format and
+#'   [upload_file()] for how to upload a file of the desired format and
 #'   purpose. You should specify either `documents` or a `file`, but not both.
 #' @param search_model required; defaults to `ada`; a length one character
 #'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`. ID of
-#'   the engine to use for [create_search()()].
+#'   the engine to use for [create_search()].
 #' @param max_rerank required; defaults to `200`; a length one numeric vector
 #'   with the integer value greater than `0`. The maximum number of documents to
-#'   be ranked by [create_search()()] when using `file`. Setting it to a higher
+#'   be ranked by [create_search()] when using `file`. Setting it to a higher
 #'   value leads to improved accuracy but with increased latency and cost.
 #' @param temperature required; defaults to `0`; a length one numeric vector
 #'   with the value between `0` and `2`. What sampling temperature to use.
@@ -254,7 +254,7 @@ create_answer <- function(
 
     if (!is.null(expand)) {
         assertthat::assert_that(
-            assertthat::is.list(expand)
+            is.list(expand)
         )
     }
 

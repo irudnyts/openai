@@ -88,6 +88,11 @@
 #'   string of up to 40 characters that will be added to your fine-tuned model
 #'   name. For example, a `suffix` of "custom-model-name" would produce a model
 #'   name like `ada:ft-your-org:custom-model-name-2022-02-15-04-21-04`.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, elements of which contain information about the
 #'   fine-tune.
 #'
