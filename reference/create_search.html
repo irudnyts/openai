@@ -3,12 +3,14 @@
 Note: This endpoint is deprecated and will be removed on December 3,
 2022. Please see Search Transition Guide
 for details.
-Computes similarity scores between provided query and documents. See this page for
+Computes similarity scores between the query and provided documents. See
+this page for
 details."><title>Create search — create_search • openai</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Create search — create_search"><meta property="og:description" content="
 Note: This endpoint is deprecated and will be removed on December 3,
 2022. Please see Search Transition Guide
 for details.
-Computes similarity scores between provided query and documents. See this page for
+Computes similarity scores between the query and provided documents. See
+this page for
 details."><meta property="og:image" content="https://irudnyts.github.io/openai/logo.png"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -60,7 +62,8 @@ details."><meta property="og:image" content="https://irudnyts.github.io/openai/l
 <p><strong>Note:</strong> This endpoint is deprecated and will be removed on December 3,
 2022. Please see <a href="https://help.openai.com/en/articles/6272952-search-transition-guide" class="external-link">Search Transition Guide</a>
 for details.</p>
-<p>Computes similarity scores between provided query and documents. See <a href="https://beta.openai.com/docs/api-reference/searches/create" class="external-link">this page</a> for
+<p>Computes similarity scores between the query and provided documents. See
+<a href="https://beta.openai.com/docs/api-reference/searches/create" class="external-link">this page</a> for
 details.</p>
     </div>
 
@@ -83,34 +86,22 @@ details.</p>
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>engine_id</dt>
 <dd><p>required; defaults to <code>"ada"</code>; a length one character
-vector, one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>. The ID
-of the engine to use for this request.</p></dd>
+vector, one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>.</p></dd>
 <dt>query</dt>
-<dd><p>required; length one character vector. Query to search against
-the documents.</p></dd>
+<dd><p>required; length one character vector.</p></dd>
 <dt>documents</dt>
 <dd><p>optional; defaults to <code>NULL</code>; an arbitrary length character
-vector. Up to 200 documents to search over. The maximum document length (in
-tokens) is 2034 minus the number of tokens in the query. You should specify
-either <code>documents</code> or a <code>file</code>, but not both.</p></dd>
+vector.</p></dd>
 <dt>file</dt>
-<dd><p>optional; defaults to <code>NULL</code>; a length one character vector. The
-ID of an uploaded file that contains documents to search over. You should
-specify either <code>documents</code> or a <code>file</code>, but not both.</p></dd>
+<dd><p>optional; defaults to <code>NULL</code>; a length one character vector.</p></dd>
 <dt>max_rerank</dt>
 <dd><p>required; defaults to <code>200</code>; a length one numeric vector
-with the integer value greater than <code>0</code>. The maximum number of documents to
-be re-ranked and returned by search. This flag only takes effect when
-<code>file</code> is set.</p></dd>
+with the integer value greater than <code>0</code>.</p></dd>
 <dt>return_metadata</dt>
 <dd><p>required; defaults to <code>FALSE</code>; a length one logical
-vector. A special boolean flag for showing metadata. If set to <code>TRUE</code>, each
-document entry in the returned JSON will contain a "metadata" field. This
-flag only takes effect when <code>file</code> is set.</p></dd>
+vector.</p></dd>
 <dt>user</dt>
-<dd><p>optional; defaults to <code>NULL</code>; a length one character vector. A
-unique identifier representing your end-user, which will help OpenAI to
-monitor and detect abuse.</p></dd>
+<dd><p>optional; defaults to <code>NULL</code>; a length one character vector.</p></dd>
 <dt>openai_api_key</dt>
 <dd><p>required; defaults to <code>Sys.getenv("OPENAI_API_KEY")</code>
 (i.e., the value is retrieved from the <code>.Renviron</code> file); a length one
@@ -126,18 +117,7 @@ supplementary information.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Given a query and a set of documents or labels, the model ranks each
-document based on its semantic similarity to the provided query. The search
-endpoint computes similarity scores between provided query and documents.
-Documents can be passed directly to the API if there are no more than 200 of
-them. To go beyond the 200 document limit, documents can be processed offline
-and then used for efficient retrieval at query time. When <code>file</code> is set, the
-search endpoint searches over all the documents in the given file and returns
-up to the <code>max_rerank</code> number of documents. These documents will be returned
-along with their search scores. The similarity score is a positive score that
-usually ranges from 0 to 300 (but can sometimes go higher), where a score
-above 200 usually means the document is semantically similar to the query.
-Related guide: <a href="https://beta.openai.com/docs/guides/search" class="external-link">Search</a>.</p>
+    <p>For arguments description please refer to the <a href="https://beta.openai.com/docs/api-reference/searches/create" class="external-link">official documentation</a>.</p>
     </div>
 
     <div class="section level2">

@@ -3,13 +3,13 @@
 Note: This endpoint is deprecated and will be removed on December 3,
 2022. Please see Classifications Transition Guide
 for details.
-Classifies the specified query using provided examples. See this page for
-details."><title>Create classification — create_classification • openai</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Create classification — create_classification"><meta property="og:description" content="
+Classifies the query based on the provided examples. See this page
+for details."><title>Create classification — create_classification • openai</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Create classification — create_classification"><meta property="og:description" content="
 Note: This endpoint is deprecated and will be removed on December 3,
 2022. Please see Classifications Transition Guide
 for details.
-Classifies the specified query using provided examples. See this page for
-details."><meta property="og:image" content="https://irudnyts.github.io/openai/logo.png"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
+Classifies the query based on the provided examples. See this page
+for details."><meta property="og:image" content="https://irudnyts.github.io/openai/logo.png"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]--></head><body>
@@ -60,8 +60,8 @@ details."><meta property="og:image" content="https://irudnyts.github.io/openai/l
 <p><strong>Note:</strong> This endpoint is deprecated and will be removed on December 3,
 2022. Please see <a href="https://help.openai.com/en/articles/6272941-classifications-transition-guide" class="external-link">Classifications Transition Guide</a>
 for details.</p>
-<p>Classifies the specified <code>query</code> using provided examples. See <a href="https://beta.openai.com/docs/api-reference/classifications/create" class="external-link">this page</a> for
-details.</p>
+<p>Classifies the query based on the provided examples. See <a href="https://beta.openai.com/docs/api-reference/classifications/create" class="external-link">this page</a>
+for details.</p>
     </div>
 
     <div class="section level2">
@@ -90,82 +90,42 @@ details.</p>
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>model</dt>
 <dd><p>required; defaults to <code>"ada"</code>; a length one character vector,
-one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>. ID of the
-engine to use for completion.</p></dd>
+one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>.</p></dd>
 <dt>query</dt>
-<dd><p>required; a length one character vector. Query to be classified.</p></dd>
+<dd><p>required; a length one character vector.</p></dd>
 <dt>examples</dt>
 <dd><p>optional; defaults to <code>NULL</code>; a list. A list of examples with
-labels, in the following format: <code>list(c("The movie is so interesting.", "Positive"), c("It is quite boring.", "Negative"), ...)</code>. All the label
-strings will be normalized to be capitalized. You should specify either
-<code>examples</code> or <code>file</code>, but not both.</p></dd>
+labels, in the following format: <code>list(c("The movie is so interesting.", "Positive"), c("It is quite boring.", "Negative"), ...)</code>.</p></dd>
 <dt>file</dt>
-<dd><p>optional; defaults to <code>NULL</code>; a length one character vector. The
-ID of the uploaded file that contains training examples. See
-<code><a href="upload_file.html">upload_file()</a></code> for how to upload a file of the desired format and
-purpose. You should specify either <code>examples</code> or <code>file</code>, but not both.</p></dd>
+<dd><p>optional; defaults to <code>NULL</code>; a length one character vector.</p></dd>
 <dt>labels</dt>
 <dd><p>optional; defaults to <code>NULL</code>; an arbitrary length character
-vector. The set of categories being classified. If not specified, candidate
-labels will be automatically collected from the examples you provide. All
-the label strings will be normalized to be capitalized.</p></dd>
+vector.</p></dd>
 <dt>search_model</dt>
 <dd><p>required; defaults to <code>ada</code>; a length one character
-vector, one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>. ID of
-the engine to use for <code><a href="create_search.html">create_search()</a></code>.</p></dd>
+vector, one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>.</p></dd>
 <dt>temperature</dt>
 <dd><p>required; defaults to <code>0</code>; a length one numeric vector
-with the value between <code>0</code> and <code>2</code>. What sampling <code>temperature</code> to use.
-Higher values means the model will take more risks. Try <code>0.9</code> for more
-creative applications, and <code>0</code> (argmax sampling) for ones with a
-well-defined answer.</p></dd>
+with the value between <code>0</code> and <code>2</code>.</p></dd>
 <dt>logprobs</dt>
 <dd><p>optional; defaults to <code>NULL</code>; a length one numeric vector
-with the integer value between <code>0</code> and <code>5</code>. Include the log probabilities
-on the <code>logprobs</code> most likely tokens, as well the chosen tokens. For
-example, if <code>logprobs</code> is <code>5</code>, the API will return a list of the 5 most
-likely tokens. The API will always return the <code>logprob</code> of the sampled
-token, so there may be up to <code>logprobs+1</code> elements in the response. The
-maximum value for logprobs is <code>5</code>. If you need more than this, please
-contact <a href="mailto:support@openai.com">support@openai.com</a> and describe your use case. When
-<code>logprobs</code> is set, <code>completion</code> will be automatically added into <code>expand</code>
-to get the logprobs.</p></dd>
+with the integer value between <code>0</code> and <code>5</code>.</p></dd>
 <dt>max_examples</dt>
 <dd><p>required; defaults to <code>200</code>; a length one numeric vector
-with the integer value greater than <code>0</code>. The maximum number of examples to
-be ranked by <code><a href="create_search.html">create_search()</a></code> when using file. Setting it to a higher
-value leads to improved accuracy but with increased latency and cost.</p></dd>
+with the integer value greater than <code>0</code>.</p></dd>
 <dt>logit_bias</dt>
-<dd><p>optional; defaults to <code>NULL</code>; a named list. Modify the
-likelihood of specified tokens appearing in the completion. Accepts a list
-that maps tokens (specified by their token ID in the GPT tokenizer) to an
-associated bias value from <code>-100</code> to <code>100</code>. You can use this tokenizer tool
-(which works for both GPT-2 and GPT-3) to convert text to token IDs.
-Mathematically, the bias is added to the logits generated by the model
-prior to sampling. The exact effect will vary per model, but values between
-<code>-1</code> and <code>1</code> should decrease or increase likelihood of selection; values
-like <code>-100</code> or <code>100</code> should result in a ban or exclusive selection of the
-relevant token. As an example, you can pass <code>list("50256" = -100)</code> to
-prevent the <code>&lt;|endoftext|&gt;</code> token from being generated.</p></dd>
+<dd><p>optional; defaults to <code>NULL</code>; a named list.</p></dd>
 <dt>return_prompt</dt>
 <dd><p>required; defaults to <code>FALSE</code>; a length one logical
-vector. If set to <code>TRUE</code>, the returned JSON will include a "prompt" field
-containing the final prompt that was used to request a completion. This is
-mainly useful for debugging purposes.</p></dd>
+vector.</p></dd>
 <dt>return_metadata</dt>
 <dd><p>required; defaults to <code>FALSE</code>; a length one logical
-vector. A special boolean flag for showing metadata. If set to <code>TRUE</code>, each
-document entry in the returned JSON will contain a "metadata" field. This
-flag only takes effect when <code>file</code> is set.</p></dd>
+vector.</p></dd>
 <dt>expand</dt>
 <dd><p>optional; defaults to <code>NULL</code>; a list elements of which are
-among <code>completion</code> and <code>file</code>. If an object name is in the list, we provide
-the full information of the object; otherwise, we only provide the object
-ID. Currently we support <code>completion</code> and <code>file</code> objects for expansion.</p></dd>
+among <code>completion</code> and <code>file</code>.</p></dd>
 <dt>user</dt>
-<dd><p>optional; defaults to <code>NULL</code>; a length one character vector. A
-unique identifier representing your end-user, which will help OpenAI to
-monitor and detect abuse.</p></dd>
+<dd><p>optional; defaults to <code>NULL</code>; a length one character vector.</p></dd>
 <dt>openai_api_key</dt>
 <dd><p>required; defaults to <code>Sys.getenv("OPENAI_API_KEY")</code>
 (i.e., the value is retrieved from the <code>.Renviron</code> file); a length one
@@ -181,19 +141,7 @@ supplementary information.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Given a query and a set of labeled examples, the model will predict
-the most likely label for the query. Useful as a drop-in replacement for any
-ML classification or text-to-label task. Classifies the specified <code>query</code>
-using provided examples. The endpoint first
-<a href="https://beta.openai.com/docs/api-reference/searches" class="external-link">searches</a> over the
-labeled examples to select the ones most relevant for the particular query.
-Then, the relevant examples are combined with the query to construct a prompt
-to produce the final label via the
-<a href="https://beta.openai.com/docs/api-reference/completions" class="external-link">completions</a>
-endpoint. Labeled examples can be provided via an uploaded <code>file</code>, or
-explicitly listed in the request using the examples parameter for quick tests
-and small scale use cases. Related guide:
-<a href="https://beta.openai.com/docs/guides/classifications" class="external-link">Classification</a>.</p>
+    <p>For arguments description please refer to the <a href="https://beta.openai.com/docs/api-reference/classifications/create" class="external-link">official documentation</a>.</p>
     </div>
 
     <div class="section level2">
