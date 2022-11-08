@@ -14,6 +14,44 @@ create_image <- function(
     #---------------------------------------------------------------------------
     # Validate arguments
 
+    assertthat::assert_that(
+        assertthat::is.string(prompt),
+        assertthat::noNA(prompt)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.count(n)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.string(size),
+        assertthat::noNA(size)
+    )
+
+    assertthat::assert_that(
+        assertthat::is.string(response_format),
+        assertthat::noNA(response_format)
+    )
+
+    if (!is.null(user)) {
+        assertthat::assert_that(
+            assertthat::is.string(user),
+            assertthat::noNA(user)
+        )
+    }
+
+    assertthat::assert_that(
+        assertthat::is.string(openai_api_key),
+        assertthat::noNA(openai_api_key)
+    )
+
+    if (!is.null(openai_organization)) {
+        assertthat::assert_that(
+            assertthat::is.string(openai_organization),
+            assertthat::noNA(openai_organization)
+        )
+    }
+
     #---------------------------------------------------------------------------
     # Build path parameters
 
