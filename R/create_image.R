@@ -1,3 +1,4 @@
+#' @export
 create_image <- function(
         prompt,
         n = 1,

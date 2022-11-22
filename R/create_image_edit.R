@@ -1,3 +1,4 @@
+#' @export
 create_image_edit <- function(
         image,
         mask,

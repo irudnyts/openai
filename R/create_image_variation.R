@@ -1,3 +1,4 @@
+#' @export
 create_image_variation <- function(
         image,
         n = 1,
