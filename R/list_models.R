@@ -1,3 +1,4 @@
+#' @export
 list_models <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL

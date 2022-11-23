@@ -1,3 +1,4 @@
+#' @export
 create_moderation <- function(
         input,
         model = c("text-moderation-stable", "text-moderation-latest"),

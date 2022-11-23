@@ -1,3 +1,4 @@
+#' @export
 retrieve_model <- function(
         model,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
