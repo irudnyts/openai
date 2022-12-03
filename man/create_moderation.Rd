@@ -14,6 +14,9 @@ create_moderation(
 \arguments{
 \item{input}{required; an arbitrary length character vector.}
 
+\item{model}{required; a length one character vector. One among
+\code{"text-moderation-stable"} and \code{"text-moderation-latest"}.}
+
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
 character vector. Specifies OpenAI API key.}
