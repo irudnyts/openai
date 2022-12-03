@@ -1,3 +1,23 @@
+#' Create moderation
+#'
+#' Classifies if text violates OpenAI's Content Policy. See [this
+#' page](https://beta.openai.com/docs/api-reference/moderations/create) for
+#' details.
+#'
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/completions/create).
+#'
+#' @param input required; an arbitrary length character vector.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
+#' @return Returns a list, elements of which contain information about the
+#'   model.
+#' @examples \dontrun{
+#' create_moderation("I want to kill them all.")
+#' }
 #' @export
 create_moderation <- function(
         input,
