@@ -1,6 +1,6 @@
 #' List fine-tune events
 #'
-#' Returns events related to a specidied fine-tune job. See [this
+#' Returns events related to a specified fine-tune job. See [this
 #' page](https://beta.openai.com/docs/api-reference/fine-tunes/events) for
 #' details.
 #'

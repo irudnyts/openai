@@ -29,7 +29,7 @@ Returns a list, elements of which contains information about the
 fine-tune events.
 }
 \description{
-Returns events related to a specidied fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/events}{this page} for
+Returns events related to a specified fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/events}{this page} for
 details.
 }
 \details{

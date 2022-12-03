@@ -1,3 +1,31 @@
+#' Create image
+#'
+#' Creates an image given a prompt. See [this
+#' page](https://beta.openai.com/docs/api-reference/images/create) for
+#' details.
+#'
+#' For arguments description please refer to the [official
+#' documentation](https://beta.openai.com/docs/api-reference/images/create).
+#'
+#' @param prompt required; a length one character vector.
+#' @param n required; defaults to `1`; a length one numeric vector with the
+#'   integer value greater than `0`.
+#' @param size required; defaults to `"1024x1024"`; a length one character
+#'   vector, one among `"256x256"`, `"512x512"`, and `"1024x1024"`.
+#' @param response_format required; defaults to `"url"`; a length one character
+#'   vector, one among `"url"` and `"b64_json"`.
+#' @param user optional; defaults to `NULL`; a length one character vector.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
+#' @return Returns a list, an element of which contain either a link to the
+#' generated image or the generated image decoded in Base64.
+#' @examples \dontrun{
+#' create_image("An astronaut riding a horse in a photorealistic style")
+#' }
+#' @family image functions
 #' @export
 create_image <- function(
         prompt,
