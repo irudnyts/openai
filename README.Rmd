@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/irudnyts/openai/workflows/R-CMD-check/badge.svg)](https://github.com/irudnyts/openai/actions)
 [![Codecov test coverage](https://codecov.io/gh/irudnyts/openai/branch/main/graph/badge.svg)](https://app.codecov.io/gh/irudnyts/openai?branch=main)
+[![CRAN status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org/package=openai)
+[![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
 <!-- badges: end -->
 
 ## Overview 
@@ -28,7 +30,13 @@ Classifications, and Answers endpoints (will be removed on December 3, 2022).
 
 ## Installation
 
-You can install the development version of `{openai}` from [GitHub](https://github.com/) with:
+The easiest way to install `{openai}` from CRAN is to use the "official" `install.packages()` function:
+
+```{r, eval = FALSE}
+install.packages("openai")
+```
+
+You can also install the development version of `{openai}` from [GitHub](https://github.com/) with:
 
 ```{r, eval = FALSE}
 if (!require(remotes))
@@ -78,4 +86,14 @@ create_completion(
     engine_id = "ada",
     prompt = "Generate a question and an answer"
 )
+```
+
+Further, one can generate an image using DALL·E text-to-image model with `create_image()`:
+
+```{r, eval=FALSE}
+create_image("An astronaut riding a horse in a photorealistic style")
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("http://tiny.cc/22n1vz")
 ```

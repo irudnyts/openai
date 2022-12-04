@@ -8,6 +8,10 @@
 [![R-CMD-check](https://github.com/irudnyts/openai/workflows/R-CMD-check/badge.svg)](https://github.com/irudnyts/openai/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/irudnyts/openai/branch/main/graph/badge.svg)](https://app.codecov.io/gh/irudnyts/openai?branch=main)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org/package=openai)
+[![CRAN
+Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
 <!-- badges: end -->
 
 ## Overview
@@ -19,7 +23,14 @@ December 3, 2022).
 
 ## Installation
 
-You can install the development version of `{openai}` from
+The easiest way to install `{openai}` from CRAN is to use the “official”
+`install.packages()` function:
+
+``` r
+install.packages("openai")
+```
+
+You can also install the development version of `{openai}` from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -85,20 +96,39 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-5GDS6aZAwCPBqUCSpjUWXdFH04FLR"
+#> [1] "cmpl-6JlmRJ6SD4vVTrIy5CTWIkQy4cUWm"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1654546642
+#> [1] 1670169919
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                                  text index
-#> 1  from Pluralities.ai\nIn this office we sleep your worries away and     0
-#>   logprobs finish_reason
-#> 1       NA        length
+#>                                                text index logprobs
+#> 1  dialog\n\nStatus\n\n$filters = filter('thrid = #     0       NA
+#>   finish_reason
+#> 1        length
+#> 
+#> $usage
+#> $usage$prompt_tokens
+#> [1] 7
+#> 
+#> $usage$completion_tokens
+#> [1] 16
+#> 
+#> $usage$total_tokens
+#> [1] 23
 ```
+
+Further, one can generate an image using DALL·E text-to-image model with
+`create_image()`:
+
+``` r
+create_image("An astronaut riding a horse in a photorealistic style")
+```
+
+<img src="http://tiny.cc/22n1vz" width="100%" />
