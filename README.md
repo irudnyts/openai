@@ -47,7 +47,7 @@ up and logged in, you need to open [this page](https://beta.openai.com),
 click on **Personal**, and select **View API keys** in drop-down menu.
 You can then copy the key by clicking on the green text **Copy**.
 
-By default, functions of `{openai}` will look for `SPOTIFY_CLIENT_ID`
+By default, functions of `{openai}` will look for `OPENAI_API_KEY`
 environment variable. If you want to set a global environment variable,
 you can use the following command (where
 `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` should be replaced
@@ -55,7 +55,7 @@ with your actual key):
 
 ``` r
 Sys.setenv(
-    SPOTIFY_CLIENT_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    OPENAI_API_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 )
 ```
 
@@ -96,22 +96,22 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-6JlmRJ6SD4vVTrIy5CTWIkQy4cUWm"
+#> [1] "cmpl-6JqOq9e30xYlIfjzK14mEiqUNzI7j"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1670169919
+#> [1] 1670187676
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                text index logprobs
-#> 1  dialog\n\nStatus\n\n$filters = filter('thrid = #     0       NA
-#>   finish_reason
-#> 1        length
+#>                                                                  text index
+#> 1  for is the phenomenon of Belonging in the service of the truth. So     0
+#>   logprobs finish_reason
+#> 1       NA        length
 #> 
 #> $usage
 #> $usage$prompt_tokens
