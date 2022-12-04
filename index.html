@@ -101,10 +101,10 @@
 <h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a>
 </h2>
 <p>To use the OpenAI API, you need to provide an API key. First, sign up for OpenAI API on <a href="https://openai.com/api/" class="external-link">this page</a>. Once you signed up and logged in, you need to open <a href="https://beta.openai.com" class="external-link">this page</a>, click on <strong>Personal</strong>, and select <strong>View API keys</strong> in drop-down menu. You can then copy the key by clicking on the green text <strong>Copy</strong>.</p>
-<p>By default, functions of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> will look for <code>SPOTIFY_CLIENT_ID</code> environment variable. If you want to set a global environment variable, you can use the following command (where <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> should be replaced with your actual key):</p>
+<p>By default, functions of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> will look for <code>OPENAI_API_KEY</code> environment variable. If you want to set a global environment variable, you can use the following command (where <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> should be replaced with your actual key):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span></span>
-<span>    SPOTIFY_CLIENT_ID <span class="op">=</span> <span class="st">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span></span>
+<span>    OPENAI_API_KEY <span class="op">=</span> <span class="st">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>Otherwise, you can add the key to the <code>.Renviron</code> file of the project. The following commands will open <code>.Renviron</code> for editing:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -130,22 +130,22 @@
 <span>    prompt <span class="op">=</span> <span class="st">"Generate a question and an answer"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt; $id</span></span>
-<span><span class="co">#&gt; [1] "cmpl-6JlmRJ6SD4vVTrIy5CTWIkQy4cUWm"</span></span>
+<span><span class="co">#&gt; [1] "cmpl-6JqOq9e30xYlIfjzK14mEiqUNzI7j"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $object</span></span>
 <span><span class="co">#&gt; [1] "text_completion"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $created</span></span>
-<span><span class="co">#&gt; [1] 1670169919</span></span>
+<span><span class="co">#&gt; [1] 1670187676</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $model</span></span>
 <span><span class="co">#&gt; [1] "ada"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $choices</span></span>
-<span><span class="co">#&gt;                                                text index logprobs</span></span>
-<span><span class="co">#&gt; 1  dialog\n\nStatus\n\n$filters = filter('thrid = #     0       NA</span></span>
-<span><span class="co">#&gt;   finish_reason</span></span>
-<span><span class="co">#&gt; 1        length</span></span>
+<span><span class="co">#&gt;                                                                  text index</span></span>
+<span><span class="co">#&gt; 1  for is the phenomenon of Belonging in the service of the truth. So     0</span></span>
+<span><span class="co">#&gt;   logprobs finish_reason</span></span>
+<span><span class="co">#&gt; 1       NA        length</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $usage</span></span>
 <span><span class="co">#&gt; $usage$prompt_tokens</span></span>
