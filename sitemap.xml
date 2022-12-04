@@ -40,6 +40,18 @@
     <loc>https://irudnyts.github.io/openai/reference/create_fine_tune.html</loc>
   </url>
   <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_image.html</loc>
+  </url>
+  <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_image_edit.html</loc>
+  </url>
+  <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_image_variation.html</loc>
+  </url>
+  <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_moderation.html</loc>
+  </url>
+  <url>
     <loc>https://irudnyts.github.io/openai/reference/create_search.html</loc>
   </url>
   <url>
@@ -64,6 +76,9 @@
     <loc>https://irudnyts.github.io/openai/reference/list_fine_tunes.html</loc>
   </url>
   <url>
+    <loc>https://irudnyts.github.io/openai/reference/list_models.html</loc>
+  </url>
+  <url>
     <loc>https://irudnyts.github.io/openai/reference/pipe.html</loc>
   </url>
   <url>
@@ -77,6 +92,9 @@
   </url>
   <url>
     <loc>https://irudnyts.github.io/openai/reference/retrieve_fine_tune.html</loc>
+  </url>
+  <url>
+    <loc>https://irudnyts.github.io/openai/reference/retrieve_model.html</loc>
   </url>
   <url>
     <loc>https://irudnyts.github.io/openai/reference/upload_file.html</loc>
