@@ -95,5 +95,5 @@ create_image("An astronaut riding a horse in a photorealistic style")
 ```
 
 ```{r, echo=FALSE}
-knitr::include_graphics("http://tiny.cc/22n1vz")
+knitr::include_graphics("inst/extdata/astronaut.png")
 ```

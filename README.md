@@ -96,20 +96,20 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-6JqOq9e30xYlIfjzK14mEiqUNzI7j"
+#> [1] "cmpl-6KBvXTHhhTv2VtgPMZQPBaNcJKWqi"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1670187676
+#> [1] 1670270427
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                                  text index
-#> 1  for is the phenomenon of Belonging in the service of the truth. So     0
+#>                                                                      text index
+#> 1  for Purchase of the product (any time you click on View It here, there     0
 #>   logprobs finish_reason
 #> 1       NA        length
 #> 
@@ -131,4 +131,4 @@ Further, one can generate an image using DALL·E text-to-image model with
 create_image("An astronaut riding a horse in a photorealistic style")
 ```
 
-<img src="http://tiny.cc/22n1vz" width="100%" />
+<img src="inst/extdata/astronaut.png" width="100%" />
