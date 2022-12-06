@@ -5,7 +5,8 @@
 \title{Create completion}
 \usage{
 create_completion(
-  engine_id,
+  engine_id = deprecated(),
+  model,
   prompt = "<|endoftext|>",
   suffix = NULL,
   max_tokens = 16,
@@ -26,7 +27,9 @@ create_completion(
 )
 }
 \arguments{
-\item{engine_id}{required; a length one character vector.}
+\item{engine_id}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}}
+
+\item{model}{required; a length one character vector.}
 
 \item{prompt}{required; defaults to \code{"<|endoftext|>"}; an arbitrary length
 character vector.}
@@ -90,7 +93,7 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 create_completion(
-    engine = "text-davinci-002",
+    model = "text-davinci-002",
     prompt = "Say this is a test",
     max_tokens = 5
 )
@@ -100,7 +103,7 @@ logit_bias <- list(
     "13" = -100
 )
 create_completion(
-    engine_id = "ada",
+    model = "ada",
     prompt = "Generate a question and an answer",
     n = 4,
     best_of = 4,
