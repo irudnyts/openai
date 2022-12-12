@@ -82,7 +82,7 @@ create_completion <- function(
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
-        ) {
+) {
 
     if (lifecycle::is_present(engine_id)) {
         lifecycle::deprecate_warn(
