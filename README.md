@@ -17,9 +17,9 @@ Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgree
 ## Overview
 
 `{openai}` is an R wrapper of OpenAI API endpoints. This package covers
-Engines, Completions, Edits, Files, Fine-tunes, Embeddings and legacy
-Searches, Classifications, and Answers endpoints (will be removed on
-December 3, 2022).
+Models, Completions, Edits, Images, Embeddings, Files, Fine-tunes,
+Moderations, and legacy Engines endpoints. The latter endpoints, namely
+Engines, are left for backward compatibility and will be removed soon.
 
 ## Installation
 
@@ -92,26 +92,26 @@ create a completion, one can use `create_completion()` function:
 library(openai)
 
 create_completion(
-    engine_id = "ada",
+    model = "ada",
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-6KBvXTHhhTv2VtgPMZQPBaNcJKWqi"
+#> [1] "cmpl-6MiImjcaCSuQYY6u8UA2Mm0rCdbEo"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1670270427
+#> [1] 1670871532
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                                      text index
-#> 1  for Purchase of the product (any time you click on View It here, there     0
-#>   logprobs finish_reason
-#> 1       NA        length
+#>                                                                             text
+#> 1  within 5 minutes, up to an hour depending on how your users are different and
+#>   index logprobs finish_reason
+#> 1     0       NA        length
 #> 
 #> $usage
 #> $usage$prompt_tokens
@@ -131,4 +131,4 @@ Further, one can generate an image using DALL·E text-to-image model with
 create_image("An astronaut riding a horse in a photorealistic style")
 ```
 
-<img src="inst/extdata/astronaut.png" width="100%" />
+<img src="man/figures/astronaut.png" width="256px" style="display: block; margin: auto;" />

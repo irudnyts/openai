@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# retrieve_engine()
+# retrieve_model()
 
 function_name <- "retrieve_model"
 

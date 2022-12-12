@@ -7,7 +7,8 @@
 #' For arguments description please refer to the [official
 #' documentation](https://beta.openai.com/docs/api-reference/edits/create).
 #'
-#' @param engine_id required; a length one character vector.
+#' @param engine_id `r lifecycle::badge("deprecated")`
+#' @param model required; a length one character vector.
 #' @param input required; defaults to `'"'`; a length one character vector.
 #' @param instruction required; a length one character vector.
 #' @param temperature required; defaults to `1`; a length one numeric vector
@@ -23,14 +24,15 @@
 #'   and supplementary information.
 #' @examples \dontrun{
 #' create_edit(
-#'     engine_id = "text-davinci-edit-001",
+#'     model = "text-davinci-edit-001",
 #'     input = "What day of the wek is it?",
 #'     instruction = "Fix the spelling mistakes"
 #' )
 #' }
 #' @export
 create_edit <- function(
-        engine_id,
+        engine_id = deprecated(),
+        model,
         input = '"',
         instruction,
         temperature = 1,
@@ -39,12 +41,21 @@ create_edit <- function(
         openai_organization = NULL
 ) {
 
+    if (lifecycle::is_present(engine_id)) {
+        lifecycle::deprecate_warn(
+            "0.3.0",
+            "create_completion(engine_id)",
+            "create_completion(model)"
+        )
+        model <- engine_id
+    }
+
     #---------------------------------------------------------------------------
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine_id),
-        assertthat::noNA(engine_id)
+        assertthat::is.string(model),
+        assertthat::noNA(model)
     )
 
     assertthat::assert_that(
@@ -92,9 +103,7 @@ create_edit <- function(
 
     task <- "edits"
 
-    base_url <- glue::glue(
-        "https://api.openai.com/v1/engines/{engine_id}/{task}"
-    )
+    base_url <- glue::glue("https://api.openai.com/v1/{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
@@ -109,6 +118,7 @@ create_edit <- function(
     # Build request body
 
     body <- list()
+    body[["model"]] <- model
     body[["input"]] <- input
     body[["instruction"]] <- instruction
     body[["temperature"]] <- temperature

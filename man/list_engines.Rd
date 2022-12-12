@@ -22,9 +22,16 @@ Returns a list, an element of which is a data frame containing
 information about engines.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+\strong{Note:} This endpoint is deprecated and soon will be removed. Please use
+its replacement,
+\href{https://beta.openai.com/docs/api-reference/models}{Models}, instead. The
+replacement function in this package is \code{list_models()}.
+
 Lists available engines and provides basic information about such engines.
-See \href{https://beta.openai.com/docs/api-reference/engines/list}{this page} for
-details.
+See \href{https://beta.openai.com/docs/api-reference/engines/list}{this page}
+for details.
 }
 \details{
 For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/engines/list}{official documentation}.
@@ -32,6 +39,8 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 list_engines()
+# ->
+list_models()
 }
 }
 \seealso{
@@ -39,3 +48,4 @@ Other engine functions:
 \code{\link{retrieve_engine}()}
 }
 \concept{engine functions}
+\keyword{internal}

@@ -7,7 +7,8 @@
 #' For arguments description please refer to the [official
 #' documentation](https://beta.openai.com/docs/api-reference/embeddings/create).
 #'
-#' @param engine_id required; a length one character vector.
+#' @param engine_id `r lifecycle::badge("deprecated")`
+#' @param model required; a length one character vector.
 #' @param input required; an arbitrary length character vector.
 #' @param user optional; defaults to `NULL`; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
@@ -19,7 +20,7 @@
 #'   a given input.
 #' @examples \dontrun{
 #' create_embedding(
-#'     engine_id = "text-similarity-babbage-001",
+#'     model = "text-similarity-babbage-001",
 #'     input = c(
 #'         "Ah, it is so boring to write documentation",
 #'         "But examples are really crucial"
@@ -28,19 +29,29 @@
 #' }
 #' @export
 create_embedding <- function(
-        engine_id,
+        engine_id = deprecated(),
+        model,
         input,
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
 
+    if (lifecycle::is_present(engine_id)) {
+        lifecycle::deprecate_warn(
+            "0.3.0",
+            "create_completion(engine_id)",
+            "create_completion(model)"
+        )
+        model <- engine_id
+    }
+
     #---------------------------------------------------------------------------
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine_id),
-        assertthat::noNA(engine_id)
+        assertthat::is.string(model),
+        assertthat::noNA(model)
     )
 
     assertthat::assert_that(
@@ -72,9 +83,7 @@ create_embedding <- function(
 
     task <- "embeddings"
 
-    base_url <- glue::glue(
-        "https://api.openai.com/v1/engines/{engine_id}/{task}"
-    )
+    base_url <- glue::glue("https://api.openai.com/v1/{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
@@ -89,6 +98,7 @@ create_embedding <- function(
     # Build request body
 
     body <- list()
+    body[["model"]] <- model
     body[["input"]] <- input
     body[["user"]] <- user
 

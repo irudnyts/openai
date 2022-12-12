@@ -7,7 +7,8 @@
 #' For arguments description please refer to the [official
 #' documentation](https://beta.openai.com/docs/api-reference/completions/create).
 #'
-#' @param engine_id required; a length one character vector.
+#' @param engine_id `r lifecycle::badge("deprecated")`
+#' @param model required; a length one character vector.
 #' @param prompt required; defaults to `"<|endoftext|>"`; an arbitrary length
 #'   character vector.
 #' @param suffix optional; defaults to `NULL`; a length one character vector.
@@ -43,7 +44,7 @@
 #'   supplementary information.
 #' @examples \dontrun{
 #' create_completion(
-#'     engine = "text-davinci-002",
+#'     model = "text-davinci-002",
 #'     prompt = "Say this is a test",
 #'     max_tokens = 5
 #' )
@@ -53,7 +54,7 @@
 #'     "13" = -100
 #' )
 #' create_completion(
-#'     engine_id = "ada",
+#'     model = "ada",
 #'     prompt = "Generate a question and an answer",
 #'     n = 4,
 #'     best_of = 4,
@@ -62,7 +63,8 @@
 #' }
 #' @export
 create_completion <- function(
-        engine_id,
+        engine_id = deprecated(),
+        model,
         prompt = "<|endoftext|>",
         suffix = NULL,
         max_tokens = 16,
@@ -80,14 +82,23 @@ create_completion <- function(
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
-        ) {
+) {
+
+    if (lifecycle::is_present(engine_id)) {
+        lifecycle::deprecate_warn(
+            "0.3.0",
+            "create_completion(engine_id)",
+            "create_completion(model)"
+        )
+        model <- engine_id
+    }
 
     #---------------------------------------------------------------------------
     # Validate arguments
 
     assertthat::assert_that(
-        assertthat::is.string(engine_id),
-        assertthat::noNA(engine_id)
+        assertthat::is.string(model),
+        assertthat::noNA(model)
     )
 
     assertthat::assert_that(
@@ -205,7 +216,7 @@ create_completion <- function(
 
     task <- "completions"
 
-    base_url <- glue::glue("https://api.openai.com/v1/engines/{engine_id}/{task}")
+    base_url <- glue::glue("https://api.openai.com/v1/{task}")
 
     headers <- c(
         "Authorization" = paste("Bearer", openai_api_key),
@@ -220,6 +231,7 @@ create_completion <- function(
     # Build request body
 
     body <- list()
+    body[["model"]] <- model
     body[["prompt"]] <- prompt
     body[["suffix"]] <- suffix
     body[["max_tokens"]] <- max_tokens

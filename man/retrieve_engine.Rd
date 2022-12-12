@@ -25,6 +25,13 @@ Returns a list, elements of which contain information about the
 engine.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+\strong{Note:} This endpoint is deprecated and soon will be removed. Please use
+its replacement,
+\href{https://beta.openai.com/docs/api-reference/models}{Models}, instead. The
+replacement function in this package is \code{retrieve_model()}.
+
 Provides information about a specified engine. See \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page} for
 details.
 }
@@ -34,6 +41,8 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 retrieve_engine("text-davinci-002")
+# ->
+retrieve_model("text-davinci-002")
 }
 }
 \seealso{
@@ -41,3 +50,4 @@ Other engine functions:
 \code{\link{list_engines}()}
 }
 \concept{engine functions}
+\keyword{internal}

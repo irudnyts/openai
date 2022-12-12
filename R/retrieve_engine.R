@@ -1,10 +1,17 @@
 #' Retrieve engine
 #'
-#' Provides information about a specified engine. See [this
-#' page](https://beta.openai.com/docs/api-reference/engines/retrieve) for
-#' details.
+#' @description `r lifecycle::badge("deprecated")`
 #'
-#' For arguments description please refer to the [official
+#'   **Note:** This endpoint is deprecated and soon will be removed. Please use
+#'   its replacement,
+#'   [Models](https://beta.openai.com/docs/api-reference/models), instead. The
+#'   replacement function in this package is `retrieve_model()`.
+#'
+#'   Provides information about a specified engine. See [this
+#'   page](https://beta.openai.com/docs/api-reference/engines/retrieve) for
+#'   details.
+#'
+#' @details For arguments description please refer to the [official
 #' documentation](https://beta.openai.com/docs/api-reference/engines/retrieve).
 #'
 #' @param engine_id required; a length one character vector.
@@ -17,14 +24,27 @@
 #'   engine.
 #' @examples \dontrun{
 #' retrieve_engine("text-davinci-002")
+#' # ->
+#' retrieve_model("text-davinci-002")
 #' }
 #' @family engine functions
+#' @keywords internal
 #' @export
 retrieve_engine <- function(
         engine_id,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
+
+    lifecycle::deprecate_warn(
+        when = "0.3.0",
+        what = "retrieve_engine()",
+        with = "retrieve_model()",
+        details = paste(
+            "Please use its replacement instead:",
+            "https://beta.openai.com/docs/api-reference/models"
+        )
+    )
 
     #---------------------------------------------------------------------------
     # Validate arguments

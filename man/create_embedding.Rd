@@ -5,7 +5,8 @@
 \title{Create embeddings}
 \usage{
 create_embedding(
-  engine_id,
+  engine_id = deprecated(),
+  model,
   input,
   user = NULL,
   openai_api_key = Sys.getenv("OPENAI_API_KEY"),
@@ -13,7 +14,9 @@ create_embedding(
 )
 }
 \arguments{
-\item{engine_id}{required; a length one character vector.}
+\item{engine_id}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}}
+
+\item{model}{required; a length one character vector.}
 
 \item{input}{required; an arbitrary length character vector.}
 
@@ -40,7 +43,7 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 create_embedding(
-    engine_id = "text-similarity-babbage-001",
+    model = "text-similarity-babbage-001",
     input = c(
         "Ah, it is so boring to write documentation",
         "But examples are really crucial"

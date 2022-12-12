@@ -1,10 +1,17 @@
 #' List engines
 #'
-#' Lists available engines and provides basic information about such engines.
-#' See [this page](https://beta.openai.com/docs/api-reference/engines/list) for
-#' details.
+#' @description `r lifecycle::badge("deprecated")`
 #'
-#' For arguments description please refer to the [official
+#'   **Note:** This endpoint is deprecated and soon will be removed. Please use
+#'   its replacement,
+#'   [Models](https://beta.openai.com/docs/api-reference/models), instead. The
+#'   replacement function in this package is `list_models()`.
+#'
+#'   Lists available engines and provides basic information about such engines.
+#'   See [this page](https://beta.openai.com/docs/api-reference/engines/list)
+#'   for details.
+#'
+#' @details For arguments description please refer to the [official
 #' documentation](https://beta.openai.com/docs/api-reference/engines/list).
 #'
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
@@ -16,13 +23,26 @@
 #'   information about engines.
 #' @examples \dontrun{
 #' list_engines()
+#' # ->
+#' list_models()
 #' }
 #' @family engine functions
+#' @keywords internal
 #' @export
 list_engines <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
+
+    lifecycle::deprecate_warn(
+        when = "0.3.0",
+        what = "list_engines()",
+        with = "list_models()",
+        details = paste(
+            "Please use its replacement instead:",
+            "https://beta.openai.com/docs/api-reference/models"
+        )
+    )
 
     #---------------------------------------------------------------------------
     # Validate arguments

@@ -5,7 +5,7 @@ image <- here("inst/figures/mini-dalle.png")
 
 sticker(
     image,
-    package = "openi",
+    package = "openai",
     p_size = 20,
     s_x = 1,
     s_y = .75,
