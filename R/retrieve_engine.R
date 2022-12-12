@@ -24,8 +24,11 @@
 #'   engine.
 #' @examples \dontrun{
 #' retrieve_engine("text-davinci-002")
+#' # ->
+#' retrieve_model("text-davinci-002")
 #' }
 #' @family engine functions
+#' @keywords internal
 #' @export
 retrieve_engine <- function(
         engine_id,

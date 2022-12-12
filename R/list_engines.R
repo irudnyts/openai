@@ -23,8 +23,11 @@
 #'   information about engines.
 #' @examples \dontrun{
 #' list_engines()
+#' # ->
+#' list_models()
 #' }
 #' @family engine functions
+#' @keywords internal
 #' @export
 list_engines <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),

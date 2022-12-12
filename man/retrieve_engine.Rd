@@ -41,6 +41,8 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 retrieve_engine("text-davinci-002")
+# ->
+retrieve_model("text-davinci-002")
 }
 }
 \seealso{
@@ -48,3 +50,4 @@ Other engine functions:
 \code{\link{list_engines}()}
 }
 \concept{engine functions}
+\keyword{internal}

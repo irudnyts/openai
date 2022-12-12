@@ -39,6 +39,8 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 list_engines()
+# ->
+list_models()
 }
 }
 \seealso{
@@ -46,3 +48,4 @@ Other engine functions:
 \code{\link{retrieve_engine}()}
 }
 \concept{engine functions}
+\keyword{internal}
