@@ -5,7 +5,8 @@
 \title{Create edit}
 \usage{
 create_edit(
-  engine_id,
+  engine_id = deprecated(),
+  model,
   input = "\\"",
   instruction,
   temperature = 1,
@@ -15,7 +16,9 @@ create_edit(
 )
 }
 \arguments{
-\item{engine_id}{required; a length one character vector.}
+\item{engine_id}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}}
+
+\item{model}{required; a length one character vector.}
 
 \item{input}{required; defaults to \code{'"'}; a length one character vector.}
 
@@ -49,7 +52,7 @@ For arguments description please refer to the \href{https://beta.openai.com/docs
 \examples{
 \dontrun{
 create_edit(
-    engine_id = "text-davinci-edit-001",
+    model = "text-davinci-edit-001",
     input = "What day of the wek is it?",
     instruction = "Fix the spelling mistakes"
 )
