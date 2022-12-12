@@ -22,12 +22,6 @@
     <loc>https://irudnyts.github.io/openai/reference/cancel_fine_tune.html</loc>
   </url>
   <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_answer.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_classification.html</loc>
-  </url>
-  <url>
     <loc>https://irudnyts.github.io/openai/reference/create_completion.html</loc>
   </url>
   <url>
@@ -50,9 +44,6 @@
   </url>
   <url>
     <loc>https://irudnyts.github.io/openai/reference/create_moderation.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_search.html</loc>
   </url>
   <url>
     <loc>https://irudnyts.github.io/openai/reference/delete_file.html</loc>

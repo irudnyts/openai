@@ -12,7 +12,7 @@ details."><meta property="og:image" content="https://irudnyts.github.io/openai/l
     
     <a class="navbar-brand me-2" href="../index.html">openai</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,8 @@ details.</p>
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_embedding</span><span class="op">(</span></span>
-<span>  <span class="va">engine_id</span>,</span>
+<span>  engine_id <span class="op">=</span> <span class="fu">deprecated</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">model</span>,</span>
 <span>  <span class="va">input</span>,</span>
 <span>  user <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  openai_api_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"OPENAI_API_KEY"</span><span class="op">)</span>,</span>
@@ -66,6 +67,10 @@ details.</p>
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>engine_id</dt>
+<dd><p><a href="https://lifecycle.r-lib.org/articles/stages.html#deprecated" class="external-link"><img src="figures/lifecycle-deprecated.svg" alt="[Deprecated]"></a></p></dd>
+
+
+<dt>model</dt>
 <dd><p>required; a length one character vector.</p></dd>
 
 
@@ -104,7 +109,7 @@ a given input.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="fu">create_embedding</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    engine_id <span class="op">=</span> <span class="st">"text-similarity-babbage-001"</span>,</span></span>
+<span class="r-in"><span>    model <span class="op">=</span> <span class="st">"text-similarity-babbage-001"</span>,</span></span>
 <span class="r-in"><span>    input <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>        <span class="st">"Ah, it is so boring to write documentation"</span>,</span></span>
 <span class="r-in"><span>        <span class="st">"But examples are really crucial"</span></span></span>
