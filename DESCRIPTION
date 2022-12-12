@@ -7,8 +7,8 @@ Authors@R:
     person("Iegor", "Rudnytskyi", , "iegor.rudnytskyi@gmail.com", c("aut", "cre"))
 Description: An R wrapper of OpenAI API endpoints (see
     <https://beta.openai.com/docs/introduction> for details). This package
-    covers Engines, Completions, Edits, Files, Fine-tunes, Embeddings and legacy
-    Searches, Classifications, and Answers endpoints.
+    covers Models, Completions, Edits, Images, Embeddings, Files, Fine-tunes,
+    Moderations, and legacy Engines endpoints.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

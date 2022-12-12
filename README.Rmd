@@ -24,9 +24,7 @@ knitr::opts_chunk$set(
 
 ## Overview 
 
-`{openai}` is an R wrapper of OpenAI API endpoints. This package covers Engines,
-Completions, Edits, Files, Fine-tunes, Embeddings and legacy Searches,
-Classifications, and Answers endpoints (will be removed on December 3, 2022).
+`{openai}` is an R wrapper of OpenAI API endpoints. This package covers Models, Completions, Edits, Images, Embeddings, Files, Fine-tunes, Moderations, and legacy Engines endpoints. The latter endpoints, namely Engines, are left for backward compatibility and will be removed soon.
 
 ## Installation
 
@@ -83,7 +81,7 @@ Functions of `{openai}` have self-explanatory names. For example, to create a co
 library(openai)
 
 create_completion(
-    engine_id = "ada",
+    model = "ada",
     prompt = "Generate a question and an answer"
 )
 ```
@@ -94,6 +92,6 @@ Further, one can generate an image using DALL·E text-to-image model with `creat
 create_image("An astronaut riding a horse in a photorealistic style")
 ```
 
-```{r, echo=FALSE}
-knitr::include_graphics("inst/extdata/astronaut.png")
+```{r, echo=FALSE, out.width = "256px", fig.align = "center"}
+knitr::include_graphics("man/figures/astronaut.png")
 ```
