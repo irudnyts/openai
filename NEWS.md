@@ -1,3 +1,9 @@
+# openai 0.3.0
+
+* Remove outdated endpoints `create_answer()`, `create_classification()`, and `create_search()`
+* Deprecate `retrieve_engine()` and `list_engines()`
+* Deprecate `engine_id` argument in `create_completion()`, `create_edit()`, and `create_embedding()`
+
 # openai 0.2.0
 
 * Add new DALL-E functions, namely `create_image()`, `create_image_edit()`, and `create_image_variation()`
