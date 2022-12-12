@@ -8,8 +8,22 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 note
+
+Possibly misspelled words in DESCRIPTION: Moderations (11:5)
+
+### Comments:    
+    
+* "Moderations" is the "official" name of the endpoint.
 
 ## Downstream dependencies
 
 There are currently no downstream dependencies for this package.
+
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* Remove outdated endpoints `create_answer()`, `create_classification()`, and `create_search()`
+* Deprecate `retrieve_engine()` and `list_engines()`
+* Deprecate `engine_id` argument in `create_completion()`, `create_edit()`, and `create_embedding()`
