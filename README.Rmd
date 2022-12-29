@@ -16,11 +16,10 @@ knitr::opts_chunk$set(
 # openai <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/irudnyts/openai/workflows/R-CMD-check/badge.svg)](https://github.com/irudnyts/openai/actions)
+[![R-CMD-check](https://github.com/irudnyts/openai/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/irudnyts/openai/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/irudnyts/openai/branch/main/graph/badge.svg)](https://app.codecov.io/gh/irudnyts/openai?branch=main)
 [![CRAN status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org/package=openai)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
-[![R-CMD-check](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview 

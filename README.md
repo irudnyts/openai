@@ -5,14 +5,13 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/irudnyts/openai/workflows/R-CMD-check/badge.svg)](https://github.com/irudnyts/openai/actions)
+[![R-CMD-check](https://github.com/irudnyts/openai/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/irudnyts/openai/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/irudnyts/openai/branch/main/graph/badge.svg)](https://app.codecov.io/gh/irudnyts/openai?branch=main)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org/package=openai)
 [![CRAN
 Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
-[![R-CMD-check](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview
@@ -97,22 +96,22 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-6SksLWnPrFNJpOoOwfIJz64VwRg2U"
+#> [1] "cmpl-6Sl1acHIzsKYEyGU94IQkzN9YCuwi"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1672311393
+#> [1] 1672311966
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                                          text
-#> 1  for this topic\n\nHelp other customers find the most recent questions.\n\n
-#>   index logprobs finish_reason
-#> 1     0       NA        length
+#>                                                           text index logprobs
+#> 1  error in Python source code (or package code) if you:\n\nUh     0       NA
+#>   finish_reason
+#> 1        length
 #> 
 #> $usage
 #> $usage$prompt_tokens
