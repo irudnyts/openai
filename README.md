@@ -12,6 +12,7 @@ coverage](https://codecov.io/gh/irudnyts/openai/branch/main/graph/badge.svg)](ht
 status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org/package=openai)
 [![CRAN
 Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
+[![R-CMD-check](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview
@@ -96,20 +97,20 @@ create_completion(
     prompt = "Generate a question and an answer"
 )
 #> $id
-#> [1] "cmpl-6MiImjcaCSuQYY6u8UA2Mm0rCdbEo"
+#> [1] "cmpl-6SksLWnPrFNJpOoOwfIJz64VwRg2U"
 #> 
 #> $object
 #> [1] "text_completion"
 #> 
 #> $created
-#> [1] 1670871532
+#> [1] 1672311393
 #> 
 #> $model
 #> [1] "ada"
 #> 
 #> $choices
-#>                                                                             text
-#> 1  within 5 minutes, up to an hour depending on how your users are different and
+#>                                                                          text
+#> 1  for this topic\n\nHelp other customers find the most recent questions.\n\n
 #>   index logprobs finish_reason
 #> 1     0       NA        length
 #> 

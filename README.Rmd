@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/irudnyts/openai/branch/main/graph/badge.svg)](https://app.codecov.io/gh/irudnyts/openai?branch=main)
 [![CRAN status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org/package=openai)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
+[![R-CMD-check](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JamesHWade/openai/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview 

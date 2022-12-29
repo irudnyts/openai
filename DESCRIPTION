@@ -16,8 +16,6 @@ RoxygenNote: 7.2.1
 URL: https://github.com/irudnyts/openai,
     https://irudnyts.github.io/openai/
 BugReports: https://github.com/irudnyts/openai/issues
-Depends:
-    R (>= 4.2)
 Imports: 
     assertthat (>= 0.2.1),
     glue (>= 1.6.2),
