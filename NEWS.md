@@ -1,3 +1,5 @@
+# openai 0.3.1
+
 # openai 0.3.0
 
 * Remove outdated endpoints `create_answer()`, `create_classification()`, and `create_search()`

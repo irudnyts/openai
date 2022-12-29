@@ -1,7 +1,7 @@
 Package: openai
 Type: Package
 Title: R Wrapper for OpenAI API
-Version: 0.3.0
+Version: 0.3.1
 Date: 2022-12-12
 Authors@R:
     person("Iegor", "Rudnytskyi", , "iegor.rudnytskyi@gmail.com", c("aut", "cre"))
