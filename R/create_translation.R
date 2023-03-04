@@ -1,3 +1,33 @@
+#' Create translation
+#'
+#' Translates audio into into English. See
+#' [this page](https://platform.openai.com/docs/api-reference/audio/create)
+#' for details.
+#'
+#' For arguments description please refer to the [official
+#' documentation](https://platform.openai.com/docs/api-reference/audio/create).
+#'
+#' @param file required; a length one character vector.
+#' @param model required; a length one character vector equals to `"whisper-1"`.
+#' @param prompt optional; defaults to `NULL`; a length one character vector.
+#' @param response_format required; defaults to `"json"`; length one character
+#'   vector equals to `"json"`. **Currently only `"json"` is implemented.**
+#' @param temperature required; defaults to `1`; a length one numeric vector
+#'   with the value between `0` and `2`.
+#' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
+#'   (i.e., the value is retrieved from the `.Renviron` file); a length one
+#'   character vector. Specifies OpenAI API key.
+#' @param openai_organization optional; defaults to `NULL`; a length one
+#'   character vector. Specifies OpenAI organization.
+#' @return Returns a list, elements of which contain a transcription and
+#'   supplementary information.
+#' @examples \dontrun{
+#' voice_sample_ua <- system.file(
+#'     "extdata", "sample-ua.m4a", package = "openai"
+#' )
+#' create_translation(file = voice_sample_ua)
+#' }
+#' @family audio functions
 #' @export
 create_translation <- function(
         file,
