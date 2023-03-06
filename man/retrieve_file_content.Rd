@@ -24,12 +24,12 @@ character vector. Specifies OpenAI organization.}
 Returns a list, an element of which contains the content of the file.
 }
 \description{
-Returns the content of the specified file. See \href{https://beta.openai.com/docs/api-reference/files/retrieve-content}{this page} for
+Returns the content of the specified file. See \href{https://platform.openai.com/docs/api-reference/files/retrieve-content}{this page} for
 details. Please note that only output files are allowed to be downloaded, not
 the input ones.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/retrieve-content}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/files/retrieve-content}{official documentation}.
 }
 \seealso{
 Other file functions: 

@@ -1,11 +1,11 @@
 #' Create fine-tune
 #'
 #' Creates a job that fine-tunes a specified model based on a given dataset. See
-#' [this page](https://beta.openai.com/docs/api-reference/fine-tunes/create) for
+#' [this page](https://platform.openai.com/docs/api-reference/fine-tunes/create) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/create).
+#' documentation](https://platform.openai.com/docs/api-reference/fine-tunes/create).
 #'
 #' @param training_file required; a length one character vector.
 #' @param validation_file optional; defaults to `NULL`; a length one character

@@ -29,11 +29,11 @@ Returns a list, elements of which contains information about the
 fine-tune events.
 }
 \description{
-Returns events related to a specified fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/events}{this page} for
+Returns events related to a specified fine-tune job. See \href{https://platform.openai.com/docs/api-reference/fine-tunes/events}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/events}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/fine-tunes/events}{official documentation}.
 }
 \examples{
 \dontrun{

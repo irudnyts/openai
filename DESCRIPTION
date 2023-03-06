@@ -6,7 +6,7 @@ Date: 2023-03-06
 Authors@R:
     person("Iegor", "Rudnytskyi", , "iegor.rudnytskyi@gmail.com", c("aut", "cre"))
 Description: An R wrapper of OpenAI API endpoints (see
-    <https://beta.openai.com/docs/introduction> for details). This package
+    <https://platform.openai.com/docs/introduction> for details). This package
     covers Models, Completions, Chat, Edits, Images, Embeddings, Audio, Files,
     Fine-tunes, Moderations, and legacy Engines endpoints.
 License: MIT + file LICENSE

@@ -1,11 +1,11 @@
 #' Create completion
 #'
 #' Creates a completion based on the provided prompt and parameters. See [this
-#' page](https://beta.openai.com/docs/api-reference/completions/create) for
+#' page](https://platform.openai.com/docs/api-reference/completions/create) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/completions/create).
+#' documentation](https://platform.openai.com/docs/api-reference/completions/create).
 #'
 #' @param engine_id `r lifecycle::badge("deprecated")`
 #' @param model required; a length one character vector.

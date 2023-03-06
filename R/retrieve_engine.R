@@ -4,15 +4,15 @@
 #'
 #'   **Note:** This endpoint is deprecated and soon will be removed. Please use
 #'   its replacement,
-#'   [Models](https://beta.openai.com/docs/api-reference/models), instead. The
+#'   [Models](https://platform.openai.com/docs/api-reference/models), instead. The
 #'   replacement function in this package is `retrieve_model()`.
 #'
 #'   Provides information about a specified engine. See [this
-#'   page](https://beta.openai.com/docs/api-reference/engines/retrieve) for
+#'   page](https://platform.openai.com/docs/api-reference/engines/retrieve) for
 #'   details.
 #'
 #' @details For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/engines/retrieve).
+#' documentation](https://platform.openai.com/docs/api-reference/engines/retrieve).
 #'
 #' @param engine_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
@@ -42,7 +42,7 @@ retrieve_engine <- function(
         with = "retrieve_model()",
         details = paste(
             "Please use its replacement instead:",
-            "https://beta.openai.com/docs/api-reference/models"
+            "https://platform.openai.com/docs/api-reference/models"
         )
     )
 

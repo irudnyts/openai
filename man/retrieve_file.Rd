@@ -25,10 +25,10 @@ Returns a list, elements of which contains information about the
 file.
 }
 \description{
-Provides information about a specific file. See \href{https://beta.openai.com/docs/api-reference/files/retrieve}{this page} for details.
+Provides information about a specific file. See \href{https://platform.openai.com/docs/api-reference/files/retrieve}{this page} for details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/retrieve}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/files/retrieve}{official documentation}.
 }
 \examples{
 \dontrun{

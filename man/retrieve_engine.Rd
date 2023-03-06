@@ -29,14 +29,14 @@ engine.
 
 \strong{Note:} This endpoint is deprecated and soon will be removed. Please use
 its replacement,
-\href{https://beta.openai.com/docs/api-reference/models}{Models}, instead. The
+\href{https://platform.openai.com/docs/api-reference/models}{Models}, instead. The
 replacement function in this package is \code{retrieve_model()}.
 
-Provides information about a specified engine. See \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{this page} for
+Provides information about a specified engine. See \href{https://platform.openai.com/docs/api-reference/engines/retrieve}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/engines/retrieve}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/engines/retrieve}{official documentation}.
 }
 \examples{
 \dontrun{

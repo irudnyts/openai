@@ -29,11 +29,11 @@ Returns a list, elements of which contain information about the
 model.
 }
 \description{
-Classifies if text violates OpenAI's Content Policy. See \href{https://beta.openai.com/docs/api-reference/moderations/create}{this page} for
+Classifies if text violates OpenAI's Content Policy. See \href{https://platform.openai.com/docs/api-reference/moderations/create}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/completions/create}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/completions/create}{official documentation}.
 }
 \examples{
 \dontrun{

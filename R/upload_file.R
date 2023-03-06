@@ -2,10 +2,10 @@
 #'
 #' Uploads a file that will be used for various purposes. The size of the
 #' storage is limited to 1 Gb. See [this
-#' page](https://beta.openai.com/docs/api-reference/files/upload) for details.
+#' page](https://platform.openai.com/docs/api-reference/files/upload) for details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/files/upload).
+#' documentation](https://platform.openai.com/docs/api-reference/files/upload).
 #'
 #' @param file required; a length one character vector.
 #' @param purpose required; defaults to `"fine-tune"`; a length one character

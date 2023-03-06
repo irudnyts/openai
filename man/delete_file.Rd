@@ -25,10 +25,10 @@ Returns a list, elements of which contains ID of the deleted file and
 status whether the file is deleted.
 }
 \description{
-Deletes a file. See \href{https://beta.openai.com/docs/api-reference/files/delete}{this page} for details.
+Deletes a file. See \href{https://platform.openai.com/docs/api-reference/files/delete}{this page} for details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/delete}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/files/delete}{official documentation}.
 }
 \examples{
 \dontrun{

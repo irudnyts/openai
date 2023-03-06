@@ -41,11 +41,11 @@ image variation or the image variation decoded in Base64.
 }
 \description{
 Creates a variation of a given image. See
-\href{https://beta.openai.com/docs/api-reference/images/create-variation}{this page}
+\href{https://platform.openai.com/docs/api-reference/images/create-variation}{this page}
 for details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/images/create-variation}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/images/create-variation}{official documentation}.
 }
 \examples{
 \dontrun{

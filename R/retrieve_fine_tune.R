@@ -1,11 +1,11 @@
 #' Retrieve fine-tune
 #'
 #' Returns information about the specified fine-tune job. See [this
-#' page](https://beta.openai.com/docs/api-reference/fine-tunes/retrieve) for
+#' page](https://platform.openai.com/docs/api-reference/fine-tunes/retrieve) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/retrieve).
+#' documentation](https://platform.openai.com/docs/api-reference/fine-tunes/retrieve).
 #'
 #' @param fine_tune_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`

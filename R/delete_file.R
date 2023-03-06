@@ -1,10 +1,10 @@
 #' Delete file
 #'
 #' Deletes a file. See [this
-#' page](https://beta.openai.com/docs/api-reference/files/delete) for details.
+#' page](https://platform.openai.com/docs/api-reference/files/delete) for details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/files/delete).
+#' documentation](https://platform.openai.com/docs/api-reference/files/delete).
 #'
 #' @param file_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`

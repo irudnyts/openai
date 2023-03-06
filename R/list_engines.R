@@ -4,15 +4,15 @@
 #'
 #'   **Note:** This endpoint is deprecated and soon will be removed. Please use
 #'   its replacement,
-#'   [Models](https://beta.openai.com/docs/api-reference/models), instead. The
+#'   [Models](https://platform.openai.com/docs/api-reference/models), instead. The
 #'   replacement function in this package is `list_models()`.
 #'
 #'   Lists available engines and provides basic information about such engines.
-#'   See [this page](https://beta.openai.com/docs/api-reference/engines/list)
+#'   See [this page](https://platform.openai.com/docs/api-reference/engines/list)
 #'   for details.
 #'
 #' @details For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/engines/list).
+#' documentation](https://platform.openai.com/docs/api-reference/engines/list).
 #'
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
@@ -40,7 +40,7 @@ list_engines <- function(
         with = "list_models()",
         details = paste(
             "Please use its replacement instead:",
-            "https://beta.openai.com/docs/api-reference/models"
+            "https://platform.openai.com/docs/api-reference/models"
         )
     )
 

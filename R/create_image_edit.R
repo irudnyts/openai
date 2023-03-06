@@ -1,11 +1,11 @@
 #' Create image edit
 #'
 #' Creates an edited or extended image given an original image and a prompt. See
-#' [this page](https://beta.openai.com/docs/api-reference/images/create-edit)
+#' [this page](https://platform.openai.com/docs/api-reference/images/create-edit)
 #' for details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/images/create-edit).
+#' documentation](https://platform.openai.com/docs/api-reference/images/create-edit).
 #'
 #' @param image required; a length one character vector.
 #' @param mask required; a length one character vector.

@@ -84,11 +84,11 @@ Returns a list, elements of which contain completion(s) and
 supplementary information.
 }
 \description{
-Creates a completion based on the provided prompt and parameters. See \href{https://beta.openai.com/docs/api-reference/completions/create}{this page} for
+Creates a completion based on the provided prompt and parameters. See \href{https://platform.openai.com/docs/api-reference/completions/create}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/completions/create}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/completions/create}{official documentation}.
 }
 \examples{
 \dontrun{

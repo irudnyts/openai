@@ -1,11 +1,11 @@
 #' Create image
 #'
 #' Creates an image given a prompt. See [this
-#' page](https://beta.openai.com/docs/api-reference/images/create) for
+#' page](https://platform.openai.com/docs/api-reference/images/create) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/images/create).
+#' documentation](https://platform.openai.com/docs/api-reference/images/create).
 #'
 #' @param prompt required; a length one character vector.
 #' @param n required; defaults to `1`; a length one numeric vector with the

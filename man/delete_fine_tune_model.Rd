@@ -25,11 +25,11 @@ Returns a list, elements of which contains information about the
 deleted model.
 }
 \description{
-Deletes a fine-tuned model. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/delete-model}{this page} for
+Deletes a fine-tuned model. See \href{https://platform.openai.com/docs/api-reference/fine-tunes/delete-model}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/delete-model}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/fine-tunes/delete-model}{official documentation}.
 }
 \examples{
 \dontrun{

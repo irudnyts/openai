@@ -1,10 +1,10 @@
 #' Retrieve file
 #'
 #' Provides information about a specific file. See [this
-#' page](https://beta.openai.com/docs/api-reference/files/retrieve) for details.
+#' page](https://platform.openai.com/docs/api-reference/files/retrieve) for details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/files/retrieve).
+#' documentation](https://platform.openai.com/docs/api-reference/files/retrieve).
 #'
 #' @param file_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`

@@ -2,11 +2,11 @@
 #'
 #' Retrieves a model instance, providing basic information about the model
 #' such as the owner and permissioning. See [this
-#' page](https://beta.openai.com/docs/api-reference/models/retrieve) for
+#' page](https://platform.openai.com/docs/api-reference/models/retrieve) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/models/retrieve).
+#' documentation](https://platform.openai.com/docs/api-reference/models/retrieve).
 #'
 #' @param model required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`

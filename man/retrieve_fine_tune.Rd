@@ -25,11 +25,11 @@ Returns a list, elements of which contains information about the
 fine-tune.
 }
 \description{
-Returns information about the specified fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/retrieve}{this page} for
+Returns information about the specified fine-tune job. See \href{https://platform.openai.com/docs/api-reference/fine-tunes/retrieve}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/retrieve}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/fine-tunes/retrieve}{official documentation}.
 }
 \examples{
 \dontrun{

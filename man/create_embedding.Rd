@@ -34,11 +34,11 @@ Returns a list, an element of which contains embedding vector(s) for
 a given input.
 }
 \description{
-Creates an embedding vector that represents the provided input. See \href{https://beta.openai.com/docs/api-reference/embeddings/create}{this page} for
+Creates an embedding vector that represents the provided input. See \href{https://platform.openai.com/docs/api-reference/embeddings/create}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/embeddings/create}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/embeddings/create}{official documentation}.
 }
 \examples{
 \dontrun{

@@ -40,11 +40,11 @@ Returns a list, an element of which contain either a link to the
 generated image or the generated image decoded in Base64.
 }
 \description{
-Creates an image given a prompt. See \href{https://beta.openai.com/docs/api-reference/images/create}{this page} for
+Creates an image given a prompt. See \href{https://platform.openai.com/docs/api-reference/images/create}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/images/create}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/images/create}{official documentation}.
 }
 \examples{
 \dontrun{

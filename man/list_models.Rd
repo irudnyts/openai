@@ -24,11 +24,11 @@ information about models.
 \description{
 Lists the currently available models, and provides basic information about
 each one such as the owner and availability. See
-\href{https://beta.openai.com/docs/api-reference/models/list}{this page} for
+\href{https://platform.openai.com/docs/api-reference/models/list}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/models/list}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/models/list}{official documentation}.
 }
 \examples{
 \dontrun{

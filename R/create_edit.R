@@ -1,11 +1,11 @@
 #' Create edit
 #'
 #' Creates an edit based on the provided input, instruction, and parameters. See
-#' [this page](https://beta.openai.com/docs/api-reference/edits/create) for
+#' [this page](https://platform.openai.com/docs/api-reference/edits/create) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/edits/create).
+#' documentation](https://platform.openai.com/docs/api-reference/edits/create).
 #'
 #' @param engine_id `r lifecycle::badge("deprecated")`
 #' @param model required; a length one character vector.

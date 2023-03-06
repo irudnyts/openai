@@ -44,9 +44,10 @@ remotes::install_github("irudnyts/openai")
 
 To use the OpenAI API, you need to provide an API key. First, sign up
 for OpenAI API on [this page](https://openai.com/api/). Once you signed
-up and logged in, you need to open [this page](https://beta.openai.com),
-click on **Personal**, and select **View API keys** in drop-down menu.
-You can then copy the key by clicking on the green text **Copy**.
+up and logged in, you need to open [this
+page](https://platform.openai.com), click on **Personal**, and select
+**View API keys** in drop-down menu. You can then copy the key by
+clicking on the green text **Copy**.
 
 By default, functions of `{openai}` will look for `OPENAI_API_KEY`
 environment variable. If you want to set a global environment variable,

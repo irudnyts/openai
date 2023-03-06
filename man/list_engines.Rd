@@ -26,15 +26,15 @@ information about engines.
 
 \strong{Note:} This endpoint is deprecated and soon will be removed. Please use
 its replacement,
-\href{https://beta.openai.com/docs/api-reference/models}{Models}, instead. The
+\href{https://platform.openai.com/docs/api-reference/models}{Models}, instead. The
 replacement function in this package is \code{list_models()}.
 
 Lists available engines and provides basic information about such engines.
-See \href{https://beta.openai.com/docs/api-reference/engines/list}{this page}
+See \href{https://platform.openai.com/docs/api-reference/engines/list}{this page}
 for details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/engines/list}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/engines/list}{official documentation}.
 }
 \examples{
 \dontrun{

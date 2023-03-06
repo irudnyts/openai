@@ -1,11 +1,11 @@
 #' Cancel fine-tune
 #'
 #' Cancel a running fine-tune job. See [this
-#' page](https://beta.openai.com/docs/api-reference/fine-tunes/cancel) for
+#' page](https://platform.openai.com/docs/api-reference/fine-tunes/cancel) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/cancel).
+#' documentation](https://platform.openai.com/docs/api-reference/fine-tunes/cancel).
 #'
 #' @param fine_tune_id required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`

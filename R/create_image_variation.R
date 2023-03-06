@@ -1,11 +1,11 @@
 #' Create image variation
 #'
 #' Creates a variation of a given image. See
-#' [this page](https://beta.openai.com/docs/api-reference/images/create-variation)
+#' [this page](https://platform.openai.com/docs/api-reference/images/create-variation)
 #' for details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/images/create-variation).
+#' documentation](https://platform.openai.com/docs/api-reference/images/create-variation).
 #'
 #' @param image required; a length one character vector.
 #' @param n required; defaults to `1`; a length one numeric vector with the

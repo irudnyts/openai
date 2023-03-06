@@ -47,11 +47,11 @@ edited image or the edited image decoded in Base64.
 }
 \description{
 Creates an edited or extended image given an original image and a prompt. See
-\href{https://beta.openai.com/docs/api-reference/images/create-edit}{this page}
+\href{https://platform.openai.com/docs/api-reference/images/create-edit}{this page}
 for details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/images/create-edit}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/images/create-edit}{official documentation}.
 }
 \examples{
 \dontrun{

@@ -26,11 +26,11 @@ model.
 }
 \description{
 Retrieves a model instance, providing basic information about the model
-such as the owner and permissioning. See \href{https://beta.openai.com/docs/api-reference/models/retrieve}{this page} for
+such as the owner and permissioning. See \href{https://platform.openai.com/docs/api-reference/models/retrieve}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/models/retrieve}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/models/retrieve}{official documentation}.
 }
 \examples{
 \dontrun{

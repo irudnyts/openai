@@ -25,11 +25,11 @@ Returns a list, elements of which contains information about the
 cancelled fine-tune.
 }
 \description{
-Cancel a running fine-tune job. See \href{https://beta.openai.com/docs/api-reference/fine-tunes/cancel}{this page} for
+Cancel a running fine-tune job. See \href{https://platform.openai.com/docs/api-reference/fine-tunes/cancel}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/cancel}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/fine-tunes/cancel}{official documentation}.
 }
 \examples{
 \dontrun{

@@ -37,3 +37,4 @@ This is a resubmission. In this version I have:
 * Added endpoints `create_chat_completion()`, `create_transcription()`, and `create_translation()`
 * Downgraded R dependence to 3.5 (see [https://github.com/irudnyts/openai/issues/27](this issue))
 * Removed redundant options of `upload_file()`'s argument `purpose`, namely `"search"`, `"answers"`, and `"classifications"`
+* Updated links in documentation

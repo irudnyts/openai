@@ -1,11 +1,11 @@
 #' List fine-tune events
 #'
 #' Returns events related to a specified fine-tune job. See [this
-#' page](https://beta.openai.com/docs/api-reference/fine-tunes/events) for
+#' page](https://platform.openai.com/docs/api-reference/fine-tunes/events) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/events).
+#' documentation](https://platform.openai.com/docs/api-reference/fine-tunes/events).
 #'
 #' @param fine_tune_id required; a length one character vector.
 #' @param stream required; defaults to `FALSE`; a length one logical vector.

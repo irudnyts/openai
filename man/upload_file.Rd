@@ -14,9 +14,8 @@ upload_file(
 \arguments{
 \item{file}{required; a length one character vector.}
 
-\item{purpose}{required; defaults to \code{"search"}; a length one character
-vector, one among \code{"search"}, \code{"answers"}, \code{"classifications"}, and
-\code{"fine-tune"}.}
+\item{purpose}{required; defaults to \code{"fine-tune"}; a length one character
+vector equals to\code{"fine-tune"}.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -31,10 +30,10 @@ and other supplementary information.
 }
 \description{
 Uploads a file that will be used for various purposes. The size of the
-storage is limited to 1 Gb. See \href{https://beta.openai.com/docs/api-reference/files/upload}{this page} for details.
+storage is limited to 1 Gb. See \href{https://platform.openai.com/docs/api-reference/files/upload}{this page} for details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/files/upload}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/files/upload}{official documentation}.
 }
 \examples{
 \dontrun{

@@ -43,11 +43,11 @@ and supplementary information.
 }
 \description{
 Creates an edit based on the provided input, instruction, and parameters. See
-\href{https://beta.openai.com/docs/api-reference/edits/create}{this page} for
+\href{https://platform.openai.com/docs/api-reference/edits/create}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/edits/create}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/edits/create}{official documentation}.
 }
 \examples{
 \dontrun{

@@ -1,11 +1,11 @@
 #' Create embeddings
 #'
 #' Creates an embedding vector that represents the provided input. See [this
-#' page](https://beta.openai.com/docs/api-reference/embeddings/create) for
+#' page](https://platform.openai.com/docs/api-reference/embeddings/create) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/embeddings/create).
+#' documentation](https://platform.openai.com/docs/api-reference/embeddings/create).
 #'
 #' @param engine_id `r lifecycle::badge("deprecated")`
 #' @param model required; a length one character vector.

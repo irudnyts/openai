@@ -3,6 +3,7 @@
 * Add endpoints `create_chat_completion()`, `create_transcription()`, and `create_translation()`
 * Downgrade R dependence to 3.5 (see [https://github.com/irudnyts/openai/issues/27](this issue))
 * Remove redundant options of `upload_file()`'s argument `purpose`, namely `"search"`, `"answers"`, and `"classifications"`
+* Update links in documentation
 
 # openai 0.3.0
 

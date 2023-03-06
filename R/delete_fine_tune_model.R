@@ -1,11 +1,11 @@
 #' Delete fine_tune model
 #'
 #' Deletes a fine-tuned model. See [this
-#' page](https://beta.openai.com/docs/api-reference/fine-tunes/delete-model) for
+#' page](https://platform.openai.com/docs/api-reference/fine-tunes/delete-model) for
 #' details.
 #'
 #' For arguments description please refer to the [official
-#' documentation](https://beta.openai.com/docs/api-reference/fine-tunes/delete-model).
+#' documentation](https://platform.openai.com/docs/api-reference/fine-tunes/delete-model).
 #'
 #' @param model required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`

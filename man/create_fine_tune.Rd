@@ -69,11 +69,11 @@ fine-tune.
 }
 \description{
 Creates a job that fine-tunes a specified model based on a given dataset. See
-\href{https://beta.openai.com/docs/api-reference/fine-tunes/create}{this page} for
+\href{https://platform.openai.com/docs/api-reference/fine-tunes/create}{this page} for
 details.
 }
 \details{
-For arguments description please refer to the \href{https://beta.openai.com/docs/api-reference/fine-tunes/create}{official documentation}.
+For arguments description please refer to the \href{https://platform.openai.com/docs/api-reference/fine-tunes/create}{official documentation}.
 }
 \examples{
 \dontrun{
