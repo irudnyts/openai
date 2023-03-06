@@ -8,9 +8,8 @@
 #' documentation](https://beta.openai.com/docs/api-reference/files/upload).
 #'
 #' @param file required; a length one character vector.
-#' @param purpose required; defaults to `"search"`; a length one character
-#'   vector, one among `"search"`, `"answers"`, `"classifications"`, and
-#'   `"fine-tune"`.
+#' @param purpose required; defaults to `"fine-tune"`; a length one character
+#'   vector equals to`"fine-tune"`.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.
