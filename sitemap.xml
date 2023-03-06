@@ -22,6 +22,9 @@
     <loc>https://irudnyts.github.io/openai/reference/cancel_fine_tune.html</loc>
   </url>
   <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_chat_completion.html</loc>
+  </url>
+  <url>
     <loc>https://irudnyts.github.io/openai/reference/create_completion.html</loc>
   </url>
   <url>
@@ -44,6 +47,12 @@
   </url>
   <url>
     <loc>https://irudnyts.github.io/openai/reference/create_moderation.html</loc>
+  </url>
+  <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_transcription.html</loc>
+  </url>
+  <url>
+    <loc>https://irudnyts.github.io/openai/reference/create_translation.html</loc>
   </url>
   <url>
     <loc>https://irudnyts.github.io/openai/reference/delete_file.html</loc>
