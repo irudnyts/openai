@@ -8,9 +8,9 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 3 notes
 
-Both notes are found only on Windows (Server 2022, R-devel 64-bit):
+* Windows (Server 2022, R-devel 64-bit):
 
 ```
 * checking for detritus in the temp directory ... NOTE
@@ -18,13 +18,26 @@ Found the following files/directories:
   'lastMiKTeXException'
 ```
 
-Further note is as follows:
+It seems like a leftover auto-generated file since none of the examples in the documentation launches the browser.
+
+* win-builder (R-release, R-devel)
 
 ```
-Found the following (possibly) invalid URLs:
+Found the following (possibly) invalid file URI:
+  URI: this%20issue
+    From: NEWS.md
 ```
 
-All links has been checked and are valid.
+The link has been checked and is valid.
+
+* Fedora Linux, R-devel, clang, gfortran
+
+```
+* checking HTML version of manual ... NOTE
+Skipping checking HTML validation: no command 'tidy' found
+```
+
+It seems like a problem related only to Fedora OS.
 
 ## Downstream dependencies
 
