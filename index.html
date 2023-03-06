@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="An R wrapper of OpenAI API endpoints (see
-    &lt;https://beta.openai.com/docs/introduction&gt; for details). This package
+    &lt;https://platform.openai.com/docs/introduction&gt; for details). This package
     covers Models, Completions, Chat, Edits, Images, Embeddings, Audio, Files,
     Fine-tunes, Moderations, and legacy Engines endpoints.">
 <title>R Wrapper for OpenAI API • openai</title>
@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="R Wrapper for OpenAI API">
 <meta property="og:description" content="An R wrapper of OpenAI API endpoints (see
-    &lt;https://beta.openai.com/docs/introduction&gt; for details). This package
+    &lt;https://platform.openai.com/docs/introduction&gt; for details). This package
     covers Models, Completions, Chat, Edits, Images, Embeddings, Audio, Files,
     Fine-tunes, Moderations, and legacy Engines endpoints.">
 <meta property="og:image" content="https://irudnyts.github.io/openai/logo.png">
@@ -100,7 +100,7 @@
 <div class="section level2">
 <h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a>
 </h2>
-<p>To use the OpenAI API, you need to provide an API key. First, sign up for OpenAI API on <a href="https://openai.com/api/" class="external-link">this page</a>. Once you signed up and logged in, you need to open <a href="https://beta.openai.com" class="external-link">this page</a>, click on <strong>Personal</strong>, and select <strong>View API keys</strong> in drop-down menu. You can then copy the key by clicking on the green text <strong>Copy</strong>.</p>
+<p>To use the OpenAI API, you need to provide an API key. First, sign up for OpenAI API on <a href="https://openai.com/api/" class="external-link">this page</a>. Once you signed up and logged in, you need to open <a href="https://platform.openai.com" class="external-link">this page</a>, click on <strong>Personal</strong>, and select <strong>View API keys</strong> in drop-down menu. You can then copy the key by clicking on the green text <strong>Copy</strong>.</p>
 <p>By default, functions of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> will look for <code>OPENAI_API_KEY</code> environment variable. If you want to set a global environment variable, you can use the following command (where <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> should be replaced with your actual key):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span></span>
