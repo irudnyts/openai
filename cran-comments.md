@@ -8,7 +8,7 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 3 notes
+0 errors | 0 warnings | 1 note
 
 * Windows (Server 2022, R-devel 64-bit):
 
@@ -20,25 +20,6 @@ Found the following files/directories:
 
 It seems like a leftover auto-generated file since none of the examples in the documentation launches the browser.
 
-* win-builder (R-release, R-devel)
-
-```
-Found the following (possibly) invalid file URI:
-  URI: this%20issue
-    From: NEWS.md
-```
-
-The link has been checked and is valid.
-
-* Fedora Linux, R-devel, clang, gfortran
-
-```
-* checking HTML version of manual ... NOTE
-Skipping checking HTML validation: no command 'tidy' found
-```
-
-It seems like a problem related only to Fedora OS.
-
 ## Downstream dependencies
 
 There are currently no downstream dependencies for this package.
@@ -48,6 +29,6 @@ There are currently no downstream dependencies for this package.
 This is a resubmission. In this version I have:
 
 * Added endpoints `create_chat_completion()`, `create_transcription()`, and `create_translation()`
-* Downgraded R dependence to 3.5 (see [https://github.com/irudnyts/openai/issues/27](this issue))
+* Downgraded R dependence to 3.5
 * Removed redundant options of `upload_file()`'s argument `purpose`, namely `"search"`, `"answers"`, and `"classifications"`
 * Updated links in documentation
