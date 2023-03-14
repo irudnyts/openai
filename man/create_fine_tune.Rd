@@ -7,7 +7,7 @@
 create_fine_tune(
   training_file,
   validation_file = NULL,
-  model = c("curie", "ada", "babbage", "davinci"),
+  model,
   n_epochs = 4,
   batch_size = NULL,
   learning_rate_multiplier = NULL,
@@ -27,8 +27,7 @@ create_fine_tune(
 \item{validation_file}{optional; defaults to \code{NULL}; a length one character
 vector.}
 
-\item{model}{model required; defaults to \code{"curie"}; a length one character
-vector, one among \code{"ada"}, \code{"babbage"}, \code{"curie"}, and \code{"davinci"}.}
+\item{model}{required; a length one character vector.}
 
 \item{n_epochs}{required; defaults to \code{4}; a length one numeric vector with
 the integer value greater than \code{0}.}

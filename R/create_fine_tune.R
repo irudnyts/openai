@@ -10,8 +10,7 @@
 #' @param training_file required; a length one character vector.
 #' @param validation_file optional; defaults to `NULL`; a length one character
 #'   vector.
-#' @param model model required; defaults to `"curie"`; a length one character
-#'   vector, one among `"ada"`, `"babbage"`, `"curie"`, and `"davinci"`.
+#' @param model required; a length one character vector.
 #' @param n_epochs required; defaults to `4`; a length one numeric vector with
 #'   the integer value greater than `0`.
 #' @param batch_size optional; defaults to `NULL`; a length one numeric vector
@@ -61,7 +60,7 @@
 create_fine_tune <- function(
         training_file,
         validation_file = NULL,
-        model = c("curie", "ada", "babbage", "davinci"),
+        model,
         n_epochs = 4,
         batch_size = NULL,
         learning_rate_multiplier = NULL,
@@ -74,8 +73,6 @@ create_fine_tune <- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
-
-    model <- match.arg(model)
 
     #---------------------------------------------------------------------------
     # Validate arguments
