@@ -8,8 +8,7 @@
 #' documentation](https://platform.openai.com/docs/api-reference/completions/create).
 #'
 #' @param input required; an arbitrary length character vector.
-#' @param model required; a length one character vector. One among
-#' `"text-moderation-stable"` and `"text-moderation-latest"`.
+#' @param model required; a length one character vector.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.
@@ -23,12 +22,10 @@
 #' @export
 create_moderation <- function(
         input,
-        model = c("text-moderation-stable", "text-moderation-latest"),
+        model,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
-
-    model <- match.arg(model)
 
     #---------------------------------------------------------------------------
     # Validate arguments
