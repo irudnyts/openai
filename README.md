@@ -140,6 +140,7 @@ It is also possible to use ChatGPT’s `gpt-3.5-turbo` model via
 
 ``` r
 create_chat_completion(
+    model = "gpt-3.5-turbo",
     messages = list(
         list(
             "role" = "system",
@@ -195,7 +196,7 @@ Finally, the speech-to-text
 
 ``` r
 voice_sample_ua <- system.file("extdata", "sample-ua.m4a", package = "openai")
-create_translation(file = voice_sample_ua)
+create_translation(file = voice_sample_ua, model = "whisper-1")
 #> $text
 #> [1] "I want to check how this model works"
 ```
