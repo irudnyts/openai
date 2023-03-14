@@ -7,8 +7,7 @@
 #' For arguments description please refer to the [official
 #' documentation](https://platform.openai.com/docs/api-reference/chat/create).
 #'
-#' @param model required; defaults to `"gpt-3.5-turbo"`; a length one character
-#'    vector, one among `"gpt-3.5-turbo"` and `"gpt-3.5-turbo-0301"`.
+#' @param model required; a length one character vector.
 #' @param messages required; defaults to `NULL`; a list in the following
 #'   format: `list(list("role" = "user", "content" = "Hey! How old are you?")`
 #' @param temperature required; defaults to `1`; a length one numeric vector
@@ -60,7 +59,7 @@
 #' }
 #' @export
 create_chat_completion<- function(
-        model = c("gpt-3.5-turbo", "gpt-3.5-turbo-0301"),
+        model,
         messages = NULL,
         temperature = 1,
         top_p = 1,
@@ -75,8 +74,6 @@ create_chat_completion<- function(
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
 ) {
-
-    model <- match.arg(model)
 
     #---------------------------------------------------------------------------
     # Validate arguments

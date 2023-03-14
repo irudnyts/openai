@@ -5,7 +5,7 @@
 \title{Create chat completion}
 \usage{
 create_chat_completion(
-  model = c("gpt-3.5-turbo", "gpt-3.5-turbo-0301"),
+  model,
   messages = NULL,
   temperature = 1,
   top_p = 1,
@@ -22,8 +22,7 @@ create_chat_completion(
 )
 }
 \arguments{
-\item{model}{required; defaults to \code{"gpt-3.5-turbo"}; a length one character
-vector, one among \code{"gpt-3.5-turbo"} and \code{"gpt-3.5-turbo-0301"}.}
+\item{model}{required; a length one character vector.}
 
 \item{messages}{required; defaults to \code{NULL}; a list in the following
 format: \verb{list(list("role" = "user", "content" = "Hey! How old are you?")}}
