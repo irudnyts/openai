@@ -36,6 +36,9 @@ For arguments description please refer to the \href{https://platform.openai.com/
 }
 \examples{
 \dontrun{
-create_moderation("I want to kill them all.")
+create_moderation(
+    input = "I want to kill them all.",
+    model = "text-moderation-stable"
+)
 }
 }

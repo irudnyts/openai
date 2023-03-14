@@ -37,6 +37,7 @@
 #'   supplementary information.
 #' @examples \dontrun{
 #' create_chat_completion(
+#'    model = "gpt-3.5-turbo",
 #'    messages = list(
 #'        list(
 #'            "role" = "system",

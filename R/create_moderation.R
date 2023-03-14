@@ -17,7 +17,10 @@
 #' @return Returns a list, elements of which contain information about the
 #'   model.
 #' @examples \dontrun{
-#' create_moderation("I want to kill them all.")
+#' create_moderation(
+#'     input = "I want to kill them all.",
+#'     model = "text-moderation-stable"
+#' )
 #' }
 #' @export
 create_moderation <- function(

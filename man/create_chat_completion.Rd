@@ -76,6 +76,7 @@ For arguments description please refer to the \href{https://platform.openai.com/
 \examples{
 \dontrun{
 create_chat_completion(
+   model = "gpt-3.5-turbo",
    messages = list(
        list(
            "role" = "system",
