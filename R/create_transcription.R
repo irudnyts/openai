@@ -8,7 +8,7 @@
 #' documentation](https://platform.openai.com/docs/api-reference/audio/create).
 #'
 #' @param file required; a length one character vector.
-#' @param model required; a length one character vector equals to `"whisper-1"`.
+#' @param model required; a length one character vector.
 #' @param prompt optional; defaults to `NULL`; a length one character vector.
 #' @param response_format required; defaults to `"json"`; length one character
 #'   vector equals to `"json"`. **Currently only `"json"` is implemented.**
@@ -26,13 +26,13 @@
 #' voice_sample_en <- system.file(
 #'     "extdata", "sample-en.m4a", package = "openai"
 #' )
-#' create_transcription(file = voice_sample_en)
+#' create_transcription(file = voice_sample_en, model = "whisper-1")
 #' }
 #' @family audio functions
 #' @export
 create_transcription <- function(
         file,
-        model = "whisper-1",
+        model,
         prompt = NULL,
         response_format = "json", # json, text, srt, verbose_json, or vtt
         temperature = 0,
@@ -41,7 +41,6 @@ create_transcription <- function(
         openai_organization = NULL
 ) {
 
-    model <- match.arg(model)
     response_format <- match.arg(response_format)
 
     #---------------------------------------------------------------------------

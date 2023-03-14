@@ -6,7 +6,7 @@
 \usage{
 create_translation(
   file,
-  model = "whisper-1",
+  model,
   prompt = NULL,
   response_format = "json",
   temperature = 0,
@@ -17,7 +17,7 @@ create_translation(
 \arguments{
 \item{file}{required; a length one character vector.}
 
-\item{model}{required; a length one character vector equals to \code{"whisper-1"}.}
+\item{model}{required; a length one character vector.}
 
 \item{prompt}{optional; defaults to \code{NULL}; a length one character vector.}
 
@@ -51,7 +51,7 @@ For arguments description please refer to the \href{https://platform.openai.com/
 voice_sample_ua <- system.file(
     "extdata", "sample-ua.m4a", package = "openai"
 )
-create_translation(file = voice_sample_ua)
+create_translation(file = voice_sample_ua, model = "whisper-1")
 }
 }
 \seealso{
