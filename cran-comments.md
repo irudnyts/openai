@@ -28,7 +28,4 @@ There are currently no downstream dependencies for this package.
 
 This is a resubmission. In this version I have:
 
-* Added endpoints `create_chat_completion()`, `create_transcription()`, and `create_translation()`
-* Downgraded R dependence to 3.5
-* Removed redundant options of `upload_file()`'s argument `purpose`, namely `"search"`, `"answers"`, and `"classifications"`
-* Updated links in documentation
+* Relaxed validation of `model` argument in functions `create_chat_completion()`, `create_fine_tune()`, `create_moderation()`, `create_embedding()`, `create_transcription()`, and `create_translation()`. Otherwise, each time OpenAI will roll out a new model, the list of models has to be updated
