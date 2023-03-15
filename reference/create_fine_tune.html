@@ -14,7 +14,7 @@ details."><meta property="og:image" content="https://irudnyts.github.io/openai/l
     
     <a class="navbar-brand me-2" href="../index.html">openai</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@ details.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_fine_tune</span><span class="op">(</span></span>
 <span>  <span class="va">training_file</span>,</span>
 <span>  validation_file <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"curie"</span>, <span class="st">"ada"</span>, <span class="st">"babbage"</span>, <span class="st">"davinci"</span><span class="op">)</span>,</span>
+<span>  <span class="va">model</span>,</span>
 <span>  n_epochs <span class="op">=</span> <span class="fl">4</span>,</span>
 <span>  batch_size <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  learning_rate_multiplier <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -87,8 +87,7 @@ vector.</p></dd>
 
 
 <dt>model</dt>
-<dd><p>model required; defaults to <code>"curie"</code>; a length one character
-vector, one among <code>"ada"</code>, <code>"babbage"</code>, <code>"curie"</code>, and <code>"davinci"</code>.</p></dd>
+<dd><p>required; a length one character vector.</p></dd>
 
 
 <dt>n_epochs</dt>

@@ -39,7 +39,7 @@
     
     <a class="navbar-brand me-2" href="index.html">openai</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -163,6 +163,7 @@
 <p>It is also possible to use ChatGPT’s <code>gpt-3.5-turbo</code> model via <code><a href="reference/create_chat_completion.html">create_chat_completion()</a></code>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/create_chat_completion.html">create_chat_completion</a></span><span class="op">(</span></span>
+<span>    model <span class="op">=</span> <span class="st">"gpt-3.5-turbo"</span>,</span>
 <span>    messages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>        <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>            <span class="st">"role"</span> <span class="op">=</span> <span class="st">"system"</span>,</span>
@@ -213,7 +214,7 @@
 <p>Finally, the speech-to-text <a href="https://openai.com/research/whisper" class="external-link">Whisper</a> is available via <code><a href="reference/create_transcription.html">create_transcription()</a></code> and <code><a href="reference/create_translation.html">create_translation()</a></code>:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">voice_sample_ua</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"sample-ua.m4a"</span>, package <span class="op">=</span> <span class="st">"openai"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/create_translation.html">create_translation</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">voice_sample_ua</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/create_translation.html">create_translation</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">voice_sample_ua</span>, model <span class="op">=</span> <span class="st">"whisper-1"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $text</span></span>
 <span><span class="co">#&gt; [1] "I want to check how this model works"</span></span></code></pre></div>
 </div>

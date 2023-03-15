@@ -12,7 +12,7 @@ details."><meta property="og:image" content="https://irudnyts.github.io/openai/l
     
     <a class="navbar-brand me-2" href="../index.html">openai</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@ details.</p>
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_moderation</span><span class="op">(</span></span>
 <span>  <span class="va">input</span>,</span>
-<span>  model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"text-moderation-stable"</span>, <span class="st">"text-moderation-latest"</span><span class="op">)</span>,</span>
+<span>  <span class="va">model</span>,</span>
 <span>  openai_api_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"OPENAI_API_KEY"</span><span class="op">)</span>,</span>
 <span>  openai_organization <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -69,8 +69,7 @@ details.</p>
 
 
 <dt>model</dt>
-<dd><p>required; a length one character vector. One among
-<code>"text-moderation-stable"</code> and <code>"text-moderation-latest"</code>.</p></dd>
+<dd><p>required; a length one character vector.</p></dd>
 
 
 <dt>openai_api_key</dt>
@@ -99,7 +98,10 @@ model.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="fu">create_moderation</span><span class="op">(</span><span class="st">"I want to kill them all."</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">create_moderation</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    input <span class="op">=</span> <span class="st">"I want to kill them all."</span>,</span></span>
+<span class="r-in"><span>    model <span class="op">=</span> <span class="st">"text-moderation-stable"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
