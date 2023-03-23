@@ -8,7 +8,7 @@ create_translation(
   file,
   model,
   prompt = NULL,
-  response_format = "json",
+  response_format = c("json", "text", "srt", "verbose_json", "vtt"),
   temperature = 0,
   openai_api_key = Sys.getenv("OPENAI_API_KEY"),
   openai_organization = NULL
@@ -22,7 +22,7 @@ create_translation(
 \item{prompt}{optional; defaults to \code{NULL}; a length one character vector.}
 
 \item{response_format}{required; defaults to \code{"json"}; length one character
-vector equals to \code{"json"}. \strong{Currently only \code{"json"} is implemented.}}
+vector with one of "json", "verbose_json", "text", "srt" or "vtt".}
 
 \item{temperature}{required; defaults to \code{1}; a length one numeric vector
 with the value between \code{0} and \code{2}.}
@@ -36,7 +36,8 @@ character vector. Specifies OpenAI organization.}
 }
 \value{
 Returns a list, elements of which contain a transcription and
-supplementary information.
+supplementary information, if the response_format is json, otherwise
+the translated text is returned.
 }
 \description{
 Translates audio into into English. See
