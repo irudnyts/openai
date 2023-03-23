@@ -11,7 +11,7 @@
 #' @param model required; a length one character vector.
 #' @param prompt optional; defaults to `NULL`; a length one character vector.
 #' @param response_format required; defaults to `"json"`; length one character
-#'   vector equals to `"json"`. **Currently only `"json"` is implemented.**
+#'   vector with one of "json", "verbose_json", "text", "srt" or "vtt".
 #' @param temperature required; defaults to `1`; a length one numeric vector
 #'   with the value between `0` and `2`.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
@@ -20,7 +20,8 @@
 #' @param openai_organization optional; defaults to `NULL`; a length one
 #'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, elements of which contain a transcription and
-#'   supplementary information.
+#'   supplementary information, if the response_format is json, otherwise
+#'   the translated text is returned.
 #' @examples \dontrun{
 #' voice_sample_ua <- system.file(
 #'     "extdata", "sample-ua.m4a", package = "openai"
@@ -33,7 +34,7 @@ create_translation <- function(
         file,
         model,
         prompt = NULL,
-        response_format = "json", # json, text, srt, verbose_json, or vtt
+        response_format = c("json", "text", "srt", "verbose_json", "vtt"),
         temperature = 0,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
@@ -41,18 +42,22 @@ create_translation <- function(
 
     response_format <- match.arg(response_format)
 
+    parse_json <- function(x) jsonlite::fromJSON(txt = x, flatten = TRUE)
+    parse_fn <- switch(response_format, json = parse_json, verbose_json = parse_json)
+
     #---------------------------------------------------------------------------
     # Validate arguments
 
-    allowed_extenssions <- c(
+    allowed_extensions <- c(
         "mp3", "mp4", "mpeg", "mpga", "m4a", "wav", "webm"
     )
+
     assertthat::assert_that(
         assertthat::is.string(file),
         assertthat::noNA(file),
         file.exists(file),
         assertthat::is.readable(file),
-        tools::file_ext(file) %in% allowed_extenssions
+        tools::file_ext(file) %in% allowed_extensions
     )
 
     assertthat::assert_that(
@@ -126,11 +131,18 @@ create_translation <- function(
         encode = "multipart"
     )
 
+    if (is.null(parse_fn)) {
+        if (httr::http_error(response))
+            stop(sprintf("OpenAI API request failed [%s]", httr::http_status(response)),
+                 call. = FALSE)
+        return (httr::content(response, as = "text", encoding = "UTF-8"))
+    }
+
     verify_mime_type(response)
 
     parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(flatten = TRUE)
+        parse_fn()
 
     #---------------------------------------------------------------------------
     # Check whether request failed and return parsed
