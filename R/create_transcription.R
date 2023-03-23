@@ -11,17 +11,19 @@
 #' @param model required; a length one character vector.
 #' @param prompt optional; defaults to `NULL`; a length one character vector.
 #' @param response_format required; defaults to `"json"`; length one character
-#'   vector equals to `"json"`. **Currently only `"json"` is implemented.**
+#'   vector with one of "json", "verbose_json", "text", "srt" or "vtt".
 #' @param temperature required; defaults to `1`; a length one numeric vector
 #'   with the value between `0` and `2`.
-#' @param language optional; defaults to `NULL`; a length one character vector.
+#' @param language optional; defaults to `NULL`; a length one character vector
+#'   with an ISO 639-1 language code.
 #' @param openai_api_key required; defaults to `Sys.getenv("OPENAI_API_KEY")`
 #'   (i.e., the value is retrieved from the `.Renviron` file); a length one
 #'   character vector. Specifies OpenAI API key.
 #' @param openai_organization optional; defaults to `NULL`; a length one
 #'   character vector. Specifies OpenAI organization.
 #' @return Returns a list, elements of which contain a transcription and
-#'   supplementary information.
+#'   supplementary information, if the response format is json, otherwise
+#'   the transcription text is returned
 #' @examples \dontrun{
 #' voice_sample_en <- system.file(
 #'     "extdata", "sample-en.m4a", package = "openai"
@@ -34,7 +36,7 @@ create_transcription <- function(
         file,
         model,
         prompt = NULL,
-        response_format = "json", # json, text, srt, verbose_json, or vtt
+        response_format = c("json", "text", "srt", "verbose_json", "vtt"),
         temperature = 0,
         language = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
@@ -43,10 +45,13 @@ create_transcription <- function(
 
     response_format <- match.arg(response_format)
 
+    parse_json <- function(x) jsonlite::fromJSON(txt = x, flatten = TRUE)
+    parse_fn <- switch(response_format, json = parse_json, verbose_json = parse_json)
+
     #---------------------------------------------------------------------------
     # Validate arguments
 
-    allowed_extenssions <- c(
+    allowed_extensions <- c(
         "mp3", "mp4", "mpeg", "mpga", "m4a", "wav", "webm"
     )
     assertthat::assert_that(
@@ -54,7 +59,7 @@ create_transcription <- function(
         assertthat::noNA(file),
         file.exists(file),
         assertthat::is.readable(file),
-        tools::file_ext(file) %in% allowed_extenssions
+        tools::file_ext(file) %in% allowed_extensions
     )
 
     assertthat::assert_that(
@@ -83,7 +88,8 @@ create_transcription <- function(
     if (!is.null(language)) {
         assertthat::assert_that(
             assertthat::is.string(language),
-            assertthat::noNA(language)
+            assertthat::noNA(language),
+            language %in% openai::iso_languages
         )
     }
 
@@ -136,11 +142,18 @@ create_transcription <- function(
         encode = "multipart"
     )
 
+    if (is.null(parse_fn)) {
+        if (httr::http_error(response))
+            stop(sprintf("OpenAI API request failed [%s]", httr::http_status(response)),
+                 call. = FALSE)
+        return (httr::content(response, as = "text", encoding = "UTF-8"))
+    }
+
     verify_mime_type(response)
 
     parsed <- response %>%
         httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(flatten = TRUE)
+        parse_fn()
 
     #---------------------------------------------------------------------------
     # Check whether request failed and return parsed
