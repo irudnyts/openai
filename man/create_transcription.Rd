@@ -8,7 +8,7 @@ create_transcription(
   file,
   model,
   prompt = NULL,
-  response_format = "json",
+  response_format = c("json", "text", "srt", "verbose_json", "vtt"),
   temperature = 0,
   language = NULL,
   openai_api_key = Sys.getenv("OPENAI_API_KEY"),
@@ -23,12 +23,13 @@ create_transcription(
 \item{prompt}{optional; defaults to \code{NULL}; a length one character vector.}
 
 \item{response_format}{required; defaults to \code{"json"}; length one character
-vector equals to \code{"json"}. \strong{Currently only \code{"json"} is implemented.}}
+vector with one of "json", "verbose_json", "text", "srt" or "vtt".}
 
 \item{temperature}{required; defaults to \code{1}; a length one numeric vector
 with the value between \code{0} and \code{2}.}
 
-\item{language}{optional; defaults to \code{NULL}; a length one character vector.}
+\item{language}{optional; defaults to \code{NULL}; a length one character vector
+with an ISO 639-1 language code.}
 
 \item{openai_api_key}{required; defaults to \code{Sys.getenv("OPENAI_API_KEY")}
 (i.e., the value is retrieved from the \code{.Renviron} file); a length one
@@ -39,7 +40,8 @@ character vector. Specifies OpenAI organization.}
 }
 \value{
 Returns a list, elements of which contain a transcription and
-supplementary information.
+supplementary information, if the response format is json, otherwise
+the transcription text is returned
 }
 \description{
 Transcribes audio into the input language. See

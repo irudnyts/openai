@@ -1,2 +1,6 @@
 voice_sample_ua <- system.file("extdata", "sample-ua.m4a", package = "openai")
 create_translation(file = voice_sample_ua, model = "whisper-1")
+create_translation(file = voice_sample_ua, model = "whisper-1", response_format = "srt")
+create_translation(file = voice_sample_ua, model = "whisper-1", response_format = "vtt")
+create_translation(file = voice_sample_ua, model = "whisper-1", response_format = "text")
+create_translation(file = voice_sample_ua, model = "whisper-1", response_format = "verbose_json")
