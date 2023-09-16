@@ -30,8 +30,6 @@ server <- function(input, output, session) {
     finished <- reactiveVal(TRUE)
     observeEvent(input$send, {
         saveRDS(character(), temp_stream_content)
-        finished(FALSE)
-        saveRDS(finished(), temp_finished)
         prompt <- input$prompt
         future_promise({
             create_chat_completion(
@@ -56,7 +54,8 @@ server <- function(input, output, session) {
                 }
             )
         })
-        return()
+        finished(FALSE)
+        saveRDS(finished(), temp_finished)
     })
     output$answer <- renderText({
         if (input$send > 0 && !finished()) {
