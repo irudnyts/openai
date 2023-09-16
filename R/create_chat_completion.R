@@ -17,7 +17,8 @@
 #' @param n required; defaults to `1`; a length one numeric vector with the
 #'   integer value greater than `0`.
 #' @param stream required; defaults to `FALSE`; a length one logical vector.
-#'   **Currently is not implemented.**
+#' @param stream_function only required if `stream` is `TRUE`. Specifies the callback function
+#' that will be applied to each chunk of the response. Default function just prints the chunks.
 #' @param stop optional; defaults to `NULL`; a character vector of length
 #'   between one and four.
 #' @param max_tokens required; defaults to `(4096 - prompt tokens)`; a length
@@ -66,6 +67,7 @@ create_chat_completion<- function(
         top_p = 1,
         n = 1,
         stream = FALSE,
+        stream_function = function(x) print(x),
         stop = NULL,
         max_tokens = NULL,
         presence_penalty = 0,
@@ -114,9 +116,14 @@ create_chat_completion<- function(
 
     assertthat::assert_that(
         assertthat::is.flag(stream),
-        assertthat::noNA(stream),
-        is_false(stream)
+        assertthat::noNA(stream)
     )
+
+    if (stream) {
+        assertthat::assert_that(
+            is.function(stream_function)
+        )
+    }
 
     if (!is.null(stop)) {
         assertthat::assert_that(
@@ -206,18 +213,29 @@ create_chat_completion<- function(
     #---------------------------------------------------------------------------
     # Make a request and parse it
 
+    stream_writer <- NULL
+    if (stream) {
+        stream_writer <- httr::write_stream(function(bytes) {
+            char <- rawToChar(bytes)
+            parsed_stream <- lapply(unlist(strsplit(char, "data: ")), function(x) {
+                if (jsonlite::validate(x)) {
+                    jsonlite::fromJSON(x, flatten = TRUE)
+                }
+            })
+            parsed_stream <- parsed_stream[!unlist(lapply(parsed_stream, is.null))]
+            stream_function(parsed_stream)
+        })
+    }
+
     response <- httr::POST(
         url = base_url,
+        stream_writer,
         httr::add_headers(.headers = headers),
         body = body,
         encode = "json"
     )
 
     verify_mime_type(response)
-
-    parsed <- response %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(flatten = TRUE)
 
     #---------------------------------------------------------------------------
     # Check whether request failed and return parsed
@@ -232,6 +250,13 @@ create_chat_completion<- function(
             stop(call. = FALSE)
     }
 
-    parsed
+    if (stream) {
+        return(response)
+    }
 
+    parsed <- response %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
+        jsonlite::fromJSON(flatten = TRUE)
+
+    parsed
 }
