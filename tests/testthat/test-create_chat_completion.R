@@ -42,7 +42,7 @@ test_argument_validation(
     function_name = function_name,
     argument_name = "stream_function",
     argument_type = "function",
-    allow_null = FALSE
+    allow_null = TRUE
 )
 
 test_argument_validation(
