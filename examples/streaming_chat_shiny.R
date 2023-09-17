@@ -21,6 +21,7 @@ stream_parser <- function(x) {
 }
 
 ui <- fluidPage(
+    selectInput(inputId = "model", label = "Select model", choices = c("gpt-4", "gpt-3.5-turbo")),
     textAreaInput(inputId = "prompt", label = "Enter your prompt here", value = "Count to 100"),
     actionButton(inputId = "send", label = "Send"),
     textOutput(outputId = "answer")
@@ -31,9 +32,10 @@ server <- function(input, output, session) {
     observeEvent(input$send, {
         saveRDS(character(), temp_stream_content)
         prompt <- input$prompt
+        model <- input$model
         future_promise({
             create_chat_completion(
-                model = "gpt-3.5-turbo",
+                model = model,
                 messages = list(
                     list(
                         "role" = "system",

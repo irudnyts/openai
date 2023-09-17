@@ -237,6 +237,14 @@ create_chat_completion<- function(
 
     verify_mime_type(response)
 
+    if (stream) {
+        return()
+    }
+
+    parsed <- response %>%
+        httr::content(as = "text", encoding = "UTF-8") %>%
+        jsonlite::fromJSON(flatten = TRUE)
+
     #---------------------------------------------------------------------------
     # Check whether request failed and return parsed
 
@@ -249,14 +257,6 @@ create_chat_completion<- function(
         ) %>%
             stop(call. = FALSE)
     }
-
-    if (stream) {
-        return(response)
-    }
-
-    parsed <- response %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(flatten = TRUE)
 
     parsed
 }
