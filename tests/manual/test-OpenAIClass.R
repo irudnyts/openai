@@ -1,7 +1,8 @@
-# client <- OpenAI$new("your_api_key")
-
 # devtools::load_all()
-client <- OpenAI$new(Sys.getenv("OPENAI_API_KEY"))
+
+# client <- OpenAI$new("your_api_key")
+# client <- openai$new(Sys.getenv("OPENAI_API_KEY"))
+client <- OpenAI(api_key = Sys.getenv("OPENAI_API_KEY"))
 
 messages <- list(
     list("role" = "system",
