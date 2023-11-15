@@ -1,6 +1,6 @@
 # client <- OpenAI$new("your_api_key")
 
-devtools::load_all()
+# devtools::load_all()
 client <- OpenAI$new(Sys.getenv("OPENAI_API_KEY"))
 
 messages <- list(
@@ -14,7 +14,6 @@ messages <- list(
          "content" = "Where was it played?")
 )
 
-debug(client$chat$completions$create)
 client$chat$completions$create(
     model = "gpt-3.5-turbo",
     messages = messages
