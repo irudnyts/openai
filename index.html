@@ -80,6 +80,17 @@
 </div>
 <!-- badges: start -->
 
+<blockquote>
+<p><span class="emoji" data-emoji="warning">⚠️</span> <strong>Note:</strong> <span class="emoji" data-emoji="warning">⚠️</span> OpenAI introduced major changes in package’s version 1.0.0. Since the idea of this package is to mimic OpenAI’s official Python package, from now on, everything will be re-written in object-oriented way. Current implementation will be gradually and gently depricated. One can install the development verion using:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"irudnyts/openai"</span>, <span class="at">ref =</span> <span class="st">"r6"</span>)</span></code></pre></div>
+<p>Then, the code will look like:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openai)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="ot">&lt;-</span> <span class="fu">OpenAI</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>completion <span class="ot">&lt;-</span> client<span class="sc">$</span>chat<span class="sc">$</span>completions<span class="sc">$</span><span class="fu">create</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> <span class="st">"gpt-3.5-turbo"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">messages =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="st">"role"</span> <span class="ot">=</span> <span class="st">"user"</span>, <span class="st">"content"</span> <span class="ot">=</span> <span class="st">"What's up?"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</blockquote>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
@@ -89,31 +100,31 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>The easiest way to install <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> from CRAN is to use the “official” <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> function:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"openai"</span><span class="op">)</span></span></code></pre></div>
-<p>You can also install the development version of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<p>You can also install the development version of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> from <a href="https://github.com/" class="external-link">GitHub</a>, which uses the latest version of official OpenAI’s Python package:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"irudnyts/openai"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"irudnyts/openai"</span>, ref <span class="op">=</span> <span class="st">"r6"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="authentication">Authentication<a class="anchor" aria-label="anchor" href="#authentication"></a>
 </h2>
 <p>To use the OpenAI API, you need to provide an API key. First, sign up for OpenAI API on <a href="https://openai.com/api/" class="external-link">this page</a>. Once you signed up and logged in, you need to open <a href="https://platform.openai.com" class="external-link">this page</a>, click on <strong>Personal</strong>, and select <strong>View API keys</strong> in drop-down menu. You can then copy the key by clicking on the green text <strong>Copy</strong>.</p>
 <p>By default, functions of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> will look for <code>OPENAI_API_KEY</code> environment variable. If you want to set a global environment variable, you can use the following command (where <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> should be replaced with your actual key):</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span></span>
 <span>    OPENAI_API_KEY <span class="op">=</span> <span class="st">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>Otherwise, you can add the key to the <code>.Renviron</code> file of the project. The following commands will open <code>.Renviron</code> for editing:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://usethis.r-lib.org" class="external-link">usethis</a></span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"usethis"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">edit_r_environ</span><span class="op">(</span>scope <span class="op">=</span> <span class="st">"project"</span><span class="op">)</span></span></code></pre></div>
 <p>You can add the following line to the file (again, replace <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code> with your actual key):</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">OPENAI_API_KEY</span><span class="op">=</span><span class="va">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span></code></pre></div>
 <p><strong>Note:</strong> If you are using GitHub/Gitlab, do not forget to add <code>.Renviron</code> to <code>.gitignore</code>!</p>
 <p>Finally, you can always provide the key manually to the functions of the package.</p>
@@ -122,7 +133,7 @@
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>Functions of <a href="https://github.com/irudnyts/openai" class="external-link">openai</a> have self-explanatory names. For example, to create a completion, one can use <code><a href="reference/create_completion.html">create_completion()</a></code> function:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/irudnyts/openai" class="external-link">openai</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/create_completion.html">create_completion</a></span><span class="op">(</span></span>
@@ -157,11 +168,11 @@
 <span><span class="co">#&gt; $usage$total_tokens</span></span>
 <span><span class="co">#&gt; [1] 23</span></span></code></pre></div>
 <p>Further, one can generate an image using DALL·E text-to-image model with <code><a href="reference/create_image.html">create_image()</a></code>:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/create_image.html">create_image</a></span><span class="op">(</span><span class="st">"An astronaut riding a horse in a photorealistic style"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/astronaut.png" width="256px" style="display: block; margin: auto;"></p>
 <p>It is also possible to use ChatGPT’s <code>gpt-3.5-turbo</code> model via <code><a href="reference/create_chat_completion.html">create_chat_completion()</a></code>:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/create_chat_completion.html">create_chat_completion</a></span><span class="op">(</span></span>
 <span>    model <span class="op">=</span> <span class="st">"gpt-3.5-turbo"</span>,</span>
 <span>    messages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
@@ -212,7 +223,7 @@
 <span><span class="co">#&gt; message.content</span></span>
 <span><span class="co">#&gt; 1 The 2020 World Series was played at Globe Life Field in Arlington, Texas.</span></span></code></pre></div>
 <p>Finally, the speech-to-text <a href="https://openai.com/research/whisper" class="external-link">Whisper</a> is available via <code><a href="reference/create_transcription.html">create_transcription()</a></code> and <code><a href="reference/create_translation.html">create_translation()</a></code>:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">voice_sample_ua</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"sample-ua.m4a"</span>, package <span class="op">=</span> <span class="st">"openai"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/create_translation.html">create_translation</a></span><span class="op">(</span>file <span class="op">=</span> <span class="va">voice_sample_ua</span>, model <span class="op">=</span> <span class="st">"whisper-1"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $text</span></span>
