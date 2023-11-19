@@ -22,7 +22,7 @@ Imports:
     assertthat (>= 0.2.1),
     glue (>= 1.6.2),
     httr (>= 1.4.3),
-    httr2 (>= 0.2.3),
+    httr2 (>= 1.0.0),
     jsonlite (>= 1.8.0),
     lifecycle (>= 1.0.1),
     magrittr (>= 2.0.3),
