@@ -14,6 +14,24 @@ status](https://www.r-pkg.org/badges/version/openai)](https://CRAN.R-project.org
 Downloads](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)](https://cranlogs.r-pkg.org/badges/grand-total/openai?color=brightgreen)
 <!-- badges: end -->
 
+> :warning: **Note:** :warning: OpenAI introduced major changes in
+> package’s version 1.0.0. Since the idea of this package is to mimic
+> OpenAI’s official Python package, from now on, everything will be
+> re-written in object-oriented way. Current implementation will be
+> gradually and gently depricated. One can install the development
+> verion using:
+>
+>     remotes::install_github("irudnyts/openai", ref = "r6")
+>
+> Then, the code will look like:
+>
+>     library(openai)
+>     client <- OpenAI()
+>     completion <- client$chat$completions$create(
+>         model = "gpt-3.5-turbo",
+>         messages = list(list("role" = "user", "content" = "What's up?"))
+>     )
+
 ## Overview
 
 `{openai}` is an R wrapper of OpenAI API endpoints. This package covers
@@ -32,12 +50,13 @@ install.packages("openai")
 ```
 
 You can also install the development version of `{openai}` from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/), which uses the latest version of official
+OpenAI’s Python package:
 
 ``` r
 if (!require(remotes))
     install.packages("remotes")
-remotes::install_github("irudnyts/openai")
+remotes::install_github("irudnyts/openai", ref = "r6")
 ```
 
 ## Authentication
