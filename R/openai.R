@@ -13,5 +13,10 @@ OpenAI <- function(
         # http_client = NULL,
         # .strict_response_validation = NULL
 ) {
-    openai$new(api_key, organization)
+    openai$new(
+        api_key = api_key,
+        organization = organization,
+        base_url = base_url,
+        max_retries = max_retries
+    )
 }
