@@ -3,14 +3,40 @@ openai <- R6::R6Class(
     "openai",
     public = list(
         api_key = NULL,
-        base_url = NULL,
         organization = NULL,
+        base_url = NULL,
+        max_retries = NULL,
+
         chat = list(completions = list()),
 
-        initialize = function(api_key) {
+        initialize = function(
+            api_key = NULL,
+            organization = NULL,
+            base_url = NULL,
+            # timeout = NULL,
+            max_retries = NULL #,
+            # default_headers = NULL,
+            # default_query = NULL,
+            # http_client = NULL,
+            # .strict_response_validation = NULL
+        ) {
+
+            if (is.null(api_key))
+                api_key <- Sys.getenv("OPENAI_API_KEY")
+
+            if(is.null(organization))
+                organization <- Sys.getenv("OPENAI_ORG_ID")
+
+            if(is.null(base_url))
+                base_url <- "https://api.openai.com/v1/"
+
+            if(is.null(max_retries))
+                max_retries <- 2
 
             self$api_key = api_key
-            self$base_url = "https://api.openai.com/v1/"
+            self$organization = organization
+            self$base_url = base_url
+            self$max_retries = max_retries
 
             self$chat$completions$create <- private$chat_competions_create
 

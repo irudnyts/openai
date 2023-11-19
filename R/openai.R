@@ -2,6 +2,11 @@
 NULL
 
 #' @export
-OpenAI <- function(api_key) {
-    openai$new(api_key)
+OpenAI <- function(
+        api_key = NULL,
+        organization = NULL,
+        base_url = NULL,
+        max_retries = NULL
+) {
+    openai$new(api_key, organization)
 }
