@@ -52,8 +52,7 @@ chat_completions_create <- function(messages,
         httr2::req_headers("OpenAI-Organization" = organization) |>
         httr2::req_body_json(data = body) |>
         httr2::req_retry(max_tries = max_retries) |>
-        # httr2::req_dry_run()
-        httr2::req_perform()
+        httr2::req_perform() # httr2::req_stream() if strem = TRUE
 
     resp |>
         httr2::resp_body_json()
