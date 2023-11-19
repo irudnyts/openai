@@ -44,33 +44,50 @@ openai <- R6::R6Class(
 
     ),
     private = list(
-        chat_competions_create = function(model,
-                                          messages = NULL,
-                                          temperature = 1,
-                                          top_p = 1,
-                                          n = 1,
-                                          stream = FALSE,
-                                          stop = NULL,
-                                          max_tokens = NULL,
-                                          presence_penalty = 0,
-                                          frequency_penalty = 0,
-                                          logit_bias = NULL,
-                                          user = NULL) {
-            create_chat_completion(
-                model = model,
+        chat_competions_create = function(
+            messages,
+            model,
+            frequency_penalty = NULL,
+            logit_bias = NULL,
+            max_tokens = NULL,
+            n = NULL,
+            presence_penalty = NULL,
+            response_format = NULL,
+            seed = NULL,
+            stop = NULL,
+            strem = NULL,
+            temperature = NULL,
+            top_p = NULL,
+            tools = NULL,
+            tool_choice = NULL,
+            user = NULL,
+            function_call = NULL,
+            functions = NULL
+        ) {
+            chat_completions_create(
                 messages = messages,
-                temperature = temperature,
-                top_p = top_p,
-                n = n,
-                stream = stream,
-                stop = stop,
-                max_tokens = max_tokens,
-                presence_penalty = presence_penalty,
+                model = model,
                 frequency_penalty = frequency_penalty,
                 logit_bias = logit_bias,
+                max_tokens = max_tokens,
+                n = n,
+                presence_penalty = presence_penalty,
+                response_format = response_format,
+                seed = seed,
+                stop = stop,
+                strem = strem,
+                temperature = temperature,
+                top_p = top_p,
+                tools = tools,
+                tool_choice = tool_choice,
                 user = user,
-                openai_api_key = self$api_key,
-                openai_organization = self$organization
+                function_call = function_call,
+                functions = functions,
+
+                api_key = self$api_key,
+                organization = self$organization,
+                base_url = self$base_url,
+                max_retries = self$max_retries
             )
         }
     )
