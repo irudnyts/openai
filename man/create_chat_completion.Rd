@@ -11,6 +11,7 @@ create_chat_completion(
   top_p = 1,
   n = 1,
   stream = FALSE,
+  stream_function = function(x) print(x),
   stop = NULL,
   max_tokens = NULL,
   presence_penalty = 0,
@@ -36,8 +37,10 @@ value between \code{0} and \code{1}.}
 \item{n}{required; defaults to \code{1}; a length one numeric vector with the
 integer value greater than \code{0}.}
 
-\item{stream}{required; defaults to \code{FALSE}; a length one logical vector.
-\strong{Currently is not implemented.}}
+\item{stream}{required; defaults to \code{FALSE}; a length one logical vector.}
+
+\item{stream_function}{only required if \code{stream} is \code{TRUE}. Specifies the callback function
+that will be applied to each chunk of the response. Default function just prints the chunks.}
 
 \item{stop}{optional; defaults to \code{NULL}; a character vector of length
 between one and four.}

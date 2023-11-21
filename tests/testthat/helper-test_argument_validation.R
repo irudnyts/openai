@@ -1,7 +1,7 @@
 test_argument_validation <- function(
         function_name,
         argument_name,
-        argument_type = c("character", "string", "number", "count", "flag"),
+        argument_type = c("character", "string", "number", "count", "flag", "function"),
         allow_null = FALSE,
         suppress_warnings = FALSE
 ) {
@@ -18,6 +18,8 @@ test_argument_validation <- function(
         non_valid_values <- list(NA_character_, -10, 0.5, NA_integer_)
     } else if (argument_type == "flag") {
         non_valid_values <- list(NA, NA_integer_, 32, "TRUE")
+    } else if (argument_type == "function") {
+        non_valid_values <- list(NA, NA_character_, NA_integer_, TRUE, 32, -10, 0.5, "one")
     }
 
     if (!allow_null) {
