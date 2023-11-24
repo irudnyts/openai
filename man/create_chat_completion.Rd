@@ -7,6 +7,7 @@
 create_chat_completion(
   model,
   messages = NULL,
+  functions = NULL,
   temperature = 1,
   top_p = 1,
   n = 1,
@@ -26,6 +27,8 @@ create_chat_completion(
 
 \item{messages}{required; defaults to \code{NULL}; a list in the following
 format: \verb{list(list("role" = "user", "content" = "Hey! How old are you?")}}
+
+\item{functions}{optional; defaults to \code{NULL}; OpenAI function definitions}
 
 \item{temperature}{required; defaults to \code{1}; a length one numeric vector
 with the value between \code{0} and \code{2}.}
@@ -96,5 +99,43 @@ create_chat_completion(
        )
    )
 )
+
+#OpenAI function example:
+messages <-
+list(
+    list(
+        "role" = "system",
+        "content" = "You are a helpful assistant."
+    ),
+    list(
+        "role" = "user",
+        "content" = "What is the weather like in San Francisco?"
+    )
+)
+
+functions<-
+  list(
+      list(name = "get_current_weather",
+           description = "Get the current weather",
+           parameters =
+            list(
+                type = "object",
+                properties =
+                 list(
+                    location =
+                      list(type = "string",
+                           description = "The city and state,
+                                          e.g. San Francisco, CA"),
+                    format = list(type = "string",
+                                  enum = c("celsius", "fahrenheit"),
+                                  description = "The temperature unit to use.
+                                    Infer this from the users location.")),
+                required = c("location", "format"))
+      )
+    )
+
+create_chat_completion(model="gpt-3.5-turbo-0613",
+                       messages = messages, functions = functions)
+
 }
 }
