@@ -33,10 +33,10 @@ openai <- R6::R6Class(
             if(is.null(max_retries))
                 max_retries <- 2
 
-            self$api_key = api_key
-            self$organization = organization
-            self$base_url = base_url
-            self$max_retries = max_retries
+            self$api_key <- api_key
+            self$organization <- organization
+            self$base_url <- base_url
+            self$max_retries <- max_retries
 
             self$chat$completions$create <- private$chat_competions_create
 
