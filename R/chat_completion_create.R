@@ -54,7 +54,17 @@ chat_completions_create <- function(messages,
         httr2::req_retry(max_tries = max_retries) |>
         httr2::req_perform() # httr2::req_stream() if strem = TRUE
 
-    resp |>
+    resp <- resp |>
         httr2::resp_body_json()
+
+    chat_completion$new(
+        id = resp$id,
+        object = resp$object,
+        created = resp$created,
+        model = resp$model,
+        system_fingerprint = resp$system_fingerprint,
+        choices = resp$choices,
+        usage = resp$usage
+    )
 
 }
