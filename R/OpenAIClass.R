@@ -1,6 +1,6 @@
 #' @export
 openai <- R6::R6Class(
-    "openai",
+    "OpenAI",
     public = list(
         api_key = NULL,
         organization = NULL,
