@@ -7,11 +7,13 @@
 #' For arguments description please refer to the [official
 #' documentation](https://platform.openai.com/docs/api-reference/images/create).
 #'
+#' @param model optional; defaults to `"dall-e-3"`; a length one character
+#'   vector, one among `"dall-e-3"` or `dall-e-2"`.
 #' @param prompt required; a length one character vector.
 #' @param n required; defaults to `1`; a length one numeric vector with the
 #'   integer value greater than `0`.
 #' @param size required; defaults to `"1024x1024"`; a length one character
-#'   vector, one among `"256x256"`, `"512x512"`, and `"1024x1024"`.
+#'   vector, one among `"256x256"`, `"512x512"`, and `"1024x1024"` for dall-e-2 and one among `"1024x1792"`, `"1792x1024"`, and `"1024x1024"` for dall-e-3.
 #' @param response_format required; defaults to `"url"`; a length one character
 #'   vector, one among `"url"` and `"b64_json"`.
 #' @param user optional; defaults to `NULL`; a length one character vector.
