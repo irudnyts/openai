@@ -28,9 +28,10 @@
 #' @family image functions
 #' @export
 create_image <- function(
+        model="dall-e-3",
         prompt,
+        size = c("1024x1024", "256x256", "512x512", "1024x1792", "1792x1024"),
         n = 1,
-        size = c("1024x1024", "256x256", "512x512"),
         response_format = c("url", "b64_json"),
         user = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
@@ -101,6 +102,7 @@ create_image <- function(
     # Build request body
 
     body <- list()
+    body[["model"]] <- model
     body[["prompt"]] <- prompt
     body[["n"]] <- n
     body[["size"]] <- size
