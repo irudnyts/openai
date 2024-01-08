@@ -9,6 +9,8 @@ openai <- R6::R6Class(
 
         chat = list(completions = list()),
 
+        images = list(generate = list()),
+
         initialize = function(
             api_key = NULL,
             organization = NULL,
@@ -39,6 +41,8 @@ openai <- R6::R6Class(
             self$max_retries <- max_retries
 
             self$chat$completions$create <- private$chat_competions_create
+
+            self$images$generate <- private$images_generate
 
         }
 
@@ -84,6 +88,31 @@ openai <- R6::R6Class(
                 function_call = function_call,
                 functions = functions,
 
+                api_key = self$api_key,
+                organization = self$organization,
+                base_url = self$base_url,
+                max_retries = self$max_retries
+            )
+        },
+        images_generate = function(
+            prompt,
+            model = NULL,
+            n = NULL,
+            quality = NULL,
+            response_format = NULL,
+            size = NULL,
+            style = NULL,
+            user = NULL
+        ) {
+            images_generate(
+                prompt = prompt,
+                model = model,
+                n = n,
+                quality = quality,
+                response_format = response_format,
+                size = size,
+                style = style,
+                user = user,
                 api_key = self$api_key,
                 organization = self$organization,
                 base_url = self$base_url,
