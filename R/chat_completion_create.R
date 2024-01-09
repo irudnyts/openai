@@ -2,6 +2,8 @@ chat_completions_create <- function(messages,
                                     model,
                                     frequency_penalty = NULL,
                                     logit_bias = NULL,
+                                    logprobs = NULL,
+                                    top_logprobs = NULL,
                                     max_tokens = NULL,
                                     n = NULL,
                                     presence_penalty = NULL,
@@ -31,6 +33,8 @@ chat_completions_create <- function(messages,
     body[["model"]] <- model
     body[["frequency_penalty"]] <- frequency_penalty
     body[["logit_bias"]] <- logit_bias
+    body[["logprobs"]] <- logprobs
+    body[["top_logprobs"]] <- top_logprobs
     body[["max_tokens"]] <- max_tokens
     body[["n"]] <- n
     body[["presence_penalty"]] <- presence_penalty
