@@ -11,7 +11,7 @@
 #' @param model required; a length one character vector.
 #' @param prompt optional; defaults to `NULL`; a length one character vector.
 #' @param response_format required; defaults to `"json"`; length one character
-#'   vector equals to `"json"`. **Currently only `"json"` is implemented.**
+#'   vector equal to `"json"`, `"srt"`, or `"text"`.
 #' @param temperature required; defaults to `1`; a length one numeric vector
 #'   with the value between `0` and `2`.
 #' @param language optional; defaults to `NULL`; a length one character vector.
@@ -34,8 +34,8 @@ create_transcription <- function(
         file,
         model,
         prompt = NULL,
-        response_format = "json", # json, text, srt, verbose_json, or vtt
-        temperature = 0,
+        response_format = c("json", "srt", "text"),
+        temperature = 1,
         language = NULL,
         openai_api_key = Sys.getenv("OPENAI_API_KEY"),
         openai_organization = NULL
@@ -77,7 +77,8 @@ create_transcription <- function(
     assertthat::assert_that(
         assertthat::is.number(temperature),
         assertthat::noNA(temperature),
-        value_between(temperature, 0, 2)
+        temperature >= 0,
+        temperature <= 2
     )
 
     if (!is.null(language)) {
@@ -136,11 +137,18 @@ create_transcription <- function(
         encode = "multipart"
     )
 
-    verify_mime_type(response)
-
-    parsed <- response %>%
-        httr::content(as = "text", encoding = "UTF-8") %>%
-        jsonlite::fromJSON(flatten = TRUE)
+    if(response_format == "json"){
+        verify_mime_type(response)
+        parsed <- response %>%
+            httr::content(as = "text", encoding = "UTF-8") %>%
+            jsonlite::fromJSON(flatten = TRUE)
+    } else {
+        # Not clear how you want to handle this since the response to
+        # httr::http_type(response) is
+        # [1] "text/plain"
+        # verify_mime_type(response)
+        parsed <- httr::content(response, as = "text", encoding = "UTF-8")
+    }
 
     #---------------------------------------------------------------------------
     # Check whether request failed and return parsed
