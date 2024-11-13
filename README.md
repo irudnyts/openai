@@ -1,4 +1,11 @@
 
+## :warning: :warning: :warning: The project is shelved and archived :warning: :warning: :warning:
+
+Since the project has been stalled for more than a year, it has been
+archived and won’t be maintained. There are other amazing packages you
+can use instead, e.g., [elmer](https://github.com/tidyverse/elmer) by
+Hadley Wickham and friends.
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # openai <img src="man/figures/logo.png" align="right" width="120" />
