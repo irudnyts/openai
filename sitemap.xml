@@ -1,102 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://irudnyts.github.io/openai/404.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/index.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/cancel_fine_tune.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_chat_completion.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_completion.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_edit.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_embedding.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_fine_tune.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_image.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_image_edit.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_image_variation.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_moderation.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_transcription.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/create_translation.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/delete_file.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/delete_fine_tune_model.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/list_engines.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/list_files.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/list_fine_tune_events.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/list_fine_tunes.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/list_models.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/retrieve_engine.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/retrieve_file.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/retrieve_file_content.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/retrieve_fine_tune.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/retrieve_model.html</loc>
-  </url>
-  <url>
-    <loc>https://irudnyts.github.io/openai/reference/upload_file.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://irudnyts.github.io/openai/404.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/LICENSE-text.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/LICENSE.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/authors.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/index.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/news/index.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/cancel_fine_tune.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_chat_completion.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_completion.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_edit.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_embedding.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_fine_tune.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_image.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_image_edit.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_image_variation.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_moderation.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_transcription.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/create_translation.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/delete_file.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/delete_fine_tune_model.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/index.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/list_engines.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/list_files.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/list_fine_tune_events.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/list_fine_tunes.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/list_models.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/pipe.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/retrieve_engine.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/retrieve_file.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/retrieve_file_content.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/retrieve_fine_tune.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/retrieve_model.html</loc></url>
+<url><loc>https://irudnyts.github.io/openai/reference/upload_file.html</loc></url>
 </urlset>
+
